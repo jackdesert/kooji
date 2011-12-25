@@ -4,11 +4,12 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new
   end
 
-  def create_table
+  def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       redirect_to user_path(current_user)
     else
+    	flash[:error] = "Password Incorrect"
       render :action => :new
     end
   end

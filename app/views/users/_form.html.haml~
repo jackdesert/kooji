@@ -16,6 +16,12 @@
     = f.label :email
     = f.text_field :email
   .field
+	  = f.label :password, "Password"
+    = f.password_field :password, :class => 'text'
+  .field
+  	= f.label :password_confirmation, "Confirm Password"
+    = f.password_field :password_confirmation, :class => 'text'
+  .field
     = f.label :phone_evening, "Phone (Evening)"
     = f.text_field :phone_evening
   .field
@@ -37,12 +43,15 @@
     = f.text_field :exercise
   .field
     * Please enter any allergies, any medications you are taking, or any other medical conditions that may be important. (Your answer will remain confidential.)
+    %br
     = f.text_field :medical
   .field
     * In case of emergency, please enter a person to contact, including name and phone number.
+    %br
     = f.text_field :emergency_contact
   .field
     Do you have any dietary preferences or restrictions (vegetarian, food allergies, etc.)?
+    %br
     = f.text_field :diet
   .actions
     = f.submit 'Save'

@@ -1,3 +1,9 @@
+%p
+- if flash[:error]
+  .flash{:class => 'error'}
+    %strong= flash[:error]
+- if flash[:notice]
+  %h2= flash[:notice].gsub("Congratulations! ","")
 = form_for @user_session, :url => user_session_path do |f|
   .field
     = f.label :email, "Email Address"
