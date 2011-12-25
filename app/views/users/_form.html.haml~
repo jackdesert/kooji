@@ -7,16 +7,42 @@
           %li= msg
 
   .field
-    = f.label :email
-    = f.text_field :email
-  .field
     = f.label :first_name
     = f.text_field :first_name
   .field
     = f.label :last_name
     = f.text_field :last_name
   .field
-    = f.label :cell_phone
-    = f.text_field :cell_phone
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :phone_evening, "Phone (Evening)"
+    = f.text_field :phone_evening
+  .field
+    = f.label :phone_cell
+    = f.text_field :phone_cell
+  .field
+    Are you and AMC member?
+    = f.label :member, "Yes"
+    = f.radio_button :member, true
+    = f.label :member, "No"
+    = f.radio_button :member, false
+  .field
+    * What is your previous hiking experience? (If applicable, please name mountains and include approximate distances.)
+    %br
+    = f.text_field :experience
+  .field
+    * What is your weekly exercise routine? Please be honest.
+    %br
+    = f.text_field :exercise
+  .field
+    * Please enter any allergies, any medications you are taking, or any other medical conditions that may be important. (Your answer will remain confidential.)
+    = f.text_field :medical
+  .field
+    * In case of emergency, please enter a person to contact, including name and phone number.
+    = f.text_field :emergency_contact
+  .field
+    Do you have any dietary preferences or restrictions (vegetarian, food allergies, etc.)?
+    = f.text_field :diet
   .actions
     = f.submit 'Save'

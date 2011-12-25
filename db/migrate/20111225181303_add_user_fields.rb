@@ -13,6 +13,6 @@ class AddUserFields < ActiveRecord::Migration
   end
 
   def down
-    remove_column(:users, :user_type, :phone_day, :member, :emergency_contact, :exercise, :diet, :leader_request)
+    remove_column(:users, :user_type, :phone_day, :phone_evening, :member, :emergency_contact, :exercise, :medical, :diet, :leader_request)
   end
 end
