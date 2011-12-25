@@ -1,17 +1,39 @@
 %p#notice= notice
 
 %p
-  %b Email:
-  = @user.email
-%p
   %b First name:
   = @user.first_name
 %p
   %b Last name:
   = @user.last_name
 %p
-  %b Cell phone:
-  = @user.cell_phone
+  %b Email:
+  = @user.email
+%p
+  %b Phone (evening)
+  = @user.phone_evening
+%p
+  %b Phone (cell)
+  = @user.phone_cell
+%p
+  %b AMC Member
+  = @user.member
+%p
+  %b Recent Hiking Experience
+  = @user.experience
+%p
+  %b Weekly Exercise Routine
+  = @user.exercise
+%p
+  %b Allergies, Medications, and relevant Medical Conditions
+  = @user.medical
+%p
+  %b Emergency Contact
+  = @user.emergency_contact
+%p
+  %b Dietary Needs
+  = @user.diet
+
 
 = link_to 'Edit', edit_user_path(@user)
 \|
