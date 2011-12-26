@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  program_id: 1
+  event_status: MyString
+  event_is_program: MyString
+  event_name: MyString
+  rating: MyString
+  pricing: MyText
+  description: MyText
+  trip_info: MyText
+  gear_list: MyText
+  confirmation_page: MyText
+  question1: MyText
+  start_date: 2011-12-26
+  end_date: 2011-12-26
+
+two:
+  program_id: 1
+  event_status: MyString
+  event_is_program: MyString
+  event_name: MyString
+  rating: MyString
+  pricing: MyText
+  description: MyText
+  trip_info: MyText
+  gear_list: MyText
+  confirmation_page: MyText
+  question1: MyText
+  start_date: 2011-12-26
+  end_date: 2011-12-26

@@ -1,4 +1,6 @@
 Regi::Application.routes.draw do
+  resources :events
+
   resource :user_session
   resource :user
 
