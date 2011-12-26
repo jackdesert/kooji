@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1
   # GET /registrations/1.json
   def show
-    @registration = Registration.find(params[:id])
+    @registration = Registration.find(1)
 
     respond_to do |format|
       format.html # show.html.erb
