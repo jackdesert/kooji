@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  register_status: MyString
+  need_ride: MyString
+  can_take: 1
+  leaving_from: MyString
+  leave_time: MyString
+  returning_to: MyString
+  return_time: MyString
+  gear_answer: MyText
+  answer1: MyText
+  has_questions: MyText
+
+two:
+  register_status: MyString
+  need_ride: MyString
+  can_take: 1
+  leaving_from: MyString
+  leave_time: MyString
+  returning_to: MyString
+  return_time: MyString
+  gear_answer: MyText
+  answer1: MyText
+  has_questions: MyText

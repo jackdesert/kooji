@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Register status:
+  = @registration.register_status
+%p
+  %b Need ride:
+  = @registration.need_ride
+%p
+  %b Can take:
+  = @registration.can_take
+%p
+  %b Leaving from:
+  = @registration.leaving_from
+%p
+  %b Leave time:
+  = @registration.leave_time
+%p
+  %b Returning to:
+  = @registration.returning_to
+%p
+  %b Return time:
+  = @registration.return_time
+%p
+  %b Gear answer:
+  = @registration.gear_answer
+%p
+  %b Answer1:
+  = @registration.answer1
+%p
+  %b Has questions:
+  = @registration.has_questions
+
+= link_to 'Edit', edit_registration_path(@registration)
+\|
+= link_to 'Back', registrations_path

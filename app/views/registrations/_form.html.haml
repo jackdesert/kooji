@@ -1,0 +1,40 @@
+= form_for @registration do |f|
+  -if @registration.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@registration.errors.count, "error")} prohibited this registration from being saved:"
+      %ul
+        - @registration.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :register_status
+    = f.text_field :register_status
+  .field
+    = f.label :need_ride
+    = f.text_field :need_ride
+  .field
+    = f.label :can_take
+    = f.number_field :can_take
+  .field
+    = f.label :leaving_from
+    = f.text_field :leaving_from
+  .field
+    = f.label :leave_time
+    = f.text_field :leave_time
+  .field
+    = f.label :returning_to
+    = f.text_field :returning_to
+  .field
+    = f.label :return_time
+    = f.text_field :return_time
+  .field
+    = f.label :gear_answer
+    = f.text_area :gear_answer
+  .field
+    = f.label :answer1
+    = f.text_area :answer1
+  .field
+    = f.label :has_questions
+    = f.text_area :has_questions
+  .actions
+    = f.submit 'Save'

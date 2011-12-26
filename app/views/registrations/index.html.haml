@@ -1,0 +1,37 @@
+%h1 Listing registrations
+
+%table
+  %tr
+    %th Register status
+    %th Need ride
+    %th Can take
+    %th Leaving from
+    %th Leave time
+    %th Returning to
+    %th Return time
+    %th Gear answer
+    %th Answer1
+    %th Has questions
+    %th
+    %th
+    %th
+
+  - @registrations.each do |registration|
+    %tr
+      %td= registration.register_status
+      %td= registration.need_ride
+      %td= registration.can_take
+      %td= registration.leaving_from
+      %td= registration.leave_time
+      %td= registration.returning_to
+      %td= registration.return_time
+      %td= registration.gear_answer
+      %td= registration.answer1
+      %td= registration.has_questions
+      %td= link_to 'Show', registration
+      %td= link_to 'Edit', edit_registration_path(registration)
+      %td= link_to 'Destroy', registration, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Registration', new_registration_path
