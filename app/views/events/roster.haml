@@ -38,9 +38,9 @@
       %td= hidden_field_tag :event_id, @event.id
       %td= hidden_field_tag :user_id, registration.user.id
       %td= hidden_field_tag :new_status, "new_status"
-      %td= submit_tag 'Approve'
-      %td= link_to 'Wait List', '#'
-      %td= link_to 'Cancel', '#'
-      %td= link_to 'Make Registrar', '#'
-      %td= link_to 'Make Leader', '#'
-      %td= link_to 'Make Co-Leader', '#'
+      %td= submit_tag 'Approved'
+      %td= submit_tag 'Wait List'
+      %td= submit_tag 'Canceled'
+      %td= submit_tag 'Registrar'
+      %td= submit_tag 'Leader'
+      %td= submit_tag 'Co-Leader'

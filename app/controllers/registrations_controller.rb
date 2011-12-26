@@ -61,7 +61,8 @@ class RegistrationsController < ApplicationController
 
     unless params[:new_status].nil?
       a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
-      a.register_status = "There is always a better way"
+
+      a.register_status = params[:commit]
       a.save
       url = "/events/" + params[:event_id] + "/roster"
       redirect_to url
