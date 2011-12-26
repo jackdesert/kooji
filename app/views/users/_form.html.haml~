@@ -1,4 +1,4 @@
-= form_for @user do |f|
+= form_for @users do |f|
   -if @user.errors.any?
     #error_explanation
       %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
@@ -16,10 +16,10 @@
     = f.label :email
     = f.text_field :email
   .field
-	  = f.label :password, "Password"
+    = f.label :password, "Password"
     = f.password_field :password, :class => 'text'
   .field
-  	= f.label :password_confirmation, "Confirm Password"
+    = f.label :password_confirmation, "Confirm Password"
     = f.password_field :password_confirmation, :class => 'text'
   .field
     = f.label :phone_evening, "Phone (Evening)"
