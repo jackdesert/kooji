@@ -21,7 +21,7 @@
     %th
     %th
 
-  - Registration.where(:event_id => @event.id).each do |registration|
+  - Registration.all.each do |registration|
     %tr
       - reg_url = "/registrations/"  + registration.id.to_s
       = form_tag(:registration, :url => reg_url, :method => :put)
@@ -34,8 +34,9 @@
       %td= registration.gear_answer
       %td= registration.answer1
       %td= registration.has_questions
-      %td= hidden_field :event_id, :value => @event.id
-      %td= hidden_field :user_id, :value => registration.user.id
+      %td= hidden_field_tag :event_id, @event.id
+      %td= hidden_field_tag :user_id, registration.user.id
+      %td= hidden_field_tag :new_status, "new_status"
       %td= submit_tag 'Approve'
       %td= link_to 'Wait List', '#'
       %td= link_to 'Cancel', '#'

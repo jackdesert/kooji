@@ -58,10 +58,10 @@ class RegistrationsController < ApplicationController
   # PUT /registrations/1
   # PUT /registrations/1.json
   def update
-    debugger
-    if params[:new_status] == "new_status"
-      a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id])
-      a.register_status = "new_status"
+
+    unless params[:new_status].nil?
+      a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
+      a.register_status = "there is always a better way"
       a.save
     end
 
