@@ -17,7 +17,7 @@
     %th Gear answer
     %th Answer1
     %th Has questions
-    %th
+    %th Event ID
     %th
     %th
 
@@ -34,6 +34,7 @@
       %td= registration.gear_answer
       %td= registration.answer1
       %td= registration.has_questions
+      %td= registration.event_id
       %td= hidden_field_tag :event_id, @event.id
       %td= hidden_field_tag :user_id, registration.user.id
       %td= hidden_field_tag :new_status, "new_status"

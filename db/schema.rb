@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20111226132723) do
   end
 
   create_table "registrations", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
+    t.integer  "user_id",         :null => false
+    t.integer  "event_id",        :null => false
     t.string   "register_status"
     t.string   "need_ride"
     t.integer  "can_take"
