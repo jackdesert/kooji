@@ -21,26 +21,26 @@
     %th
     %th
 
-  - Registration.all.each do |registration|
+  - Registration.where(:event_id => @event.id).each do |registration|
     %tr
       - reg_url = "/registrations/"  + registration.id.to_s
-      = form_tag(:registration, :url => reg_url, :method => :put)
-      %td= registration.user.first_name
-      %td= registration.user.experience
-      %td= registration.user.exercise
-      %td= registration.user.medical
-      %td= registration.user.diet
-      %td= registration.register_status
-      %td= registration.gear_answer
-      %td= registration.answer1
-      %td= registration.has_questions
-      %td= registration.event_id
-      %td= hidden_field_tag :event_id, @event.id
-      %td= hidden_field_tag :user_id, registration.user.id
-      %td= hidden_field_tag :new_status, "new_status"
-      %td= submit_tag 'Approved'
-      %td= submit_tag 'Wait List'
-      %td= submit_tag 'Canceled'
-      %td= submit_tag 'Registrar'
-      %td= submit_tag 'Leader'
-      %td= submit_tag 'Co-Leader'
+      = form_tag(:registration, :url => reg_url, :method => :put) do
+        %td= registration.user.first_name
+        %td= registration.user.experience
+        %td= registration.user.exercise
+        %td= registration.user.medical
+        %td= registration.user.diet
+        %td= registration.register_status
+        %td= registration.gear_answer
+        %td= registration.answer1
+        %td= registration.has_questions
+        %td= registration.event_id
+        %td= hidden_field_tag :event_id, @event.id
+        %td= hidden_field_tag :user_id, registration.user.id
+        %td= hidden_field_tag :new_status, "new_status"
+        %td= submit_tag 'Approved'
+        %td= submit_tag 'Wait List'
+        %td= submit_tag 'Canceled'
+        %td= submit_tag 'Registrar'
+        %td= submit_tag 'Leader'
+        %td= submit_tag 'Co-Leader'
