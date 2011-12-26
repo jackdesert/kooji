@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
       return false
     end
+    return current_user.id
   end
   protect_from_forgery
 end

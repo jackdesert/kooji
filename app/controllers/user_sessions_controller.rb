@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      redirect_to user_path(current_user)
+      redirect_to user_path
     else
     	flash[:error] = "Password Incorrect"
       render :action => :new
