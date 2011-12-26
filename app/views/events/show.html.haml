@@ -1,6 +1,12 @@
 %p#notice= notice
 
-= render 'event_listing'
+= render 'event_listing', :event => @event
+
+- current_registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first
+- current_registration ||= Registration.new(:event_id => @event.id)
+
+- debugger
+= render 'registrations/form', :registration => current_registration
 
 = link_to 'Edit', edit_event_path(@event)
 \|
