@@ -71,7 +71,10 @@ class EventsController < ApplicationController
 
   def roster
     @event = Event.find(params[:id])
+    @registration = Registration.first
   end
+
+
 
 
   # DELETE /events/1

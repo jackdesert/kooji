@@ -58,6 +58,13 @@ class RegistrationsController < ApplicationController
   # PUT /registrations/1
   # PUT /registrations/1.json
   def update
+    debugger
+    if params[:new_status] == "new_status"
+      a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id])
+      a.register_status = "new_status"
+      a.save
+    end
+
     @registration = Registration.find(params[:id])
 
     respond_to do |format|
@@ -70,6 +77,7 @@ class RegistrationsController < ApplicationController
       end
     end
   end
+
 
   # DELETE /registrations/1
   # DELETE /registrations/1.json
