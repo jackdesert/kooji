@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  before_filter :authenticate
   # GET /registrations
   # GET /registrations.json
   def index
@@ -41,6 +42,7 @@ class RegistrationsController < ApplicationController
   # POST /registrations.json
   def create
     @registration = Registration.new(params[:registration])
+    @registration.user_id = current_user.id
 
     respond_to do |format|
       if @registration.save
