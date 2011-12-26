@@ -1,45 +1,9 @@
 %p#notice= notice
 
-%p
-  %b Program:
-  = @event.program_id
-%p
-  %b Event status:
-  = @event.event_status
-%p
-  %b Event is program:
-  = @event.event_is_program
-%p
-  %b Event name:
-  = @event.event_name
-%p
-  %b Rating:
-  = @event.rating
-%p
-  %b Pricing:
-  = @event.pricing
-%p
-  %b Description:
-  = @event.description
-%p
-  %b Trip info:
-  = @event.trip_info
-%p
-  %b Gear list:
-  = @event.gear_list
-%p
-  %b Confirmation page:
-  = @event.confirmation_page
-%p
-  %b Question1:
-  = @event.question1
-%p
-  %b Start date:
-  = @event.start_date
-%p
-  %b End date:
-  = @event.end_date
+= render 'event_listing'
 
 = link_to 'Edit', edit_event_path(@event)
 \|
 = link_to 'Back', events_path
+\|
+= link_to 'Sign Up', new_registration_path
