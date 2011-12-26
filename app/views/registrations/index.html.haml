@@ -16,7 +16,7 @@
     %th
     %th
 
-  - Registration.where(:event_id => 1).each do |registration|
+  - Registration.where(:event_id => params[:event_id]).each do |registration|
     %tr
       %td= registration.register_status
       %td= registration.need_ride

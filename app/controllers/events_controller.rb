@@ -69,6 +69,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def roster
+    @event = Event.find(params[:id])
+  end
+
+
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
