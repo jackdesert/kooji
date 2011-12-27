@@ -16,6 +16,7 @@ match 'events/:id/roster' => 'events#roster'
 match 'events/:id/roster/export' => 'events#export', :as => 'roster_export'
 match 'support' => 'imports#support', :as => 'support_page'
 match 'hbtrips' => 'imports#featured_events', :as => 'hbtrips'
+match 'events/:id/word' => 'events#get_the_word_out', :as => 'publicize'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

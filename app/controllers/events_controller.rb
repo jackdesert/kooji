@@ -84,6 +84,9 @@ class EventsController < ApplicationController
     @registrations = Registration.where(:event_id => params[:id])
   end
 
+  def get_the_word_out
+    @event = Event.find(params[:id])
+  end
 
   def may_create_events
     unless current_user.user_type.nil?

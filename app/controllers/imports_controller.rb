@@ -4,7 +4,7 @@ class ImportsController < ApplicationController
 
   def featured_events
     require 'open-uri'
-    @page = Nokogiri::HTML(open("http://google.com"))
+    @page = Nokogiri::HTML(open("http://www.hbbostonamc.org/trips.php"))
   end
 
   def support
