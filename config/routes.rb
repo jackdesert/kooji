@@ -15,6 +15,8 @@ Regi::Application.routes.draw do
 match 'events/:id/roster' => 'events#roster'
 match 'events/:id/roster/export' => 'events#export', :as => 'roster_export'
 match 'support' => 'imports#support', :as => 'support_page'
+match 'hbtrips' => 'imports#featured_events', :as => 'hbtrips'
+
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
