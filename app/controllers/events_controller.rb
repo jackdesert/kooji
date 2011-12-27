@@ -75,6 +75,14 @@ class EventsController < ApplicationController
   end
 
 
+  def export
+    headers['Content-Type'] = "application/vnd.ms-excel"
+    headers['Content-Disposition'] = 'attachment; filename="report.xls"'
+    headers['Cache-Control'] = ''
+    @registrations = Registration.where(:event_id => params[:id])
+  end
+
+
 
   # DELETE /events/1
   # DELETE /events/1.json
