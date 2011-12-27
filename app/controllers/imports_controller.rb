@@ -15,7 +15,7 @@ class ImportsController < ApplicationController
   def generate_html(raw, html)
     input_file = File.expand_path(raw)
     output_file = File.expand_path(html)
-    command = "elyxer #{input_file} #{output_file}"
+    command = "elyxer --raw #{input_file} #{output_file}"
     system(command)
     return output_file
   end
