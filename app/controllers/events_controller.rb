@@ -85,14 +85,15 @@ class EventsController < ApplicationController
   end
 
 
-  def may_create_trips
-    if [:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
-      return true
-    else
-      flash[:notice] = "I'm sorry, only leaders, coleaders, and admins can create trips"
-      redirect_to "/"
-      return false
+  def may_create_events
+    unless current_user.user_type.nil?
+      if [:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
+        return true
+      end
     end
+    flash[:notice] = "I'm sorry, only leaders, coleaders, and admins can create trips"
+    redirect_to "/"
+    return false
   end
 
   def may_edit_event
