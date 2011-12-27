@@ -7,8 +7,10 @@ class ImportsController < ApplicationController
   def elyxer
     raw = "doc/Regi_FAQ.lyx"
     html = "public/Regi_FAQ.html"
+    input_file = File.new(raw)
+    output_file = File.expand_path(html)
     # Generate a new html file unless raw file is older than generated
-    output_file = generate_html(raw, html) # unless File.exists?(html) and File.new(raw).mtime < File.new(html).mtime
+    generate_html(raw, html) unless File.exists?(html) and File.new(raw).mtime < File.new(html).mtime
     return get_file_as_string(output_file)
   end
 
@@ -17,7 +19,6 @@ class ImportsController < ApplicationController
     output_file = File.expand_path(html)
     command = "elyxer --raw #{input_file} #{output_file}"
     system(command)
-    return output_file
   end
 
   def get_file_as_string(filename)
