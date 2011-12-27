@@ -55,6 +55,10 @@ class RegistrationsController < ApplicationController
     end
   end
 
+
+  def mine
+    @my_registrations = Registration.where(:user_id => current_user.id)
+  end
   # PUT /registrations/1
   # PUT /registrations/1.json
   def update

@@ -1,0 +1,16 @@
+%p These are all the trips I'm signed up for
+%table
+
+  %tr
+    %th Start
+    %th End
+    %th Event
+    %th My Status
+    %th Event Status
+  - @my_registrations.each do |f|
+    %tr
+      %td= f.event.start_date
+      %td= f.event.end_date
+      %td= f.event.event_name
+      %td= f.register_status
+      %td= f.event.event_status

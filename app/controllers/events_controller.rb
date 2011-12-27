@@ -76,7 +76,6 @@ class EventsController < ApplicationController
 
 
 
-
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
