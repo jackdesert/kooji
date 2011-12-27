@@ -1,6 +1,8 @@
 Regi::Application.routes.draw do
   resources :registrations
 
+
+  # for some reason, when I delete this line, then my /1/edit url complains "no route matches :controller => :events"
   resources :events
 
   resource :user_session
@@ -12,11 +14,32 @@ Regi::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-match 'events/:id/roster' => 'events#roster'
-match 'events/:id/roster/export' => 'events#export', :as => 'roster_export'
+
+
+
+
 match 'support' => 'imports#support', :as => 'support_page'
 match 'hbtrips' => 'imports#featured_events', :as => 'hbtrips'
-match 'events/:id/word' => 'events#get_the_word_out', :as => 'publicize'
+
+# custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
+match ':id' => 'events#show', :via => 'get', :as => 'event'
+match ':id' => 'events#update', :via => 'put'
+match ':id/edit' => 'events#edit', :as => 'edit_event', :via => 'get'
+match 'new' => 'events#new', :as => 'new_event', :via => 'get'
+match 'create' => 'events#create', :via => 'post'
+match ':id/roster' => 'events#roster'
+match ':id/roster/export' => 'events#export', :as => 'roster_export'
+match ':id/share' => 'events#get_the_word_out', :as => 'publicize'
+
+
+
+
+
+
+
+
+
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
