@@ -17,20 +17,24 @@ Regi::Application.routes.draw do
 
 
 
+match '/profile' => 'user#show', :as => 'view_profile'
+match 'support' => 'imports#support', :as => 'support'
+match 'hbtrips' => 'imports#featured_events', :as => 'hbtrips', :via => :get
 
-match 'support' => 'imports#support', :as => 'support_page'
-match 'hbtrips' => 'imports#featured_events', :as => 'hbtrips'
+### custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
+##get ':id' => 'events#show', :as => 'event', :id => /1/
+##put ':id' => 'events#update', :id => /1/
+##get ':id/edit' => 'events#edit', :as => 'edit_event'
+##get 'new' => 'events#new', :as => 'new_event'
+##post 'create' => 'events#create'
+##match ':id/roster' => 'events#roster', :as => 'roster'
+##match ':id/roster/export' => 'events#export', :as => 'roster_export'
+##match ':id/share' => 'events#get_the_word_out', :as => 'share_event'
 
-# custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
-match ':id' => 'events#show', :via => 'get', :as => 'event'
-match ':id' => 'events#update', :via => 'put'
-match ':id/edit' => 'events#edit', :as => 'edit_event', :via => 'get'
-match 'new' => 'events#new', :as => 'new_event', :via => 'get'
-match 'create' => 'events#create', :via => 'post'
-match ':id/roster' => 'events#roster'
-match ':id/roster/export' => 'events#export', :as => 'roster_export'
-match ':id/share' => 'events#get_the_word_out', :as => 'publicize'
 
+
+
+match 'profile/edit' => 'users#edit', :as => 'edit_profile'
 
 
 
