@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_filter :may_create_events, :only => [:new, :create]
-  before_filter :may_edit_event, :only => [:edit, :update]
+  before_filter :may_edit_event, :only => [:edit, :update, :roster, :export]
   # GET /events
   # GET /events.json
   def index
@@ -93,18 +93,6 @@ class EventsController < ApplicationController
     end
     flash[:notice] = "I'm sorry, only leaders, coleaders, and admins can create trips"
     redirect_to "/"
-    return false
-  end
-
-  def may_edit_event
-    my_reg = Registration.where(:user_id => current_user.id, :event_id => params[:id])
-    unless my_reg.empty?
-      if [:leader, :coleader, :registrar].include? my_reg.register_status.downcase.to_sym
-        return true
-      end
-    end
-    flash[:notice] = "You must be the leader, the coleader, or the registrar of this event to edit the event details"
-    redirect_to event_path
     return false
   end
 
