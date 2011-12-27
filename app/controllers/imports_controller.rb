@@ -1,5 +1,9 @@
 class ImportsController < ApplicationController
 
+  def featured_events
+
+  end
+
   def support
     @user_guide_html = elyxer
   end
