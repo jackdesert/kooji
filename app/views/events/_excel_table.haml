@@ -1,0 +1,6 @@
+%table
+  %tr
+    %th Name
+  - @registrations.each do |u|
+    %tr
+      %td= u.user.first_name

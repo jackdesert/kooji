@@ -18,5 +18,14 @@ class ApplicationController < ActionController::Base
     end
     return current_user.id
   end
+
+  def may_create_trips(user)
+    if [:leader, :coleader, :admin].include? user.user_type.downcase.to_sym
+      return true
+    else
+      return false
+    end
+  end
+
   protect_from_forgery
 end
