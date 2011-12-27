@@ -6,7 +6,24 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %p.notice= flash[:notice]
-    %p.error= flash[:error]
-    = yield
+    #top
+      = link_to "HB Trip Listings", hbtrips_path
+      = link_to "Support", support_path
+      = link_to "Create New Event", new_event_path
+      = link_to "My Events", root_path
+      = link_to "My Profile", view_profile_path
+      %p.notice= flash[:notice]
+      %p.error= flash[:error]
+
+    #left
+      = link_to "Event Info", event_path
+      %br
+      = link_to "Roster", roster_path
+      %br
+      = link_to "Admin", edit_event_path
+      %br
+      = link_to "Share", share_event_path
+    #right
+      = yield
+    .clear
     %p REGI-Rails 0.4
