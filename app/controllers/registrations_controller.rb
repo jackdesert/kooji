@@ -61,9 +61,9 @@ class RegistrationsController < ApplicationController
 
     unless params[:new_status].nil?
       a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
-      debugger
       a.register_status = params[:commit]
       a.save
+      Notifier.reg_status_email(a.user).deliver
       url = "/events/" + params[:event_id] + "/roster"
       redirect_to url
       return true
