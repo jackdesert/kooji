@@ -1,0 +1,995 @@
+#LyX 2.0.0beta4 created this file. For more info see http://www.lyx.org/
+\lyxformat 412
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:user_faq"
+
+\end_inset
+
+Frequently Asked Questions 
+\end_layout
+
+\begin_layout Paragraph
+How do I create a REGI Account? 
+\end_layout
+
+\begin_layout Itemize
+Go to the 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "login screen"
+target "logout.php"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Click the link that says 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Create an Account"
+target "myProfile.php"
+
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+Enter your information as requested, starting with the required fields (user
+ name, password, first/last name, email).
+ If you want to be able to create new events in REGI, Be sure to answer
+ YES to 
+\begin_inset Quotes eld
+\end_inset
+
+Are you a current AMC H/B Leader or Coleader?
+\begin_inset Quotes erd
+\end_inset
+
+ This checkbox sends an email to the webmaster so they can grant you LEADER
+ privileges.
+ 
+\end_layout
+
+\begin_layout Itemize
+Click 
+\emph on
+Create Profile
+\emph default
+.
+ Note that you can return to edit your profile at any time by clicking on
+ 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Profile"
+target "myProfile.php"
+
+\end_inset
+
+
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+What do I do if I forget my user name or password? 
+\end_layout
+
+\begin_layout Quote
+Go to the 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "login page"
+target "logout.php"
+
+\end_inset
+
+
+\emph default
+ and click the link where it says 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Forgot username or password"
+target "forgotPassword.php"
+
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Paragraph
+How do I edit My Profile? 
+\end_layout
+
+\begin_layout Quote
+You can edit your profile at any time by clicking on 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Profile"
+target "myProfile.php"
+
+\end_inset
+
+
+\emph default
+ in the navigation bar at the upper right of every REGI page.
+ Don't forget to update your experience profile as you continue to use the
+ system.
+\end_layout
+
+\begin_layout Paragraph
+How do I register for an event? 
+\end_layout
+
+\begin_layout Quote
+Once you have created your profile, you can immediately begin to sign up
+ for events that are using the new online REGI system.
+ Follow these 2 steps: 
+\end_layout
+
+\begin_layout Quote
+Find an event on the 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "HB Trip Listings"
+target "hbTrips.php"
+
+\end_inset
+
+
+\emph default
+ page that you are interested in.
+ 
+\end_layout
+
+\begin_layout Quote
+Click on the REGI link listed near the bottom of the listing.
+ Usually REGI links are of the form 
+\emph on
+http://www.hbbostonamc.org/regi/xxx
+\emph default
+.
+ This link takes you to this event's REGI page.
+ 
+\end_layout
+
+\begin_layout Quote
+On the REGI page of the event you are interested in, you will find basic
+ information about the event: name, description, a gear list, and specific
+ questions, such as whether you have the listed gear, and your carpooling
+ details.
+ Enter the requested information and click 
+\emph on
+Sign Up For This Event
+\emph default
+.
+ Your registration status will be listed as 
+\emph on
+SUBMITTED
+\emph default
+ under your 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Events"
+target "myEvents.php"
+
+\end_inset
+
+
+\emph default
+ page until the leader approves you for the event.
+ If you are Approved, your status under 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Events"
+target "myEvents.php"
+
+\end_inset
+
+
+\emph default
+ will be changed to 
+\emph on
+APPROVED
+\emph default
+ and you will receive an automated email noting the update.
+\end_layout
+
+\begin_layout Paragraph
+An event is marked 
+\begin_inset Quotes eld
+\end_inset
+
+FULL
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Can I still register?
+\end_layout
+
+\begin_layout Quote
+The short answer is 
+\begin_inset Quotes eld
+\end_inset
+
+no
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Here is what the different event statuses mean:
+\end_layout
+
+\begin_layout Itemize
+OPEN: This event is currently accepting new registrations.
+\end_layout
+
+\begin_layout Itemize
+WAIT LIST: All the spots on the event are taken.
+ However, you can still sign up to be on the wait list, and if someone else
+ cancels out of the event you will be notified.
+ 
+\end_layout
+
+\begin_layout Itemize
+FULL: All the spots on the event are taken.
+ No more registrations are being accepted, not even for the wait list.
+ 
+\end_layout
+
+\begin_layout Itemize
+CANCELLED: This event has been cancelled.
+ 
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset Quotes eld
+\end_inset
+
+My Status
+\begin_inset Quotes erd
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+APPROVED
+\begin_inset Quotes erd
+\end_inset
+
+.
+ What does that mean?
+\end_layout
+
+\begin_layout Quote
+
+\emph on
+My Status
+\emph default
+ is short for 
+\emph on
+My Registration Status
+\emph default
+.
+ It tells whether you have been approved for that particular event.
+ Here is what the different statuses mean:
+\end_layout
+
+\begin_layout Itemize
+SUBMITTED: You have registered for the event.
+ Your approval for this event is pending.
+ 
+\end_layout
+
+\begin_layout Itemize
+APPROVED: You made the list.
+ You're in.
+ You're going.
+ You'll have a great time.
+ 
+\end_layout
+
+\begin_layout Itemize
+WAIT LIST: All the spots on the event are taken.
+ However you have been added to the wait list.
+ If someone cancels out of the event you will be notified.
+\end_layout
+
+\begin_layout Itemize
+CANCELLED: You have cancelled your attendance for this event.
+\end_layout
+
+\begin_layout Itemize
+ENROLLED (Only applies to 
+\emph on
+programs)
+\emph default
+ You made the list.
+ You're in.
+ We'll see you there.
+\end_layout
+
+\begin_layout Paragraph
+When will I know if I have been approved for an event? 
+\end_layout
+
+\begin_layout Quote
+Once the leader has had a chance to review your application, your registration
+ status will be updated toeither "APPROVED" or "WAITLIST".
+ You will receive an automated email sent to your profile email address
+ to notify you of the status change.
+ You can also check the 
+\emph on
+My Status 
+\emph default
+column under your 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Events"
+target "myEvents.php"
+
+\end_inset
+
+
+\emph default
+ page.
+ 
+\end_layout
+
+\begin_layout Paragraph
+What do I do if I’m WAITLISTED? 
+\end_layout
+
+\begin_layout Quote
+If a spot opens up on the event, the leader will contact you to offer you
+ a spot.
+ If you are taken off the waitlist, your registration status will switch
+ to “APPROVED” and you will receive an automated email to this effect.
+\end_layout
+
+\begin_layout Paragraph
+How do I cancel out of a trip? 
+\end_layout
+
+\begin_layout Quote
+If you need to cancel your registration, email the leader ASAP so that he
+ or she can cancel you from the trip and open the event to others.
+ Once the leader cancels your registration, you will receive an automated
+ email that your registration status has been updated to 
+\emph on
+CANCELLED
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Paragraph
+How do I get a ride or offer a ride? 
+\end_layout
+
+\begin_layout Quote
+When you register for an event, the REGI system will ask whether you can
+ offer others a ride or if you need a ride yourself.
+ Once you are approved for the event, you will be able to see other participants
+' carpooling information.
+ Who is coming, where they are coming from, whether they are offering or
+ requesting rides, and their email address.
+ You can then email them and offer to carpool with them.
+ 
+\end_layout
+
+\begin_layout Paragraph
+How do I become a LEADER so I can create REGI trips?
+\end_layout
+
+\begin_layout Quote
+To create REGI trips, you must have LEADER privileges on the REGI site.
+ When you create your account, be sure to answer YES to 
+\begin_inset Quotes eld
+\end_inset
+
+Are you a current AMC H/B Leader or Coleader?
+\begin_inset Quotes erd
+\end_inset
+
+ This checkbox sends an email to the webmaster so they will allow you to
+ create new events in REGI.
+ To gain LEADER privileges with an existing account, Simply send an email
+ to 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "amcbostonhbs@gmail.com"
+target "mailto:amcbostonhbs@gmail.com?subject=Request%20Leader%20Privileges"
+
+\end_inset
+
+
+\emph default
+.
+ This is the user support email for REGI.
+ One of the online support volunteers (currently Abby Driscoll and Julie
+ LePage) will get back to you as soon as possible to upgrade your account.
+ Once they verify that you are indeed an AMC Leader, they will grant you
+ the ability to create new trips in the system.
+ Once they email you back saying you can create events now, LOG OUT of REGI,
+ and log back in.
+ You will now have a 
+\emph on
+Create New Event 
+\emph default
+tab at the top of REGI.
+ Once logged in with LEADER privileges, this 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "support page"
+target "support.php"
+
+\end_inset
+
+ 
+\emph default
+will display additional information specific to REGI event management.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5cm"
+width "100col%"
+height "0.7bp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:leader_guide"
+
+\end_inset
+
+REGI Leader Guide
+\end_layout
+
+\begin_layout Standard
+This section contains information to help REGI leaders, coleaders, and registrar
+s understand how to create REGI events, and how to approve and contact participa
+nts.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Creating a REGI Page for a New Event 
+\end_layout
+
+\begin_layout Quote
+To create a REGI page for a new event or trip, log in and click 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Create New Event"
+target "eventAdmin.php"
+
+\end_inset
+
+
+\emph default
+ on the navigation bar at the upper right.
+ You are now in the Event Admin screen, which is only available to leaders.
+ Supply information about the trip.
+ Most of the information you enter is publicly viewable by anyone.
+ However, the 
+\emph on
+Confirmation Page
+\emph default
+ is only visible to approved participants after they sign up for the event.
+ And 
+\emph on
+Participant Info
+\emph default
+ is only be visible to participants who have been approved for the event,
+ so this section is ideal for such information as meeting place and time,
+ directions to the trail head, etc.
+ 
+\end_layout
+
+\begin_layout Quote
+The default “Event Status” when you create a trip is “OPEN”.
+ This status means that, if users click on your registration link, they
+ will be allowed to register.
+ If you wish to defer the opening of registration, set event status to "PENDING"
+, which prevents new registrations, and update it to “OPEN” later.
+ “WAIT LIST” will allow registrants to register, just like “OPEN”, but lets
+ them know that the trip is already full.
+ All other statuses (“FULL”, “CLOSED”, “CANCELLED”) do not allow new registratio
+ns.
+ 
+\end_layout
+
+\begin_layout Quote
+Applicants are automatically asked if they have the required gear, if they
+ have questions or comments, and for their carpool details.
+ You can also enter an Additional Event Question if you have another question
+ you want to ask participants when they sign up.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Program Info 
+\end_layout
+
+\begin_layout Quote
+Assuming your trip is NOT part of the H/B Spring Hiking Program or Winter
+ Hiking Programs, select 
+\emph on
+This is a STANDALONE EVENT.
+ 
+\emph default
+and leave the program ID box blank.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Payment 
+\end_layout
+
+\begin_layout Quote
+Payment is not currently handled through REGI.
+ The current recommended process for paid events is to handle payments directly
+ with participants.
+ In the case of H/B sponsored programs (WHP, SHP, SLP, WFA), a PayPal account
+ will be made available.
+ 
+\end_layout
+
+\begin_layout Paragraph
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Finish-and-Publicize"
+
+\end_inset
+
+Finish and Publicize your REGI Link
+\end_layout
+
+\begin_layout Quote
+Click the 
+\emph on
+Create New Event
+\emph default
+ button to create the REGI page.
+ You will be returned to the same page with one additional field: 
+\emph on
+Registration URL
+\emph default
+, listed right beneath the event name.
+ This is where your event lives in cyberspace, so copy this link for inclusion
+ in the event listing on outdoors.org.
+ Do NOT use the admin link at the top of the page or the registration link
+ in the browser window.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Updating the REGI Page
+\end_layout
+
+\begin_layout Quote
+At any time, you can return to the trip administration page and make any
+ updates to the event.
+ Select the event from your 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Events"
+target "myEvents.php"
+
+\end_inset
+
+
+\emph default
+ page.
+ Select the 
+\emph on
+Admin 
+\emph default
+tab from the left side of the screen (this tab is only visible to Leaders,
+ CoLeaders, and Registrars for this trip.) Now you can update trip details.
+ Click the "Update Event" button to save any changes that you make to the
+ trip.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Processing Sign-ups 
+\end_layout
+
+\begin_layout Quote
+You can log in to the site anytime to change the enrollment status of participan
+ts.
+ Select the event from your 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Events"
+target "myEvents.php"
+
+\end_inset
+
+
+\emph default
+ page.
+ Select the 
+\emph on
+Roster 
+\emph default
+tab from the left side of the screen (this tab is only visible to Leaders,
+ CoLeaders, and Registrars for this trip.) Additionally, each time a new
+ participant registers for your event, all leaders and co-leaders for that
+ event will receive an automated email notification (sent to your profile
+ email address).
+ This email will include a link to the Roster page.
+ 
+\end_layout
+
+\begin_layout Quote
+Here on the Roster page you will find a table of applicants to your trip.
+ Screen the people with status 
+\emph on
+SUBMITTED
+\emph default
+.
+ As you screen registrants, you may change their status to: 
+\emph on
+APPROVED
+\emph default
+, 
+\emph on
+WAIT LIST
+\emph default
+, or 
+\emph on
+CANCELED
+\emph default
+.
+ IMPORTANT: You must click on “Update Sign Up Sheet” at the bottom of the
+ page each time you want to make changes to participants’ enrollment status.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Other trip leader/co-leader registration 
+\end_layout
+
+\begin_layout Quote
+Fellow co-leaders and registrars must sign up for the event just like all
+ other participants.
+ Once they have signed up, log in to the system and go to the 
+\emph on
+Roster
+\emph default
+ page for the event.
+ Using the pull-down menus to the far right of each person's entries, change
+ their status by selecting either LEADER, CO-LEADER or REGISTRAR.
+ Once you change the status of a participant, they will be sent an automated
+ email notifying them of the change.
+ Leaders, Co-Leaders and Registrars of this particular event all have access
+ to this event's 
+\emph on
+Admin
+\emph default
+ page.
+\end_layout
+
+\begin_layout Paragraph
+Notes Section 
+\end_layout
+
+\begin_layout Quote
+You may use the notes section to provide information on screening, contact
+ with participants, or payment for participation in a program or an event.
+ To save changes to Registration Status or Notes, click the 
+\emph on
+Update Roster 
+\emph default
+button at the bottom of the page.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Changing an Event's Status 
+\end_layout
+
+\begin_layout Quote
+You can stop accepting applications by setting 
+\emph on
+Event Status
+\emph default
+ to 
+\emph on
+FULL
+\emph default
+ on the event's 
+\emph on
+Admin 
+\emph default
+page.
+ This will prevent future sign-ups.
+ As noted above, setting the trip to “WAITLIST” will allow participants
+ to register and for you to accept them if there are cancellations.
+ Therefore, this will be the most common selection once a event fills since
+ cancellations are not uncommon.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Export Roster
+\end_layout
+
+\begin_layout Quote
+You can print all the participants' information to take with you on the
+ trip.
+ Select the event from 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "My Events"
+target "myEvents.php"
+
+\end_inset
+
+
+\emph default
+ Then select the 
+\emph on
+Roster 
+\emph default
+tab from the left side of the screen (this tab is only visible to Leaders,
+ CoLeaders, and Registrars for this trip.) Scroll down to th bottom where
+ it says 
+\emph on
+Export Roster.
+ 
+\emph default
+You can choose from either a Microsoft Excel spreadsheet or a tab-delimited
+ text file.
+ 
+\end_layout
+
+\begin_layout Quote
+This will allow you to sort the list by registration status, last name,
+ payment status, etc.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5cm"
+width "100col%"
+height "1pc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:leader_faq"
+
+\end_inset
+
+Frequently Asked Questions (Leaders)
+\end_layout
+
+\begin_layout Paragraph
+Once I create a event in the new system, how do I get it posted to outdoors.org
+ and included in HB Announce? 
+\end_layout
+
+\begin_layout Quote
+For instructions on posting an event on outdoors.org, go to the 
+\emph on
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Online Trip Posting"
+target "http://www.hbbostonamc.org/index.php/Table/Online-Trip-Posting/"
+
+\end_inset
+
+ 
+\emph default
+section of the HB website's 
+\emph on
+Leader's Corner
+\emph default
+.
+ When you get to the part of the listing that says, "Include web link(s)
+ in event description:", this is where you paste in the REGI link
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "par:Finish-and-Publicize"
+
+\end_inset
+
+ to your event.
+ 
+\end_layout
+
+\begin_layout Paragraph
+What is the easiest way to email all participants on a trip? 
+\end_layout
+
+\begin_layout Quote
+Go to the event's 
+\emph on
+Roster
+\emph default
+ page, scroll down to the bottom, and click the link called 
+\emph on
+Email Approved Participants
+\emph default
+.
+ If your email client does not automatically open when you click this link,
+ right-click the link and select 
+\emph on
+Copy Email Addresses.
+ 
+\emph default
+Then compose an email and paste the email addresses into the 
+\begin_inset Quotes eld
+\end_inset
+
+TO
+\begin_inset Quotes erd
+\end_inset
+
+ field.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5cm"
+width "100col%"
+height "0.7bp"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:about"
+
+\end_inset
+
+About REGI 
+\end_layout
+
+\begin_layout Standard
+REGI is currently hosted at http://hbbostonamc.org/regi.
+ The application was originally developed in LAMP (Linux, Apache, MySQL,
+ PHP) and HTML in 2010 by Dirk Koechner, a long time AMC Boston chapter
+ member and outdoor enthusiast.
+ Then in June 2011 
+\begin_inset CommandInset href
+LatexCommand href
+name "Jack Desert"
+target "mailto:jackdesert556@gmail.com"
+
+\end_inset
+
+ stepped up to add more features and improve the look and feel of the site.
+ If you have suggestions on what would really make this site get up and
+ dance, Jack would love to hear them.
+ 
+\end_layout
+
+\end_body
+\end_document
