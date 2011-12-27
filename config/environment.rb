@@ -1,8 +1,9 @@
+################################################################
+#####  R E S T A R T    S E R V E R    After changing this file
+
 # Load the rails application
 require File.expand_path('../application', __FILE__)
 
-# Initialize the rails application
-Regi::Application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   :user_name => "hbboston",
@@ -13,3 +14,6 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :enable_starttls_auto => true
 }
+
+# Initialize the rails application
+Regi::Application.initialize!
