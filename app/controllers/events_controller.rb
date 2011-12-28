@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_filter :may_create_events, :only => [:new, :create]
   before_filter :may_edit_event, :only => [:edit, :update, :roster, :export]
+  before_filter :authenticate
   # GET /events
   # GET /events.json
   def index
