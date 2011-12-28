@@ -71,8 +71,7 @@ class RegistrationsController < ApplicationController
         a.register_status = params[:commit]
         a.save
         Notifier.reg_status_email(a.user).deliver
-        url = "/events/" + params[:event_id] + "/roster"
-        redirect_to url
+        redirect_to roster_path(:id => params[:event_id])
         return true
       end
     end

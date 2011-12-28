@@ -26,8 +26,7 @@
 
     - Registration.where(:event_id => @event.id).each do |registration|
       %tr
-        - reg_url = "/registrations/"  + registration.id.to_s
-        = form_tag(:registration, :url => reg_url, :method => :put) do
+        = form_tag(:registration, :method => :put) do
           %td= registration.user.first_name
           %td= registration.user.experience
           %td= registration.user.exercise
