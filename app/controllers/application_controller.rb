@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
-
+  before_filter :may_create_events_no_redirect
   protected
   def current_user_session
     @current_user_session ||= UserSession.find
@@ -41,6 +41,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  def may_create_events
+    unless current_user.user_type.nil?
+      return true if may_create_events_no_redirect
+    end
+    flash[:notice] = "I'm sorry, only leaders, coleaders, and admins can create trips"
+    redirect_to "/"
+    return false
+  end
+
+  def may_create_events_no_redirect
+    @show_create_event_link = [:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
+    return @show_create_event_link
+  end
 
   protect_from_forgery
 end

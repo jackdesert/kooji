@@ -1,48 +1,51 @@
-%p the Roster!!!
+= render 'left_tabs'
+#right
 
-%p This is event:
+  %p the Roster!!!
 
-= @event.id
+  %p This is event:
+
+  = @event.id
 
 
 
-%table
-  %tr
-    %th Name
-    %th Experience
-    %th Exercise
-    %th Medical
-    %th Diet
-    %th Register status
-    %th Gear answer
-    %th Answer1
-    %th Has questions
-    %th Event ID
-    %th
-    %th
-
-  - Registration.where(:event_id => @event.id).each do |registration|
+  %table
     %tr
-      - reg_url = "/registrations/"  + registration.id.to_s
-      = form_tag(:registration, :url => reg_url, :method => :put) do
-        %td= registration.user.first_name
-        %td= registration.user.experience
-        %td= registration.user.exercise
-        %td= registration.user.medical
-        %td= registration.user.diet
-        %td= registration.register_status
-        %td= registration.gear_answer
-        %td= registration.answer1
-        %td= registration.has_questions
-        %td= registration.event_id
-        %td= hidden_field_tag :event_id, @event.id
-        %td= hidden_field_tag :user_id, registration.user.id
-        %td= hidden_field_tag :new_status, "new_status"
-        %td= submit_tag 'Approved'
-        %td= submit_tag 'Wait List'
-        %td= submit_tag 'Canceled'
-        %td= submit_tag 'Registrar'
-        %td= submit_tag 'Leader'
-        %td= submit_tag 'Co-Leader'
+      %th Name
+      %th Experience
+      %th Exercise
+      %th Medical
+      %th Diet
+      %th Register status
+      %th Gear answer
+      %th Answer1
+      %th Has questions
+      %th Event ID
+      %th
+      %th
 
-=link_to "Export as Excel", roster_export_url
+    - Registration.where(:event_id => @event.id).each do |registration|
+      %tr
+        - reg_url = "/registrations/"  + registration.id.to_s
+        = form_tag(:registration, :url => reg_url, :method => :put) do
+          %td= registration.user.first_name
+          %td= registration.user.experience
+          %td= registration.user.exercise
+          %td= registration.user.medical
+          %td= registration.user.diet
+          %td= registration.register_status
+          %td= registration.gear_answer
+          %td= registration.answer1
+          %td= registration.has_questions
+          %td= registration.event_id
+          %td= hidden_field_tag :event_id, @event.id
+          %td= hidden_field_tag :user_id, registration.user.id
+          %td= hidden_field_tag :new_status, "new_status"
+          %td= submit_tag 'Approved'
+          %td= submit_tag 'Wait List'
+          %td= submit_tag 'Canceled'
+          %td= submit_tag 'Registrar'
+          %td= submit_tag 'Leader'
+          %td= submit_tag 'Co-Leader'
+
+  =link_to "Export as Excel", roster_export_url

@@ -89,17 +89,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def may_create_events
-    unless current_user.user_type.nil?
-      if [:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
-        return true
-      end
-    end
-    flash[:notice] = "I'm sorry, only leaders, coleaders, and admins can create trips"
-    redirect_to "/"
-    return false
-  end
-
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy

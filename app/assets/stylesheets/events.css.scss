@@ -1,3 +1,22 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#top{
+  text-align: right;
+}
+#left{
+  float: left;
+  width: 200px;
+}
+#right{
+  float: left;
+  width: 600px;
+}
+.clear{
+  clear: both;
+}
+.footer{
+  text-align: center;
+}

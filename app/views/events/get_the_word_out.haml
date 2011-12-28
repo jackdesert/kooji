@@ -1,31 +1,33 @@
-%h1 Thank Yor for Making a REGI Page
+= render 'left_tabs'
+#right
+  %h1 Thank Yor for Making a REGI Page
 
-%p Congratulations, your Registration Page has been created. This page allows you to keep track of who's signing up for your event. Now, let's post your event so people can sign up for it!
-%p Post your REGI page with your Trip Listing:
-%ol
-  %li Log in to http://activities.outdoors.org/admin.
-  %li Click on the link in the side bar under Events that says Add Chapter Trip.
-  %li Below are the details of your event. Copy and paste them into your listing.
+  %p Congratulations, your Registration Page has been created. This page allows you to keep track of who's signing up for your event. Now, let's post your event so people can sign up for it!
+  %p Post your REGI page with your Trip Listing:
+  %ol
+    %li Log in to http://activities.outdoors.org/admin.
+    %li Click on the link in the side bar under Events that says Add Chapter Trip.
+    %li Below are the details of your event. Copy and paste them into your listing.
 
-%p Registration URL:  http://hbbostonamc.org/regi/#{@event.id}
-%p Event Name: #{@event.event_name}
-%table
-  %tr
-    %th Start Date:
-    %th End Date
-  %tr
-    %td= @event.start_date
-    %td= @event.end_date
-%p Hike Rating: #{@event.rating}
+  %p Registration URL:  http://hbbostonamc.org/regi/#{@event.id}
+  %p Event Name: #{@event.event_name}
+  %table
+    %tr
+      %th Start Date:
+      %th End Date
+    %tr
+      %td= @event.start_date
+      %td= @event.end_date
+  %p Hike Rating: #{@event.rating}
 
-%p Cost: #{@event.pricing}
+  %p Cost: #{@event.pricing}
 
-%h2 General Description:
-%p= @event.description
+  %h2 General Description:
+  %p= @event.description
 
-%h2 Gear List
-%p= @event.gear_list
+  %h2 Gear List
+  %p= @event.gear_list
 
-%h2 View Your Trip
+  %h2 View Your Trip
 
-%p Once your event is posted on outdoors.org, you will be able to view it at HB Trip Listings .
+  %p Once your event is posted on outdoors.org, you will be able to view it at HB Trip Listings .

@@ -9,32 +9,32 @@ Regi::Application.routes.draw do
   resource :user
 
   # The priority is based upon order of creation:
-  # first created -> highest priority.
 
+  # first created -> highest priority.
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
 
 
-match '/profile' => 'user#show', :as => 'view_profile'
-match 'support' => 'imports#support', :as => 'support'
-match 'hbtrips' => 'imports#featured_events', :as => 'hbtrips', :via => :get
+  get 'profile' => 'user#show', :as => 'view_profile'
+  get 'support' => 'imports#support', :as => 'support'
+  get 'hbtrips' => 'imports#featured_events', :as => 'hbtrips', :via => :get
 
-### custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
-##get ':id' => 'events#show', :as => 'event', :id => /1/
-##put ':id' => 'events#update', :id => /1/
-##get ':id/edit' => 'events#edit', :as => 'edit_event'
-##get 'new' => 'events#new', :as => 'new_event'
-##post 'create' => 'events#create'
-##match ':id/roster' => 'events#roster', :as => 'roster'
-##match ':id/roster/export' => 'events#export', :as => 'roster_export'
-##match ':id/share' => 'events#get_the_word_out', :as => 'share_event'
-
-
+  # custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
+  get ':id' => 'events#show', :as => 'event', :id => /1/
+  put ':id' => 'events#update', :id => /1/
+  get ':id/edit' => 'events#edit', :as => 'edit_event'
+  get 'new' => 'events#new', :as => 'new_event'
+  post 'create' => 'events#create'
+  get ':id/roster' => 'events#roster', :as => 'roster'
+  get ':id/roster/export' => 'events#export', :as => 'roster_export'
+  get ':id/share' => 'events#get_the_word_out', :as => 'share_event'
 
 
-match 'profile/edit' => 'users#edit', :as => 'edit_profile'
+
+
+  get 'profile/edit' => 'users#edit', :as => 'edit_profile'
 
 
 
@@ -88,7 +88,7 @@ match 'profile/edit' => 'users#edit', :as => 'edit_profile'
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-root :to => 'registrations#mine'
+  root :to => 'registrations#mine'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

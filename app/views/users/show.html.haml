@@ -1,5 +1,9 @@
 %p#notice= notice
 
+
+= link_to 'Edit Your Profile', edit_user_path(@user)
+
+
 %p
   %b First name:
   = @user.first_name
@@ -33,10 +37,3 @@
 %p
   %b Dietary Needs
   = @user.diet
-
-
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', user_path
-\|
-= link_to 'Logout', user_session_path, :method => :delete
