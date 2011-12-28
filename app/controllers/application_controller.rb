@@ -52,8 +52,12 @@ class ApplicationController < ActionController::Base
   end
 
   def may_create_events_no_redirect
-    @show_create_event_link = [:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
-    return @show_create_event_link
+    if current_user
+      @show_create_event_link = [:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
+      return @show_create_event_link
+    else
+      return false
+    end
   end
 
   protect_from_forgery

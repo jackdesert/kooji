@@ -9,11 +9,12 @@
     #top
       = link_to "HB Trip Listings", hbtrips_path
       = link_to "Support", support_path
-      - if @show_create_event_link
-        = link_to "Create New Event", new_event_path
-      = link_to "My Events", root_path
-      = link_to "My Profile", view_profile_path
-      = link_to 'Logout', user_session_path, :method => :delete
+      - if current_user
+        - if @show_create_event_link
+          = link_to "Create New Event", new_event_path
+        = link_to "My Events", root_path
+        = link_to "My Profile", view_profile_path
+        = link_to 'Logout', user_session_path, :method => :delete
 
       %p.notice= flash[:notice]
       %p.error= flash[:error]
