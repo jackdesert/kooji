@@ -79,9 +79,9 @@ class RegistrationsController < ApplicationController
   end
 
   def update_register_status
-
       a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
       a.register_status = params[:commit]
+      @new_status = params[:new_status]
       a.save
       Notifier.reg_status_email(a.user).deliver
 
