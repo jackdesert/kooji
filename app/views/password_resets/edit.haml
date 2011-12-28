@@ -12,6 +12,6 @@
   = password_field :user, :password_confirmation
   %br
   -# For some reason the perishable token was not being passed by default, so I'm passing it manually so we can reset the password
-  = hidden_field_tag :id, @token
+  = hidden_field_tag :token, @token
   %br
   = submit_tag "Update my password and log me in" 
