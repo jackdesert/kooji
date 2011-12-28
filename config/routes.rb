@@ -22,9 +22,9 @@ Regi::Application.routes.draw do
   get 'hbtrips' => 'imports#featured_events', :as => 'hbtrips', :via => :get
 
   # custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
-  get ':id' => 'events#show', :as => 'event', :id => /1/
-  put ':id' => 'events#update', :id => /1/
-  get ':id/edit' => 'events#edit', :as => 'edit_event'
+  get ':id' => 'events#show', :as => 'event', :id => /\d+/
+  put ':id' => 'events#update', :id => /\d+/
+  get ':id/edit' => 'events#edit', :as => 'edit_event', :id => /\d+/
   get 'new' => 'events#new', :as => 'new_event'
   post 'create' => 'events#create'
   get ':id/roster' => 'events#roster', :as => 'roster'

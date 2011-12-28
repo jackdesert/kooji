@@ -11,6 +11,6 @@
     %tr
       %td= f.event.start_date
       %td= f.event.end_date
-      %td= f.event.event_name
+      %td= link_to f.event.event_name, event_path(:id => f.event_id)
       %td= f.register_status
       %td= f.event.event_status
