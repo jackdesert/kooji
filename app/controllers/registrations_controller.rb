@@ -58,8 +58,13 @@ class RegistrationsController < ApplicationController
 
 
   def mine
-    @my_registrations = Registration.where(:user_id => current_user.id)
-  end
+    # I have no idea why we end up here when we reset a password
+    if current_user
+      @my_registrations = Registration.where(:user_id => current_user.id)
+    else
+      @my_registrations = []
+    end
+end
 
 
   # PUT /registrations/1

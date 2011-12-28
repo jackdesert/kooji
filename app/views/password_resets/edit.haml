@@ -1,15 +1,17 @@
 %h1 Change My Password
 
-= form_for @user, :url => password_reset_path, :method => :put do |f|
+= form_tag(:password_reset, :method => :put) do
   =# f.error_messages
-  = f.label :password
+  = label :password, "Password"
   %br
-  = f.password_field :password
-  %br
-  %br
-  = f.label :password_confirmation
-  %br
-  = f.password_field :password_confirmation
+  = password_field :user, :password
   %br
   %br
-  = f.submit "Update my password and log me in" 
+  = label :password_confirmation, "Password Confirmatoin"
+  %br
+  = password_field :user, :password_confirmation
+  %br
+  -# For some reason the perishable token was not being passed by default, so I'm passing it manually so we can reset the password
+  = hidden_field_tag :id, @token
+  %br
+  = submit_tag "Update my password and log me in" 
