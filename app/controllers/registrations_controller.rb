@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
   before_filter :authenticate
+  before_filter :may_edit_event, :only => :update_register_status
   # GET /registrations
   # GET /registrations.json
   def index
@@ -78,18 +79,17 @@ class RegistrationsController < ApplicationController
   end
 
   def update_register_status
-    unless params[:new_status].nil?
-      if may_edit_event
 
+      a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
+      a.register_status = params[:commit]
+      a.save
+      Notifier.reg_status_email(a.user).deliver
 
-        a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
-        a.register_status = params[:commit]
-        a.save
-        Notifier.reg_status_email(a.user).deliver
-        redirect_to roster_path(:id => params[:event_id])
-        return true
-      end
+    respond_to do |format|
+      format.html {redirect_to roster_path(:id => params[:event_id])}
+      format.js
     end
+
   end
 
 
