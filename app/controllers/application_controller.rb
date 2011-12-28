@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
   before_filter :may_create_events_no_redirect
   protected
+
+
   def current_user_session
     @current_user_session ||= UserSession.find
   end

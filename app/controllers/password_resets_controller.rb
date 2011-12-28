@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-  # before_filter :require_no_user
+  before_filter :require_no_user  # If you attempt to reset your password while you are logged in, your perishable token will change before you can use it
   before_filter :load_user_using_perishable_token, :only => [:edit, :update]
 
   def require_no_user
@@ -44,6 +44,7 @@ class PasswordResetsController < ApplicationController
 
   private
   def load_user_using_perishable_token
+
     @user = User.find_using_perishable_token(params[:id])
     unless @user
       flash[:notice] = "We're sorry, but we could not locate your account. " +

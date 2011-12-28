@@ -1,5 +1,8 @@
 Regi::Application.routes.draw do
   resources :registrations
+
+
+  get 'password_reset/edit/:id' => 'password_resets#edit', :as => 'edit_password_reset'
   resource :password_reset
 
   # for some reason, when I delete this line, then my /1/edit url complains "no route matches :controller => :events"
