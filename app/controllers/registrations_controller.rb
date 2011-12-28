@@ -64,9 +64,6 @@ class RegistrationsController < ApplicationController
   # PUT /registrations/1
   # PUT /registrations/1.json
   def update
-
-
-
     @registration = Registration.find(params[:id])
 
     respond_to do |format|
@@ -76,6 +73,21 @@ class RegistrationsController < ApplicationController
       else
         format.html { render action: "edit" }
         format.json { render json: @registration.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_register_status
+    unless params[:new_status].nil?
+      if may_edit_event
+
+
+        a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
+        a.register_status = params[:commit]
+        a.save
+        Notifier.reg_status_email(a.user).deliver
+        redirect_to roster_path(:id => params[:event_id])
+        return true
       end
     end
   end

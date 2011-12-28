@@ -90,21 +90,6 @@ class EventsController < ApplicationController
   end
 
 
-  def update_register_status
-    unless params[:new_status].nil?
-      if may_edit_event
-
-
-        a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
-        a.register_status = params[:commit]
-        a.save
-        Notifier.reg_status_email(a.user).deliver
-        redirect_to roster_path(:id => params[:event_id])
-        return true
-      end
-    end
-  end
-
 
   # DELETE /events/1
   # DELETE /events/1.json
