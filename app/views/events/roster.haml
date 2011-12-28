@@ -26,25 +26,20 @@
 
     - Registration.where(:event_id => @event.id).each do |registration|
       %tr
-        = form_tag(:registration, :method => :put, :remote => true) do
-          %td= registration.user.first_name
-          %td= registration.user.experience
-          %td= registration.user.exercise
-          %td= registration.user.medical
-          %td= registration.user.diet
-          %td= registration.register_status
-          %td= registration.gear_answer
-          %td= registration.answer1
-          %td= registration.has_questions
-          %td= registration.event_id
-          %td= hidden_field_tag :event_id, @event.id
-          %td= hidden_field_tag :user_id, registration.user.id
-          %td= hidden_field_tag :new_status, "new_status"
-          %td= submit_tag 'Approved'
-          %td= submit_tag 'Wait List'
-          %td= submit_tag 'Canceled'
-          %td= submit_tag 'Registrar'
-          %td= submit_tag 'Leader'
-          %td= submit_tag 'Co-Leader'
-
+        %td= registration.user.first_name
+        %td= registration.user.experience
+        %td= registration.user.exercise
+        %td= registration.user.medical
+        %td= registration.user.diet
+        %td= registration.register_status
+        %td= registration.gear_answer
+        %td= registration.answer1
+        %td= registration.has_questions
+        %td= registration.event_id
+        = render 'mini_form', :registration => registration, :new_status => 'Approved'
+        = render 'mini_form', :registration => registration, :new_status => 'Wait List'
+        = render 'mini_form', :registration => registration, :new_status => 'Canceled'
+        = render 'mini_form', :registration => registration, :new_status => 'Registrar'
+        = render 'mini_form', :registration => registration, :new_status => 'Leader'
+        = render 'mini_form', :registration => registration, :new_status => 'Co-Leader'
   =link_to "Export as Excel", roster_export_url
