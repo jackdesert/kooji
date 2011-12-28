@@ -1,0 +1,6 @@
+%td
+  = form_tag(:registration, :method => :put, :remote =>  true) do
+    = hidden_field_tag :event_id, @event.id
+    = hidden_field_tag :user_id, registration.user.id
+    = hidden_field_tag :new_status, new_status
+    = submit_tag new_status 
