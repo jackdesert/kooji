@@ -36,7 +36,7 @@ Regi::Application.routes.draw do
 
   get 'profile/edit' => 'users#edit', :as => 'edit_profile'
 
-
+  put 'update_register_status' => 'events#update_register_status', :as => 'update_register_status'
 
 
 
