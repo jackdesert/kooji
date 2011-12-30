@@ -1,0 +1,4 @@
+# These are the commands that must be run in order to transform the original regi database into one that can be used by Regi-Rails
+
+17e3500b2b
+b3b3e7da7d5fb8555b8a2500526cf2f6a8b90c84

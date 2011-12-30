@@ -21,7 +21,7 @@ Regi::Application.routes.draw do
 
 
 
-  get 'profile' => 'user#show', :as => 'view_profile'
+  get 'profile' => 'users#show', :as => 'view_profile'
   get 'support' => 'imports#support', :as => 'support'
   get 'hbtrips' => 'imports#featured_events', :as => 'hbtrips', :via => :get
 
