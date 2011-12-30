@@ -15,7 +15,8 @@
         = link_to "My Events", root_path
         = link_to "My Profile", view_profile_path
         = link_to 'Logout', user_session_path, :method => :delete
-
+      - else
+        = link_to "Log In", new_user_session_path
       %p.notice= flash[:notice]
       %p.error= flash[:error]
 
