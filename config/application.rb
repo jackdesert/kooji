@@ -18,7 +18,7 @@ module Regi
     config.generators do |g|
       g.template_engine :haml
     end
-
+    config.force_ssl = false
 
 
     # Custom directories with classes and modules you want to be autoloadable.
