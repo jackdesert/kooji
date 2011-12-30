@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   helper_method :current_user_session, :current_user
   before_filter :may_create_events_no_redirect
   protected
@@ -21,6 +22,12 @@ class ApplicationController < ActionController::Base
     return current_user.id
   end
 
+  def require_no_user
+    if current_user
+      flash[:error] = "It appears that you are already logged in. Please log out before completing that action"
+      redirect_to root_path
+    end
+  end
 
   def may_edit_event
     return true if is_admin
@@ -55,7 +62,7 @@ class ApplicationController < ActionController::Base
 
   def may_create_events_no_redirect
     if current_user
-      @show_create_event_link = [:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
+     @show_create_event_link = true #[:leader, :coleader, :admin].include? current_user.user_type.downcase.to_sym
       return @show_create_event_link
     else
       return false

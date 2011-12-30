@@ -19,7 +19,8 @@ Regi::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
-
+  # Add ability to log out from a URL
+  get 'logout' => 'user_sessions#destroy', :as => 'logout', :via => 'delete'
 
   get 'profile' => 'users#show', :as => 'view_profile'
   get 'support' => 'imports#support', :as => 'support'
