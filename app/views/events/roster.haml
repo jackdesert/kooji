@@ -8,7 +8,7 @@
   - Registration.where(:event_id => @event.id).each do
     -  |registration|
     - user = registration.user
-    .user
+    .user{:class => registration.register_status.downcase}
       .avatar.left
         =image_tag('http://placehold.it/100x100')
       .info.left
@@ -20,7 +20,7 @@
           .question= @event.question1
           .answer= registration.answer1
         .gear
-          .question Do you have the required gear? Any Questions?
+          .question Gear & Gear Questions
           .answer= registration.gear_answer
       .select_box.left
         = render 'mini_form', :registration => registration, :new_status => 'Approved'
@@ -31,10 +31,11 @@
         = render 'mini_form', :registration => registration, :new_status => 'Co-Leader'
       .clear
       .recent_trips
-        .question Recent Trips
+        .question Recent Events
         - Registration.where(:user_id => user.id).each do
           - |reg|
-          %p #{reg.event.start_date.pretty} #{reg.event.event_name}
+          %ul
+            %li #{reg.event.start_date.short} #{reg.event.event_name}
       .medical
         .question Medical
         .answer=user.medical
@@ -48,7 +49,7 @@
         .question Experience
         .answer= user.experience
       .exercise
-        .question Weekly Exercise Routine
+        .question Exercise Routine
         .answer= user.exercise
 
 

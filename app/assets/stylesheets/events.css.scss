@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+$name_color: #cfc;
+
+*{
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: normal;
+  font-family: arial, sans-serif;
+}
 #top{
   text-align: right;
 }
@@ -17,6 +27,58 @@
 .clear{
   clear: both;
 }
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
 .footer{
   text-align: center;
+}
+h1, h2, h3, h4, h5{
+  font-weight: bold;
+  font-family: georgia, serif;
+}
+h1{
+  font-size: 120%;
+}
+h2{
+  font-size: 110%;
+}
+ul, ol{
+  li{
+  list-style-position: inside;
+  padding-left: 20px;
+  }
+}
+.user{
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: blue;
+}
+#roster{
+  background: white;
+}
+.name{
+font-size: 125%;
+color: $name_color;
+}
+.question{
+  color: brown;
+}
+.question:first-letter{
+  font-size: 140%;
+}
+.answer{
+  color: white;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+.info{
+  width: 394px;
+}
+.leader, .coleader, .co-leader, .registrar{
+  background: red;
 }
