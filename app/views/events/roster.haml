@@ -1,45 +1,53 @@
 = render 'left_tabs'
 #right
-
-  %p the Roster!!!
-
-  %p This is event:
-
-  = @event.id
+  %p Roster
+  %h1= @event.event_name
+  #roster_bin
 
 
-
-  %table
-    %tr
-      %th Name
-      %th Experience
-      %th Exercise
-      %th Medical
-      %th Diet
-      %th Register status
-      %th Gear answer
-      %th Answer1
-      %th Has questions
-      %th Event ID
-      %th
-      %th
-
-    - Registration.where(:event_id => @event.id).each do |registration|
-      %tr
-        %td= registration.user.first_name
-        %td= registration.user.experience
-        %td= registration.user.exercise
-        %td= registration.user.medical
-        %td= registration.user.diet
-        %td= registration.register_status
-        %td= registration.gear_answer
-        %td= registration.answer1
-        %td= registration.has_questions
-        %td= registration.event_id
+  - Registration.where(:event_id => @event.id).each do |registration|
+    - user = registration.user
+    .user
+      .avatar.left
+        =image_tag :src => 'http://placehold.it/100x100'
+      .info.left
+        .name
+          #{user.first_name} #{user.last_name}
+        .contact_info
+          #{user.phone} #{user.email}
+        .answer1
+          .question= @event.question1
+          .answer= registration.answer1
+        .gear
+          .question Do you have the required gear? Any Questions?
+          .answer= registration.gear
+      .select_box.left
         = render 'mini_form', :registration => registration, :new_status => 'Approved'
         = render 'mini_form', :registration => registration, :new_status => 'Wait List'
         = render 'mini_form', :registration => registration, :new_status => 'Canceled'
         = render 'mini_form', :registration => registration, :new_status => 'Registrar'
         = render 'mini_form', :registration => registration, :new_status => 'Leader'
         = render 'mini_form', :registration => registration, :new_status => 'Co-Leader'
+      .clear
+      .recent_trips
+        .question Recent Trips
+        - Registration.where(:user_id => @user.id).each do |r|
+          %p #{r.event.start_date.pretty} #{r.event.event_name}
+      .medical
+        .question Medical
+        .answer=user.medical
+      .diet
+        .question Diet
+        .answer= user.diet
+      .emergency_contact
+        .question Emergency Contact
+        .answer= user.emergency_contact
+      .experience
+        .question Experience
+        .answer= user.experience
+      .exercise
+        .question Weekly Exercise Routine
+        .answer= user.exercise
+
+
   =link_to "Export as Excel", roster_export_url
