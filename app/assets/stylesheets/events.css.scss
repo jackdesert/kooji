@@ -58,8 +58,9 @@ ul, ol{
   border-radius: 10px;
   background: blue;
 }
-#roster{
+#roster_bin{
   background: white;
+  padding-top: 12px;
 }
 .name{
 font-size: 125%;
@@ -81,4 +82,13 @@ color: $name_color;
 }
 .leader, .coleader, .co-leader, .registrar{
   background: red;
+}
+.approved{
+  background: brown;
+}
+.canceled{
+  background: black;
+}
+.avatar{
+  padding-right: 10px;
 }

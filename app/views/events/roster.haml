@@ -15,7 +15,7 @@
         .name
           #{user.first_name} #{user.last_name}
         .contact_info
-          #{user.phone} #{user.email}
+          #{user.phone} #{link_to user.email, 'mailto:#{user.email}'}
         .answer1
           .question= @event.question1
           .answer= registration.answer1
