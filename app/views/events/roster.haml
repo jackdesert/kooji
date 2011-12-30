@@ -5,7 +5,8 @@
   #roster_bin
 
 
-  - Registration.where(:event_id => @event.id).each do |registration|
+  - Registration.where(:event_id => @event.id).each do
+    -  |registration|
     - user = registration.user
     .user
       .avatar.left
@@ -20,7 +21,7 @@
           .answer= registration.answer1
         .gear
           .question Do you have the required gear? Any Questions?
-          .answer= registration.gear
+          .answer= registration.gear_answer
       .select_box.left
         = render 'mini_form', :registration => registration, :new_status => 'Approved'
         = render 'mini_form', :registration => registration, :new_status => 'Wait List'
@@ -31,8 +32,9 @@
       .clear
       .recent_trips
         .question Recent Trips
-        - Registration.where(:user_id => @user.id).each do |r|
-          %p #{r.event.start_date.pretty} #{r.event.event_name}
+        - Registration.where(:user_id => user.id).each do
+          - |reg|
+          %p #{reg.event.start_date.pretty} #{reg.event.event_name}
       .medical
         .question Medical
         .answer=user.medical
