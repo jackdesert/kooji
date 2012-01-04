@@ -19,8 +19,28 @@
     Congratulations! You have been APPROVED to participate in
     = render "event_name_linked"
   %h2 CARPOOL
-  %p Carpooling is good for the environment, and a great way to get to know people. We encourage you to contact other participants and find ways to share transportation. You can update your carpool information and view the carpool information for other participants by going to the
+  %p Carpooling is good for the environment, and a great way to get to know people. We encourage you to contact other participants and find ways to share transportation. Please revisit the
   = link_to "REGI page", @event_link
-  for this event.
+  for this event to view the carpool information posted by other participants, or to update your own carpooling status.
+- when :registrar
+  %p
+    Congratulations! You are now the REGISTRAR for
+    = render "event_name_linked"
+  %p= leader_means
+  %p
+    As the registrar for
+    = render "event_name_linked"
+    , when participants have questions about registration for this event, they will be given your email as the first point of contact. For example, if a user replies to the email that says they're signed up for this event,  that email will come directly to you (and only you). If you are also this event's LEADER, you may wish to assign the role of REGISTRAR to one of your coleaders so they can help you with some of this administrative stuff.
+  %p Thank your for being our registrar!
+- when :leader
+  %p Congratulations! You are now the LEADER for
+    = render "event_name_linked"
+  %p= leader_means
+  %p Thank you for leading trips with AMC!
+- when :coleader
+  %p Congratulations! You are now a COLEADER for
+    = render "event_name_linked"
+  %p= leader_means
+  %p Thank you for helping us bring nature to the people, and people to nature.
 
 = render "footer_html"
