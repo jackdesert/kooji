@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111230155538) do
+ActiveRecord::Schema.define(:version => 20120104000818) do
 
   create_table "events", :force => true do |t|
     t.integer  "program_id"
@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(:version => 20111230155538) do
     t.text     "medical"
     t.text     "diet"
     t.boolean  "leader_request"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
 end

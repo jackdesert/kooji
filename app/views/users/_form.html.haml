@@ -22,6 +22,13 @@
     = f.label :password_confirmation, "Confirm Password"
     = f.password_field :password_confirmation, :class => 'text'
   .field
+    = f.label :photo, "Upload a Photo"
+    - if current_user.photo.file?
+      = image_tag current_user.photo.url(:large)
+    - else
+      = image_tag "fish.jpg"
+    = f.file_field :photo
+  .field
     = f.label :phone, "Phone"
     = f.text_field :phone
   .field

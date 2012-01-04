@@ -4,6 +4,10 @@
 = link_to 'Edit Your Profile', edit_user_path(@user)
 
 
+- if current_user.photo.file?
+  = image_tag current_user.photo.url(:large)
+- else
+  = image_tag "fish.jpg"
 %p
   %b First name:
   = @user.first_name
