@@ -1,0 +1,10 @@
+- registrar_additional_role = Registration.where(:user_id => @event.registrar_id, :event_id => @event.id).first.register_status.downcase.to_sym
+- registrar_full_name = @event.registrar.first_name + " " + @event.registrar.last_name
+- if registrar_additional_role == :leader
+  leader,
+- elsif registrar_additional_role == :coleader
+  coleader,
+- else
+  registrar,
+= link_to registrar_full_name, "mailto:#{@event.registrar.email}"
+= "."

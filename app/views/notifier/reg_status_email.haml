@@ -1,4 +1,26 @@
-%h1 Hello
-%p This message is for you
+
+%p #{@user.first_name},
+- case @new_status.downcase.to_sym
+- when :canceled
+  %p
+    You are no longer registered for
+    = render "event_name_linked"
+    If you believe this is a mistake, please contact the event's
+    = render "contact_registrar"
+- when :submitted
+  %p
+    You have signed up for
+    = render "event_name_linked"
+    The event's
+    = render "contact_registrar"
+    will be in contact with you soon to discuss your participation.
+- when :approved
+  %p
+    Congratulations! You have been APPROVED to participate in
+    = render "event_name_linked"
+  %h2 CARPOOL
+  %p Carpooling is good for the environment, and a great way to get to know people. We encourage you to contact other participants and find ways to share transportation. You can update your carpool information and view the carpool information for other participants by going to the
+  = link_to "REGI page", @event_link
+  for this event.
 
 = render "footer_html"

@@ -88,7 +88,7 @@ end
       a.register_status = params[:commit]
       @new_status = params[:new_status]
       a.save
-      Notifier.reg_status_email(a.user).deliver
+      Notifier.reg_status_email(a.user, a.event, a.register_status).deliver
 
     respond_to do |format|
       format.html {redirect_to roster_path(:id => params[:event_id])}

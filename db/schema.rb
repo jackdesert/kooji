@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104000818) do
+ActiveRecord::Schema.define(:version => 20120104025652) do
 
   create_table "events", :force => true do |t|
     t.integer  "program_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120104000818) do
     t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "registrar_id"
   end
 
   create_table "imports", :force => true do |t|
