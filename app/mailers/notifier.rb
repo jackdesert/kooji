@@ -15,6 +15,14 @@ class Notifier < ActionMailer::Base
           :subject => "Registration Status Update for XXX" )
   end
 
+  def tell_leaders_about_new_registrant(user, event)
+    @user = user
+    @event = event
+    @roster_url = roster_url(event.id, :host => get_host)
+    mail( :to => get_leaders_emails(event),
+          :subject => "New Registrant for XXX" )
+  end
+
   def password_reset_instructions(user)
     @reset_link = edit_password_reset_url(user.perishable_token, :host => get_host)
     mail( :to => user.email,
@@ -27,6 +35,20 @@ class Notifier < ActionMailer::Base
     else
       return "http://hbbostonamc.org/regi"
     end
+  end
+
+  def get_leaders_emails(event)
+    emails = []
+    registrar = User.where(:id => event.registrar_id)
+    registrar_reg = Registrations.where(:event => event, :user => registrar)
+    leader_regs = Registrations.where(:event => event, :register_status => :leader)
+    coleader_regs = Registrations.where(:event => event, :register_status => :coleader)
+    all_registrations = registrar_reg + leader_regs + coleader_regs
+    all_registrations.uniq!
+    all_registrations.each do |reg|
+      emails << reg.user.email
+    end
+    return emails
   end
 
 end

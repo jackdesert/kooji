@@ -47,6 +47,8 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
+        Notifier.reg_status_email(current_user, @registration.event, :submitted).deliver
+        Notifier.tell_leaders_about_new_registrant(current_user, @registration.event).deliver
         format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
         format.json { render json: @registration, status: :created, location: @registration }
       else
