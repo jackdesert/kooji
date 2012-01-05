@@ -5,6 +5,10 @@ gem 'authlogic'
 gem 'ruby-debug19'
 gem 'nokogiri'
 gem 'paperclip'
+gem 'cucumber-rails'
+gem 'capybara'
+gem 'minitest'
+gem 'database_cleaner'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
