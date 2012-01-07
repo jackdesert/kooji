@@ -9,6 +9,7 @@ gem 'cucumber-rails'
 gem 'capybara'
 gem 'minitest'
 gem 'database_cleaner'
+gem 'factory_girl'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 

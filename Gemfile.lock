@@ -71,6 +71,7 @@ GEM
     erubis (2.7.0)
     execjs (1.2.13)
       multi_json (~> 1.0)
+    factory_girl (2.0.5)
     ffi (1.0.9)
     gherkin (2.4.16)
       json (>= 1.4.6)
@@ -185,6 +186,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   execjs
+  factory_girl
   haml-rails
   jquery-rails
   minitest
