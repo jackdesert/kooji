@@ -11,7 +11,7 @@ gem 'minitest'
 gem 'database_cleaner'
 gem 'factory_girl_rails'
 gem 'rspec-rails'
-
+gem 'launchy'
 
 group :test do
   gem 'email_spec'
