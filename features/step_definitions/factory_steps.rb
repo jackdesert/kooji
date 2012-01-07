@@ -1,5 +1,5 @@
-Given /^the following (\S+) exists?:$/ do |table, model|
+Given /^the following (\S+) exists?:$/ do |model, table|
   table.hashes.each do |hash|
-    Factory(:user, hash)
+    Factory(model.singularize, hash)
   end
 end  
