@@ -33,12 +33,14 @@
     , when participants have questions about registration for this event, they will be given your email as the first point of contact. For example, if a user replies to the email that says they're signed up for this event,  that email will come directly to you (and only you). If you are also this event's LEADER, you may wish to assign the role of REGISTRAR to one of your coleaders so they can help you with some of this administrative stuff.
   %p Thank your for being our registrar!
 - when :leader
-  %p Congratulations! You are now the LEADER for
+  %p
+    Congratulations! You are now the LEADER for
     = render "event_name_linked"
   %p= leader_means
   %p Thank you for leading trips with AMC!
 - when :coleader
-  %p Congratulations! You are now a COLEADER for
+  %p
+    Congratulations! You are now a COLEADER for
     = render "event_name_linked"
   %p= leader_means
   %p Thank you for helping us bring nature to the people, and people to nature.

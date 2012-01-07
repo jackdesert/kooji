@@ -61,9 +61,18 @@ class RegistrationsController < ApplicationController
   def mine
     # I have no idea why we end up here when we reset a password
     if current_user
-      @future_registrations = Registration.where("? <= ?", :drop_off_date, Time.now.to_date)
-      @past_registrations = Registration.where("? > ?", :drop_off_date, Time.now.to_date)
-      if @past_registrations.empty? && @future_registrations.empty?
+      @future = []
+      @past = []
+      registrations = Registration.where(:user_id => current_user.id)
+      registrations.each do |reg|
+        if reg.future?
+          @future << reg
+        else
+          @past << reg
+        end
+      end
+
+      if @past.empty? && @future.empty?
         @has_registrations = false
       else
         @has_registrations = true

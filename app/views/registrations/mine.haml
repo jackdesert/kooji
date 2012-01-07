@@ -2,7 +2,7 @@
 - unless @has_registrations
   %p You haven't signed up for any events yet. Click on the link at the top called 'HB Trip Listings' to find a trip you may be interested in
 
-- unless @future_registrations.empty?
-  = render "my_events_table", :label => "Future", :registrations => @future_registrations
-- unless @past_registrations.empty?
-  = render "my_events_table", :label => "Past", :registrations => @past_registrations
+- unless @future.empty?
+  = render "my_events_table", :label => "Future", :registrations => @future
+- unless @past.empty?
+  = render "my_events_table", :label => "Past", :registrations => @past
