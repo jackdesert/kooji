@@ -1,6 +1,5 @@
-Given /^the following user exists:$/ do |table|
+Given /^the following users? exists?:$/ do |table|
   table.hashes.each do |hash|
-debugger
     Factory(:user, hash)
   end
 end  
