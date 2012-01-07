@@ -12,6 +12,7 @@ gem 'database_cleaner'
 gem 'factory_girl_rails'
 gem 'rspec-rails'
 gem 'launchy'
+gem 'date_validator'
 
 group :test do
   gem 'email_spec'

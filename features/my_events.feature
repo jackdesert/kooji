@@ -14,12 +14,15 @@ Feature: Root URL loads my events
       | user                |
       | first_name: Jack    |
 
-    And show me the page
-    And I sign in via the login page with "jack@sunni.ru/pass"
+    And I go to the login page
+    And I fill in "Email Address" with "jack@sunni.ru"
+    And I fill in "Password" with "pass"
+    And I press "Sign In"
 
 
   Scenario:
-    I should see "My Current Events"
+And show me the page
+    Then I should see "My Current Events"
 
   Scenario: A new person signs up
       When I go to event "FunHike"

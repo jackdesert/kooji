@@ -1,19 +1,8 @@
 %p These are all the trips I'm signed up for
-- if @my_registrations.empty?
+- unless @has_registrations
   %p You haven't signed up for any events yet. Click on the link at the top called 'HB Trip Listings' to find a trip you may be interested in
-- else
-  %table
 
-    %tr
-      %th Start
-      %th End
-      %th Event
-      %th My Status
-      %th Event Status
-    - @my_registrations.each do |f|
-      %tr
-        %td= f.event.start_date.pretty
-        %td= f.event.end_date.pretty
-        %td= link_to f.event.event_name, event_path(:id => f.event_id)
-        %td= f.register_status
-        %td= f.event.event_status
+- unless @future_registrations.empty?
+  = render "my_events_table", :label => "Future", :registrations => @future_registrations
+- unless @past_registrations.empty?
+  = render "my_events_table", :label => "Past", :registrations => @past_registrations
