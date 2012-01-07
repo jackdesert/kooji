@@ -11,6 +11,12 @@ gem 'minitest'
 gem 'database_cleaner'
 gem 'factory_girl_rails'
 gem 'rspec-rails'
+
+
+group :test do
+  gem 'email_spec'
+end
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
