@@ -1,4 +1,4 @@
-Given /^the following users? exists?:$/ do |table|
+Given /^the following (\S+) exists?:$/ do |table, model|
   table.hashes.each do |hash|
     Factory(:user, hash)
   end
