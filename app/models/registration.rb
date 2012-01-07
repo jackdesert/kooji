@@ -11,6 +11,6 @@ class Registration < ActiveRecord::Base
     else
       master_date = self.event.start_date
     end
-    master_date < Time.now.to_date
+    master_date >= Time.now.to_date
   end
 end
