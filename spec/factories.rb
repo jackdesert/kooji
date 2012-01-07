@@ -8,5 +8,14 @@ FactoryGirl.define do
     password_confirmation "pass"
   end
 
+  factory :event do
+    sequence (:event_name) { |n| "Event Name ##{n}" }
+  end
+
+  factory :registration do
+    register_status "approved"
+    association :user
+    association :event
+  end
 
 end
