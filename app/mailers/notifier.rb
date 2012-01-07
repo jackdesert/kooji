@@ -12,7 +12,7 @@ class Notifier < ActionMailer::Base
     @event_link = event_url(event.id, :host => get_host)
     @support_url = support_url(:host => get_host)
     mail( :to => user.email,
-          :subject => "Registration Status Update for XXX" )
+          :subject => "Registration Status Update for #{@event.event_name}" )
   end
 
   def tell_leaders_about_new_registrant(user, event)
@@ -20,7 +20,8 @@ class Notifier < ActionMailer::Base
     @event = event
     @roster_url = roster_url(event.id, :host => get_host)
     mail( :to => get_leaders_emails(event),
-          :subject => "New Registrant for XXX" )
+          :subject => "New Registrant for #{@event.event_name}",
+          :reply_to => @user.email )
   end
 
   def password_reset_instructions(user)
