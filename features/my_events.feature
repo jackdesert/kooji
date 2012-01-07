@@ -4,7 +4,7 @@ Feature: Root URL loads my events
     Given the following user exists:
       | first_name | last_name | email   |
       | Jack       | Daniels   | 2@2.com |
-    Given the following events:
+    Given the following events exist:
       | event_name | start date | end date   |
       | FunHike    | 2011-12-12 | 2011-12-24 |
       | LakeJump   | 2011-13-13 |            |
