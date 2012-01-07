@@ -44,7 +44,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(params[:registration])
     @registration.user_id = current_user.id
-
+debugger
     respond_to do |format|
       if @registration.save
         Notifier.reg_status_email(current_user, @registration.event, :submitted).deliver

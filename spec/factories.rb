@@ -12,10 +12,10 @@ FactoryGirl.define do
     sequence (:event_name) { |n| "Event Name ##{n}" }
   end
 
-  factory :registration do
-    register_status "approved"
-    association :user
-    association :event
+  factory :registration do |a|
+    a.register_status "approved"
+    a.association :user
+    a.association :event
   end
 
 end

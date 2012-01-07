@@ -1,5 +1,8 @@
 require "spec_helper"
 
 describe Notifier do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "should send an email to leaders when a user signs up for an event" do
+    a = Factory :registration
+  end
 end
