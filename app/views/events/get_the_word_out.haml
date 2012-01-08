@@ -1,11 +1,16 @@
+
 = render 'left_tabs'
 #right
-  %h1 Thank Yor for Making a REGI Page
+  %h1= @event.event_name
+  %h2 Thank Yor for Making a REGI Page
 
   %p Congratulations, your Registration Page has been created. This page allows you to keep track of who's signing up for your event. Now, let's post your event so people can sign up for it!
   %p Post your REGI page with your Trip Listing:
   %ol
-    %li Log in to http://activities.outdoors.org/admin.
+    %li
+      - outdoors_link = "http://activities.outdoors.org/admin"
+      Log in to
+      = link_to outdoors_link + ".", outdoors_link
     %li Click on the link in the side bar under Events that says Add Chapter Trip.
     %li Below are the details of your event. Copy and paste them into your listing.
 

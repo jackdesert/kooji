@@ -1,9 +1,7 @@
 = render 'left_tabs'
 #right
-  %h1 Editing event
+  %h1 Edit Event Details
 
   = render 'form'
 
-  = link_to 'Show', @event
-  \|
-  = link_to 'Back', events_path
+  = button_to 'Cancel', @event, :method => :get

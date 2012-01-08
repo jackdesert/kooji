@@ -1,3 +1,4 @@
+%h1= @event.event_name if @event.created_at
 = form_for @event do |f|
   -if @event.errors.any?
     #error_explanation
@@ -5,16 +6,17 @@
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
-  %h1 Create New Event
+
   .field
     = f.label :event_name, "*Event Name: (include location)"
     = f.text_field :event_name
   .field
     = f.label :start_date
-    = f.date_select :start_date
+    = f.date_select :start_date, :order => [:month, :day, :year]
   .field
     = f.label :end_date
-    = f.date_select :end_date
+    = f.date_select :end_date, :order => [:month, :day, :year], :default => :blank
+
   .field
     = f.label :event_status, "*Event Status"
     %p Registration is ONLY active when status is set to 'OPEN' or 'WAIT LIST'. All other statuses do NOT allow new registrations.
@@ -83,4 +85,5 @@
 
 
   .actions
-    = f.submit 'Create New Event'
+    - button_text = (@event.created_at) ? "Update Event" : "Create This Event"
+    = f.submit button_text

@@ -1,9 +1,9 @@
-%h1 Forgot Password
-
-%p Fill out the form below and instructions to reset your password will be emailed to you:
+%h1 I Forgot my User Name or my Password
+%p Enter your email address below, and we will send you a link enabling you to reset your password
 
 = form_tag password_reset_path do
   Email
   = text_field_tag "email"
   %br
-  = submit_tag "Reset my password" 
+  = submit_tag "Reset my password"
+= button_to "Cancel", new_user_session_path, :method => :get
