@@ -4,6 +4,14 @@
     %strong= flash[:error]
 - if flash[:notice]
   %h2= flash[:notice].gsub("Congratulations! ","")
+%h2 With REGI, it's easy to register for multiple AMC events
+%ul
+  %li Enter your profile and contact information only once
+  %li Use your profile to register for as many events as you want
+  %li Once approved for an event, arrange carpooling with other approved participants
+  %li View up-to-date event information online
+
+%p Please log in here
 = form_for @user_session, :url => user_session_path do |f|
   .field
     = f.label :email, "Email Address"
@@ -20,3 +28,6 @@
   .field
     %label
     = f.submit "Sign In"
+
+= link_to "Create an Account", new_user_path
+= link_to "Get Support", support_path

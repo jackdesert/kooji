@@ -5,45 +5,82 @@
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
-
+  %h1 Create New Event
   .field
-    = f.label :program_id
-    = f.number_field :program_id
-  .field
-    = f.label :event_status
-    = f.text_field :event_status
-  .field
-    = f.label :event_is_program
-    = f.text_field :event_is_program
-  .field
-    = f.label :event_name
+    = f.label :event_name, "*Event Name: (include location)"
     = f.text_field :event_name
-  .field
-    = f.label :rating
-    = f.text_field :rating
-  .field
-    = f.label :pricing
-    = f.text_area :pricing
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :trip_info
-    = f.text_area :trip_info
-  .field
-    = f.label :gear_list
-    = f.text_area :gear_list
-  .field
-    = f.label :confirmation_page
-    = f.text_area :confirmation_page
-  .field
-    = f.label :question1
-    = f.text_area :question1
   .field
     = f.label :start_date
     = f.date_select :start_date
   .field
     = f.label :end_date
     = f.date_select :end_date
+  .field
+    = f.label :event_status, "*Event Status"
+    %p Registration is ONLY active when status is set to 'OPEN' or 'WAIT LIST'. All other statuses do NOT allow new registrations.
+    = f.text_field :event_status
+  .field
+    = f.label :rating, "Hike Rating"
+    %p (Example: B3B, also see the Hike Rating Key)
+    = f.text_field :rating
+
+  .field
+    = f.label :pricing, "Cost"
+    %p  (Example: $110 covers 2 nights lodging, 2 breakfasts, and 2 dinners.)
+    = f.text_area :pricing
+
+  .field
+    = f.label :description, "* Event Description"
+    = f.text_area :description
+  .field
+    = f.label :gear_list
+    %p (If no gear necessary, please type: "No gear necessary"):
+    = f.text_area :gear_list
+  .field
+    = f.label :trip_info, "Participant Info"
+    %p (Directions to trailhead, etc. Visible only to APPROVED participants.)
+    = f.text_area :trip_info
+
+  .field
+    %p Program Info
+    %table
+      %tr
+        %td= f.radio_button :event_is_program, 'Y'
+        %td= f.label :event_is_program, "This is a STANDALONE EVENT"
+      %tr
+        %td= f.radio_button :event_is_program, 'N'
+        %td= f.label :event_is_program, "This is a PROGRAM (a collection of events)"
+      %tr
+        %td= f.radio_button :event_is_program, 'P'
+        %td
+          = f.label :event_is_program, "This event is PART OF A PROGRAM"
+          The program id is
+          .field
+            = f.label :program_id
+            = f.number_field :program_id
+          Please contact the program leader for the program ID. If this event is not part of a program, leave blank.
+
+  %h2 Default Questions
+  %p Your event will ask the following by default:
+  %ul
+    %li "Do you have any questions or comments for us?"
+
+  %p If it's not a PROGRAM, your event will also ask:
+
+  %ul
+    %li "Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions."
+  %p You can also ask participants an additional question by listing it here:
+
+  .field
+    = f.label :question1, "Additional Event Question"
+    %p (Optional)
+    = f.text_area :question1
+
+  .field
+    = f.label :confirmation_page
+    %p (Displays when user registers for event.)
+    = f.text_area :confirmation_page, :value => "Thank you for registering. An event leader will be in contact with you soon regarding your participation in this event."
+
+
   .actions
-    = f.submit 'Save'
+    = f.submit 'Create New Event'

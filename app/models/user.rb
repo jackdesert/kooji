@@ -17,6 +17,9 @@ validates_attachment_content_type :photo,
     config.crypto_provider = Authlogic::CryptoProviders::Sha1
   end
 
+  def full_name
+    self.first_name + ' ' + self.last_name
+  end
   def deliver_password_reset_instructions!
     reset_perishable_token!
     Notifier.password_reset_instructions(self).deliver

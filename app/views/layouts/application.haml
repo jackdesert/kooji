@@ -7,13 +7,13 @@
     = csrf_meta_tags
   %body
     #top
-      = link_to "HB Trip Listings", hbtrips_path
+      = link_to "HB Event Listings", hbtrips_path
       = link_to "Support", support_path
       - if current_user
         - if @show_create_event_link
           = link_to "Create New Event", new_event_path
         = link_to "My Events", root_path
-        = link_to "My Profile", view_profile_path
+        = link_to current_user.full_name, view_profile_path
         = link_to 'Logout', user_session_path, :method => :delete
       - else
         = link_to "Log In", new_user_session_path
