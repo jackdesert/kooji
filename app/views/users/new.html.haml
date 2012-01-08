@@ -1,5 +1,8 @@
-%h1 New user
+%h1 Create Profile
+%p
+  Please note: if you have already created an account, please use that account to login and do not create a new account. If you don't remember your password, please
+  = link_to "click here.", new_password_reset_path
 
 = render 'form'
 
-= link_to 'Back', user_path
+= button_to 'Cancel', new_user_session_path, :method => :get

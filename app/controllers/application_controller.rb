@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user
   before_filter :may_create_events_no_redirect
+  before_filter :load_yaml
+require 'yaml'
   protected
 
 
@@ -67,6 +69,11 @@ class ApplicationController < ActionController::Base
     else
       return false
     end
+  end
+
+  def load_yaml
+    #@string = YAML::load(ERB.new(IO.read(File.join(Rails.root, 'config', 'strings.yml'))).result)[RAILS_ENV]
+    @string = YAML::load(File.open("#{Rails.root}/config/strings.yml"))
   end
 
   protect_from_forgery

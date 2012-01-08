@@ -1,3 +1,7 @@
+
+
+%p= @string["encourage_to_update_profile"]
+
 = form_for @user, :url => user_path do |f|
   -if @user.errors.any?
     #error_explanation
@@ -7,19 +11,19 @@
           %li= msg
 
   .field
-    = f.label :first_name
+    = f.label :first_name, "* First Name"
     = f.text_field :first_name
   .field
-    = f.label :last_name
+    = f.label :last_name, "* Last Name"
     = f.text_field :last_name
   .field
-    = f.label :email
+    = f.label :email, "* Email"
     = f.text_field :email
   .field
-    = f.label :password, "Password"
+    = f.label :password, "* Password"
     = f.password_field :password, :class => 'text'
   .field
-    = f.label :password_confirmation, "Confirm Password"
+    = f.label :password_confirmation, "* Confirm Password"
     = f.password_field :password_confirmation, :class => 'text'
   .field
     = f.label :photo, "Upload a Photo"
@@ -29,7 +33,7 @@
       = image_tag "fish.jpg"
     = f.file_field :photo
   .field
-    = f.label :phone, "Phone"
+    = f.label :phone, "* Phone"
     = f.text_field :phone
   .field
     Are you and AMC member?
@@ -37,6 +41,13 @@
     = f.radio_button :member, true
     = f.label :member, "No"
     = f.radio_button :member, false
+  .field
+    Are you a current AMC H/B Leader or Coleader?
+    = f.label :leader_request, "Yes"
+    = f.radio_button :leader_request, true
+    = f.label :leader_request, "No"
+    = f.radio_button :leader_request, false
+    %p Please note: selecting yes will send an email to the administrator to verify your AMC H/B Leader/Coleader status.
   .field
     * What is your previous hiking experience? (If applicable, please name mountains and include approximate distances.)
     %br
