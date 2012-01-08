@@ -1,13 +1,17 @@
 
-When: Tue, Oct 11, 2011 - Tue, Oct 4, 2011
+%p When: #{@event.date_range}
+%p Event Status: #{@event.event_status}
+- myreg = Registration.where(:user_id => current_user.id, :event_id => @event.id)
+- unless myreg.empty?
+  %p My Registration Status: #{myreg.first.register_status}
 
-Event Status: OPEN
-
-My Registration Status: LEADER
-
-Hike Rating:   (
-Hike Rating Key)
-Cost:
+.hike_rating
+  %p
+    Hike Rating: #{@event.rating}
+    = link_to "(Hike Rating Key)", "http://www.hbbostonamc.org/index.php/Table/Key-to-Hike-Ratings/"
+  = render "hike_rating_key"
+- pricing = @event.pricing.empty? ? "No cost for this event" : @event.pricing
+%p Cost: #{pricing}
 
 %h2 Event Registration
 %h2= @event.event_name

@@ -11,7 +11,7 @@ describe Event do
     a.date_range.should == "Saturday Nov 12, 2011"
   end
 
-  it "should give me 'Monday Jan 3 - Tuesday Jan 4, 2011' if start date and end date are in the same year" do
+  it "should give me 'Monday Jan 3 - Tuesday Jan 4, 2011' unless start year and end year differ" do
     a = Factory :event
     a.start_date = "2011-01-03"
     a.end_date = "2011-01-14"

@@ -13,6 +13,9 @@ $name_color: #cfc;
   font-weight: normal;
   font-family: arial, sans-serif;
 }
+a, a:hover, a:visited, a:active{
+  color: red;
+}
 #top{
   text-align: right;
 }
@@ -91,4 +94,32 @@ color: $name_color;
 }
 .avatar{
   padding-right: 10px;
+}
+
+.hike_rating:hover{
+    background: #ccc;
+    border-radius: 2ex;
+}
+.visible_on_hover {
+    position: fixed; /* fixed means relative to the browser window*/
+    left:50%;
+    top: 1ex;
+    width: 35%;
+    display: none;
+    padding: 1ex;
+    border-style: solid;
+    border-radius: 2ex;
+    background: white;
+
+    border-color: black;
+    border-width: 2px;
+}
+.hike_rating:hover .visible_on_hover {
+    display: block;
+}
+dd{
+  padding-left: 40px;
+}
+b{
+  font-weight: bold;
 }
