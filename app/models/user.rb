@@ -32,14 +32,14 @@ validates_attachment_content_type :photo,
 
 
   def compound_status(event)
-
+debugger
     registrations = Registration.where(:user_id => self.id, :event_id => event.id)
     unless registrations.empty?
       reg = registrations.first
       if event.registrar_id == self.id
-        if reg.register_status == :leader
+        if reg.register_status == "leader"
           return "leader, registrar"
-        elsif reg.register_status == :coleader
+        elsif reg.register_status == "coleader"
           return "coleader, registrar"
         else
           return "registrar"
