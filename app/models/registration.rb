@@ -3,6 +3,8 @@ class Registration < ActiveRecord::Base
   belongs_to :event
   # this is a composite uniqueness constraint
   validates_uniqueness_of :user_id, :scope => :event_id
+  validates_format_of :register_status, :with => /^(leader)?(coleader)?(approved)?(submitted)?(canceled)?$/
+  validates_presence_of :register_status
 
   # drop off date is used to decide whether to show this event as a "future" or "past" event
   def future?
