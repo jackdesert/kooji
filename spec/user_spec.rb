@@ -10,10 +10,14 @@ describe User do
 
   it "should return 'leader' when user is a leader but not the registrar" do
     user = Factory :user
-    event = Factory( :event, :event_name => "Lots of Fun", :registrar_id => user.id)
+    event = Factory( :event, :event_name => "Lots of Fun")
     registration = Factory(:registration, :user_id => user.id, :event_id => event.id, :register_status => :leader)
-    event = Factory :event
-    user.compound_status(event).should == "not registered"
+    user.compound_status(event).should == "leader"
   end
 
+  it "should return 'not registered' when user is not registered for the event" do
+    user = Factory :user
+    event = Factory( :event, :event_name => "Lots of Fun")
+    user.compound_status(event).should == "not registered"
+  end
 end

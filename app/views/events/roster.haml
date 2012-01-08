@@ -9,6 +9,7 @@
     -  |registration|
     - user = registration.user
     .user{:class => registration.register_status.downcase}
+      .register_status= registration.user.compound_status(@event)
       .avatar.left
         - if user.photo.file?
           = image_tag user.photo.url(:large)

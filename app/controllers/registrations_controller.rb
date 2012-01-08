@@ -98,14 +98,14 @@ end
   end
 
   def update_register_status
-      a = Registration.where(:user_id => params[:user_id], :event_id => params[:event_id]).first
+      a = Registration.where(:user_id => params[:user_id], :event_id => params[:id]).first
       a.register_status = params[:commit]
       @new_status = params[:new_status]
       a.save
       Notifier.reg_status_email(a.user, a.event, a.register_status).deliver
 
     respond_to do |format|
-      format.html {redirect_to roster_path(:id => params[:event_id])}
+      format.html {redirect_to roster_path(:id => params[:id])}
       format.js
     end
 

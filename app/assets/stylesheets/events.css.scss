@@ -4,7 +4,7 @@
 
 
 $name_color: #cfc;
-
+$right: 90deg;
 *{
   padding: 0;
   margin: 0;
@@ -60,6 +60,7 @@ ul, ol{
   margin-bottom: 20px;
   border-radius: 10px;
   background: blue;
+  position: relative;
 }
 #roster_bin{
   background: white;
@@ -81,7 +82,7 @@ color: $name_color;
   padding-bottom: 5px;
 }
 .info{
-  width: 394px;
+  width: 376px;
 }
 .leader, .coleader, .co-leader, .registrar{
   background: red;
@@ -122,4 +123,24 @@ dd{
 }
 b{
   font-weight: bold;
+}
+.register_status{
+  font-size: 200%;
+  width: 100%;
+  color: green;
+  font-weight: bold;
+  position: absolute;
+  left: 634px;
+  top: 12px;
+  transform: rotate($right);
+  -ms-transform: rotate($right); /* IE 9 */
+  -webkit-transform: rotate($right); /* Safari and Chrome */
+  -o-transform: rotate($right); /* Opera */
+  -moz-transform: rotate($right); /* Firefox */
+  transform-origin: 0;
+  -ms-transform-origin: 0;
+  -webkit-transform-origin: 0;
+  -o-transform-origin: 0;
+  -moz-transform-origin: 0;
+
 }
