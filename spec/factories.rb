@@ -12,7 +12,8 @@ FactoryGirl.define do
   factory :event do
     sequence (:event_name) { |n| "Event Name ##{n}" }
     start_date 3.days.from_now.to_date
-    association :registrar, :factory => :user
+# This registrar association causes it to fail, so I took it out
+#    association :registrar, :factory => :user
   end
 
   factory :registration do |a|

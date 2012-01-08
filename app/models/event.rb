@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   belongs_to :program, :class_name => "Event"
   validates :end_date, :date => {:after_or_equal_to => :start_date,
             :message => "must be AFTER start date.", :allow_nil => true}
-  validates :program_id, :with =>
+
   def date_range
     return "no date entered" unless self.start_date
     unless self.end_date
