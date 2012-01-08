@@ -29,4 +29,25 @@ validates_attachment_content_type :photo,
 #  validates_format_of :phone_cell, :with => /^(1?(-?\d{3})-?)?(\d{3})(-?\d{4})$/, :message => "Use this phone number format: XXX-XXX-XXXX"
 #  validates_format_of :phone_evening, :with => /^(1?(-?\d{3})-?)?(\d{3})(-?\d{4})$/, :message => "Use this phone number format: XXX-XXX-XXXX"
 #  validates_presence_of :experience, :exercise, :medical, :emergency_contact, :diet
+
+
+  def compound_status(event)
+
+    registrations = Registration.where(:user_id => self.id, :event_id => event.id)
+    unless registrations.empty?
+      reg = registrations.first
+      if event.registrar_id == self.id
+        if reg.register_status == :leader
+          return "leader, registrar"
+        elsif reg.register_status == :coleader
+          return "coleader, registrar"
+        else
+          return "registrar"
+        end
+      end
+      return reg.register_status
+    end
+    return "not registered"
+  end
+
 end

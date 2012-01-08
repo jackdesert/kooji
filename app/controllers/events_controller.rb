@@ -17,6 +17,10 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    @leaders = @event.leaders
+    @coleaders = @event.coleaders
+    leads_and_coleads = @leaders + @coleaders
+    @registrar_already_listed = (leads_and_coleads.include? @event.registrar) ? true : false
 
     respond_to do |format|
       format.html # show.html.erb

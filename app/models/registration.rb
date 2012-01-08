@@ -13,4 +13,6 @@ class Registration < ActiveRecord::Base
     end
     master_date >= Time.now.to_date
   end
+
+
 end

@@ -22,6 +22,29 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def leaders
+    management(:leader)
+  end
+  def coleaders
+    management(:coleader)
+  end
+  def management(register_status)
+    regs = Registration.where(:event_id => self.id, :register_status => register_status)
+    managers = []
+    regs.each do |reg|
+      managers << reg.user
+    end
+    return managers
+  end
+
+  def management_hash
+    hash = {}
+    hash[:leaders] = {}
+    hash[:coleaders] = {}
+    hash[:registrar] = {}
+
+  end
+
 
 #  validates_presence_of :event_status, :event_is_program, :event_name, :pricing, :description, :confirmation_page, :start_date
 
