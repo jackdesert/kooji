@@ -32,7 +32,7 @@ validates_attachment_content_type :photo,
 
 
   def compound_status(event)
-debugger
+
     registrations = Registration.where(:user_id => self.id, :event_id => event.id)
     unless registrations.empty?
       reg = registrations.first
