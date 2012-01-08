@@ -2,9 +2,13 @@ class Event < ActiveRecord::Base
   has_many :registrations
   has_many :users, :through => :registrations
   belongs_to :registrar, :class_name => "User"
-  belongs_to :program, :class_name => "Event"
   validates :end_date, :date => {:after_or_equal_to => :start_date,
             :message => "must be AFTER start date.", :allow_nil => true}
+
+# This is how we say that a class belongs to itself
+  belongs_to :program, :class_name => 'Event', :foreign_key => 'program_id'
+
+
 
   def date_range
     return "no date entered" unless self.start_date

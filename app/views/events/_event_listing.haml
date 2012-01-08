@@ -7,6 +7,12 @@
 - unless myreg.empty?
   %p My Registration Status: #{myreg.first.register_status}
 
+- if @event.program
+  %h2 Mother Program
+  %p This event is part of a program series: <b>#{@event.program.event_name}</b>
+  %p
+    Your program enrollment status is:
+    = current_user.compound_status(@event.program)
 .hike_rating
   %p
     Hike Rating: #{@event.rating}
@@ -27,51 +33,11 @@
   = link_to @event.registrar.full_name, "mailto:#{@event.registrar.email}"
   = @event.registrar.compound_status(@event).wrap
 
-- if @event.program_id
-  This event is part of a program series: #{@event.program.event_name}
-  Your program enrollment status is:
-  = current_user.compound_status(@event.program)
 
 
-%p
-  When:
-  = @event.date_range
-%p
-  %b Program:
-  = event.program_id
-%p
-  %b Event status:
-  = event.event_status
-%p
-  %b Event is program:
-  = event.event_is_program
-%p
-  %b Event name:
-  = event.event_name
-%p
-  %b Rating:
-  = event.rating
-%p
-  %b Pricing:
-  = event.pricing
-%p
-  %b Description:
-  = event.description
-%p
-  %b Trip info:
-  = event.trip_info
-%p
-  %b Gear list:
-  = event.gear_list
-%p
-  %b Confirmation page:
-  = event.confirmation_page
-%p
-  %b Question1:
-  = event.question1
-%p
-  %b Start date:
-  = event.start_date
-%p
-  %b End date:
-  = event.end_date
+%h2 Event Information:
+%p= event.description
+%h2 Gear List
+%p= event.gear_list
+%h2 Information for Approved Participants
+%p= event.trip_info

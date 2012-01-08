@@ -1,4 +1,5 @@
 Regi::Application.routes.draw do
+
   resources :registrations
 
 
@@ -7,6 +8,7 @@ Regi::Application.routes.draw do
   resource :password_reset
 
   # for some reason, when I delete this line, then my /1/edit url complains "no route matches :controller => :events"
+
   resources :events
 
   resource :user_session

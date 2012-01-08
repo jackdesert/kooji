@@ -1,18 +1,12 @@
 = render 'left_tabs'
 #right
-
   = render 'event_listing', :event => @event
-
   - current_registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first
-  - current_registration ||= Registration.new(:event_id => @event.id)
+  - if current_registration
+    = render 'show_my_registration'
+  - if @sign_up
+    - current_registration = Registration.new(:event_id => @event.id)
+    = render 'registrations/form', :registration => current_registration, :event => @event
 
-
-
-  = render 'registrations/form', :registration => current_registration, :event => @event
-
-  = link_to 'Edit', edit_event_path(@event)
-  \|
-  = link_to 'Back', events_path
-  \|
-  = link_to 'Sign Up', new_registration_path
+  = button_to 'Sign Up For This Event', new_registrations_path
 .clear

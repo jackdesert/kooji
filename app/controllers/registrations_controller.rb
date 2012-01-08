@@ -27,9 +27,9 @@ class RegistrationsController < ApplicationController
   # GET /registrations/new.json
   def new
     @registration = Registration.new
-
+    @sign_up = true
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { redirect_to event_path(params[:id]) and return}
       format.json { render json: @registration }
     end
   end
