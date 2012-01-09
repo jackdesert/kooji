@@ -91,4 +91,7 @@ ActiveRecord::Schema.define(:version => 20120104025652) do
     t.integer  "photo_file_size"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
+
 end

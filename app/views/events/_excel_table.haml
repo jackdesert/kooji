@@ -1,6 +1,24 @@
 %table
   %tr
     %th Name
+	%th Phone
+    %th Email
+    %th Status
+    %th Member
+    %th Recent Experience
+    %th Weekly Exercise
+    %th Medical
+    %th Emergency Contact
+    %th Dietary Needs
   - @registrations.each do |u|
     %tr
-      %td= u.user.first_name
+      %td= u.user.full_name
+      %td= u.user.phone
+      %td= u.user.email
+      %td= u.register_status
+      %td= u.user.member
+      %td= u.user.experience
+      %td= u.user.exercise
+      %td= u.user.medical
+      %td= u.user.emergency_contact
+      %td= u.user.diet

@@ -8,5 +8,5 @@
     - current_registration = Registration.new(:event_id => @event.id)
     = render 'registrations/form', :registration => current_registration, :event => @event
 
-  = button_to 'Sign Up For This Event', new_registrations_path
+  = button_to 'Sign Up For This Event' #, new_registrations_path
 .clear

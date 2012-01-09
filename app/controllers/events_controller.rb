@@ -48,9 +48,12 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
+    @event.registrar = current_user
 
     respond_to do |format|
       if @event.save
+        leader_reg = Registration.new(:user_id => current_user.id, :event_id => @event.id, :register_status => :leader)
+        leader_reg.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
