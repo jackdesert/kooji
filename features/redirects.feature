@@ -11,9 +11,8 @@ Feature: User can click an email link, log in, and be redirected to the appropri
 
   Scenario: User is redirected to to event after login 
     And I go to the "FunHike" event page
-    And show me the page
     Then I should see "Please log in"
     And I fill in "Email Address" with "jack@sunni.ru"
     And I fill in "Password" with "pass"
     And I press "Sign In"
-    Then I should see "Funhike"
+    Then I should see "FunHike"

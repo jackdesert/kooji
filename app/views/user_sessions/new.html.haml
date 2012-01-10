@@ -10,7 +10,6 @@
   %li Use your profile to register for as many events as you want
   %li Once approved for an event, arrange carpooling with other approved participants
   %li View up-to-date event information online
-
 %p Please log in here
 = form_for @user_session, :url => user_session_path do |f|
   .field
@@ -25,6 +24,10 @@
       Remember me
       = link_to 'I forgot my password', new_password_reset_path
     .clear
+  .field
+    - 
+
+    = hidden_field_tag :send_to, params[:send_to]
   .field
     %label
     = f.submit "Sign In"

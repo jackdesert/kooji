@@ -7,6 +7,10 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
+      
+      if params[:send_to]
+        redirect_to params[:send_to] and return
+      end
       redirect_to root_path
     else
     	flash[:error] = "Password Incorrect"

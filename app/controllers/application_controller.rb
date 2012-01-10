@@ -18,7 +18,11 @@ require 'yaml'
   def authenticate
     unless current_user
       flash[:notice] = "You're not logged in, Captain"
-      redirect_to new_user_session_path
+      where_to = @_env["REQUEST_PATH"].nil? ? @_env["PATH_INFO"] : @_env["REQUEST_PATH"] 
+      extra_param = "?send_to=" + where_to
+      
+      send_here = new_user_session_path + extra_param
+      redirect_to send_here
       return false
     end
     return current_user.id

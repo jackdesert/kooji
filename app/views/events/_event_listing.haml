@@ -18,8 +18,10 @@
     Hike Rating: #{@event.rating}
     = link_to "(Hike Rating Key)", "http://www.hbbostonamc.org/index.php/Table/Key-to-Hike-Ratings/"
   = render "hike_rating_key"
-- pricing = @event.pricing.empty? ? "No cost for this event" : @event.pricing
-%p Cost: #{pricing}
+- pricing = @event.pricing.blank? ? "No cost for this event" : @event.pricing
+%p 
+  Cost: 
+  = pricing
 %h2 Leading This Event
 - @leaders.each do |a|
   = link_to a.full_name , "mailto:#{a.email}"
@@ -29,6 +31,8 @@
   = link_to a.full_name , "mailto:#{a.email}"
   = a.compound_status(@event).wrap
   %br
+
+
 - unless @registrar_already_listed
   = link_to @event.registrar.full_name, "mailto:#{@event.registrar.email}"
   = @event.registrar.compound_status(@event).wrap
