@@ -11,7 +11,8 @@
     -  |registration|
     - user = registration.user
     %a.hidden{:name => user.id}
-    .user{:class => registration.register_status.downcase}
+    - status_color = (user == registration.event.registrar) ? "registrar" : registration.register_status 
+    .user{:class => status_color}
       .register_status= registration.user.compound_status(@event)
       .avatar.left
         - if user.photo.file?
@@ -32,7 +33,7 @@
           .answer= registration.gear_answer
       .select_box.left
         = render 'mini_form', :registration => registration, :new_status => 'Approved'
-        = render 'mini_form', :registration => registration, :new_status => 'Wait List'
+        = render 'mini_form', :registration => registration, :new_status => 'Waitlist'
         = render 'mini_form', :registration => registration, :new_status => 'Canceled'
         = render 'mini_form', :registration => registration, :new_status => 'Leader'
         = render 'mini_form', :registration => registration, :new_status => 'Coleader'

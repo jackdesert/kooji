@@ -40,6 +40,8 @@ end
     unless my_reg.nil?
       if [:leader, :coleader, :registrar].include? my_reg.register_status.downcase.to_sym
         return true
+      elsif my_reg.event.registrar == current_user
+        return true
       end
     end
     flash[:error] = "You must be the leader, the coleader, or the registrar of this event to edit the event details"

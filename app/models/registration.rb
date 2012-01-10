@@ -3,7 +3,7 @@ class Registration < ActiveRecord::Base
   belongs_to :event
   # this is a composite uniqueness constraint
   validates_uniqueness_of :user_id, :scope => :event_id
-  validates_format_of :register_status, :with => /^(leader)?(coleader)?(approved)?(submitted)?(canceled)?$/
+  validates_format_of :register_status, :with => /^(leader)?(coleader)?(approved)?(waitlist)?(submitted)?(canceled)?$/
   validates_presence_of :register_status
 
   # drop off date is used to decide whether to show this event as a "future" or "past" event
@@ -17,24 +17,26 @@ class Registration < ActiveRecord::Base
   end
 
   def sorted
-    sort = 100
+    sort = 6.0
     case self.register_status
     when "leader"
-      sort = 0
+      sort = 0.0
     when "coleader"
-      sort = 0
+      sort = 0.0
     when "approved"
-      sort = 2
+      sort = 2.0
     when "waitlist"
-      sort = 3
+      sort = 3.0
     when "submitted"
-      sort = 4
+      sort = 4.0
     when "canceled"
-      sort = 5
+      sort = 5.0
     end
     if self.event.registrar == self.user && sort > 0
-      sort = 1
+      sort = 1.0
     end
+    # Add a tiny portion of timestamped (not to exceed one)
+    sort += self.updated_at.to_f/1e12
     return sort
   end
 end
