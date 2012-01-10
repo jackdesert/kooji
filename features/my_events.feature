@@ -21,7 +21,6 @@ Feature: Root URL loads my events
 
 
   Scenario:
-And show me the page
     Then I should see "My Current Events"
 
   Scenario: A new person signs up
