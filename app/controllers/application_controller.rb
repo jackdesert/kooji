@@ -18,6 +18,7 @@ require 'yaml'
   def authenticate
     unless current_user
       flash[:notice] = "You're not logged in, Captain"
+      binding.pry
       where_to = @_env["REQUEST_PATH"].nil? ? @_env["PATH_INFO"] : @_env["REQUEST_PATH"] 
       extra_param = "?send_to=" + where_to
       
@@ -36,16 +37,15 @@ require 'yaml'
   end
 
   def may_edit_event
-if params[:id].nil?
-  debugger
-end
-    return true if is_admin
-    my_reg = Registration.where(:user_id => current_user.id, :event_id => params[:id]).first
-    unless my_reg.nil?
-      if [:leader, :coleader, :registrar].include? my_reg.register_status.downcase.to_sym
-        return true
-      elsif my_reg.event.registrar == current_user
-        return true
+    if current_user
+      return true if is_admin
+      my_reg = Registration.where(:user_id => current_user.id, :event_id => params[:id]).first
+      unless my_reg.nil?
+        if [:leader, :coleader, :registrar].include? my_reg.register_status.downcase.to_sym
+          return true
+        elsif my_reg.event.registrar == current_user
+          return true
+        end
       end
     end
     flash[:error] = "You must be the leader, the coleader, or the registrar of this event to edit the event details"
@@ -54,6 +54,7 @@ end
   end
 
   def is_admin
+    return false unless current_user
     if [:admin].include? current_user.user_type.downcase.to_sym
       return true
     else
