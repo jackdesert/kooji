@@ -16,5 +16,25 @@ class Registration < ActiveRecord::Base
     master_date >= Time.now.to_date
   end
 
-
+  def sorted
+    sort = 100
+    case self.register_status
+    when "leader"
+      sort = 0
+    when "coleader"
+      sort = 0
+    when "approved"
+      sort = 2
+    when "waitlist"
+      sort = 3
+    when "submitted"
+      sort = 4
+    when "canceled"
+      sort = 5
+    end
+    if self.event.registrar == self.user && sort > 0
+      sort = 1
+    end
+    return sort
+  end
 end

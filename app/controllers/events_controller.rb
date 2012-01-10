@@ -81,8 +81,9 @@ class EventsController < ApplicationController
 
   def roster
     @event = Event.find(params[:id])
-    
-    @registrations = Registration.where(:event_id => @event.id)
+    @registrations = Registration.where(:event_id => @event.id).sort do |a, b|       
+      a.sorted <=> b.sorted 
+    end
     @approved_participants = []
     @registrations.each do |r|
       @approved_participants << r.user if ["approved", "leader", "coleader"].include? r.register_status
