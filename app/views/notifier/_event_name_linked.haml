@@ -1,4 +1,4 @@
-= link_to @event.event_name, @event_link
+= link_to @event.event_name, @event_url
 - if @event.end_date.nil?
   #{@event.start_date.short} - #{@event.end_date.short}
 - else

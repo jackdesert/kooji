@@ -98,9 +98,10 @@ end
   end
 
   def update_register_status
+binding.pry
       a = Registration.where(:user_id => params[:user_id], :event_id => params[:id]).first
-      a.register_status = params[:commit]
-      @new_status = params[:new_status]
+      @new_status = params[:commit]
+      a.register_status = @new_status.downcase
       a.save
       Notifier.reg_status_email(a.user, a.event, a.register_status).deliver
 

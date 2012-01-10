@@ -724,7 +724,7 @@ Roster
 \emph default
 tab from the left side of the screen (this tab is only visible to Leaders,
  CoLeaders, and Registrars for this trip.) Additionally, each time a new
- participant registers for your event, all leaders and co-leaders for that
+ participant registers for your event, all leaders and coleaders for that
  event will receive an automated email notification (sent to your profile
  email address).
  This email will include a link to the Roster page.
@@ -757,11 +757,11 @@ CANCELED
 \end_layout
 
 \begin_layout Paragraph
-Other trip leader/co-leader registration 
+Other trip leader/coleader registration 
 \end_layout
 
 \begin_layout Quote
-Fellow co-leaders and registrars must sign up for the event just like all
+Fellow coleaders and registrars must sign up for the event just like all
  other participants.
  Once they have signed up, log in to the system and go to the 
 \emph on
@@ -769,10 +769,10 @@ Roster
 \emph default
  page for the event.
  Using the pull-down menus to the far right of each person's entries, change
- their status by selecting either LEADER, CO-LEADER or REGISTRAR.
+ their status by selecting either LEADER, COLEADER or REGISTRAR.
  Once you change the status of a participant, they will be sent an automated
  email notifying them of the change.
- Leaders, Co-Leaders and Registrars of this particular event all have access
+ Leaders, Coleaders and Registrars of this particular event all have access
  to this event's 
 \emph on
 Admin

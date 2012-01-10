@@ -20,13 +20,13 @@
     = render "event_name_linked"
   %h2 CARPOOL
   %p Carpooling is good for the environment, and a great way to get to know people. We encourage you to contact other participants and find ways to share transportation. Please revisit the
-  = link_to "REGI page", @event_link
+  = link_to "REGI page", @event_url
   for this event to view the carpool information posted by other participants, or to update your own carpooling status.
 - when :registrar
   %p
     Congratulations! You are now the REGISTRAR for
     = render "event_name_linked"
-  %p= leader_means
+  %p= render "leader_means"
   %p
     As the registrar for
     = render "event_name_linked"
@@ -36,13 +36,13 @@
   %p
     Congratulations! You are now the LEADER for
     = render "event_name_linked"
-  %p= leader_means
+  %p= render "leader_means"
   %p Thank you for leading trips with AMC!
 - when :coleader
   %p
     Congratulations! You are now a COLEADER for
     = render "event_name_linked"
-  %p= leader_means
+  %p= render "leader_means"
   %p Thank you for helping us bring nature to the people, and people to nature.
 
 = render "footer_html"

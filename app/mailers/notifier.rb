@@ -1,7 +1,7 @@
 
 class Notifier < ActionMailer::Base
   default :from => "regi@hbbostonamc.org"
-
+  
 
 
   # send a signup email to the user, pass in the user object that contains the user's email address
@@ -9,8 +9,7 @@ class Notifier < ActionMailer::Base
     @user = user
     @event = event
     @new_status = new_status
-    @event_link = event_url(event.id, :host => get_host)
-    @support_url = support_url(:host => get_host)
+    set_event_urls
     mail( :to => user.email,
           :subject => "Registration Status Update for #{@event.event_name}" )
   end
@@ -18,12 +17,19 @@ class Notifier < ActionMailer::Base
   def tell_leaders_about_new_registrant(user, event)
     @user = user
     @event = event
-    @roster_url = roster_url(event.id, :host => get_host)
+    set_event_urls
     mail( :to => get_leaders_emails(event),
           :subject => "New Registrant for #{@event.event_name}",
           :reply_to => @user.email )
   end
 
+  def set_event_urls
+    @event_url = event_url(@event.id, :host => get_host)
+    @edit_event_url = edit_event_url(@event.id, :host => get_host)  
+    @roster_url = roster_url(@event.id, :host => get_host)
+    @support_url = support_url(:host => get_host)
+  end
+  
   def password_reset_instructions(user)
     @reset_link = edit_password_reset_url(user.perishable_token, :host => get_host)
     mail( :to => user.email,

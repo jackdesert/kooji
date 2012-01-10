@@ -84,15 +84,25 @@ color: $name_color;
 .info{
   width: 376px;
 }
-.leader, .coleader, .co-leader, .registrar{
+/***********************************************************/
+/* Background Coloration for various Registration statuses */
+.leader, .coleader, .coleader, .registrar{
   background: red;
 }
 .approved{
-  background: brown;
+  background: tan;
+}
+.waitlist{
+	background: green;
+}
+.submitted{
+	background: cyan;
 }
 .canceled{
   background: black;
 }
+
+/************************************************************/
 .avatar{
   padding-right: 10px;
 }

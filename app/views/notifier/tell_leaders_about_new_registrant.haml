@@ -1,0 +1,11 @@
+%h2 Notice to event leaders:
+%p 
+	= @user.full_name 
+	has just registered for 
+	= render "event_name_linked"
+	Please review  
+	= link_to "their profile on the roster page", roster_path(@event.id), :anchor => @user.id
+	and update their registration status once you've determined whether they will be a good fit for this event. 
+	
+%p Thank you!
+
