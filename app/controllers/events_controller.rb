@@ -81,6 +81,9 @@ class EventsController < ApplicationController
   end
 
   def roster
+    if params[:anchor]
+      redirect_to roster_path(:id => params[:id]) + "#" + params[:anchor]
+    end
     @event = Event.find(params[:id])
     @registrations = Registration.where(:event_id => @event.id).sort do |a, b|       
       a.sorted <=> b.sorted 
