@@ -90,6 +90,7 @@ require 'yaml'
 
   # returns the person to either the original url from a redirect_away or to a default url
   def redirect_back(*params)
+    binding.pry
     uri = session[:original_uri]
     session[:original_uri] = nil
     if uri
@@ -102,9 +103,9 @@ require 'yaml'
   def capture_original_request
     # Note that the before_filter invoking this method must happen before the before_filter for :authenticate, or there will be no
     # data to grab
-
-    if params[:controller] == "events" && params[:action] == "roster"    
-      session[:original_request_before_auth] = request.env['REQUEST_URI']
+binding.pry
+    if params[:controller] == "events" #&& params[:action] == "roster"    
+      session[:original_request_before_auth] = request.env['PATH_INFO']
     end
   end
   
