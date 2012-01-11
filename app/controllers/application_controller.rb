@@ -18,12 +18,8 @@ require 'yaml'
   def authenticate
     unless current_user
       flash[:notice] = "You're not logged in, Captain"
-      binding.pry
-      where_to = @_env["REQUEST_PATH"].nil? ? @_env["PATH_INFO"] : @_env["REQUEST_PATH"] 
-      extra_param = "?send_to=" + where_to
-      
-      send_here = new_user_session_path + extra_param
-      redirect_to send_here
+
+      redirect_away new_user_session_path
       return false
     end
     return current_user.id
@@ -86,5 +82,31 @@ require 'yaml'
     @string = YAML::load(File.open("#{Rails.root}/config/strings.yml"))
   end
 
+  # redirect somewhere that will eventually return back to here
+  def redirect_away(*params)
+    session[:original_uri] = session[:original_request_before_auth]
+    redirect_to(*params)
+  end
+
+  # returns the person to either the original url from a redirect_away or to a default url
+  def redirect_back(*params)
+    uri = session[:original_uri]
+    session[:original_uri] = nil
+    if uri
+      redirect_to uri
+    else
+      redirect_to(*params)
+    end
+  end
+
+  def capture_original_request
+    # Note that the before_filter invoking this method must happen before the before_filter for :authenticate, or there will be no
+    # data to grab
+
+    if params[:controller] == "events" && params[:action] == "roster"    
+      session[:original_request_before_auth] = request.env['REQUEST_URI']
+    end
+  end
+  
   protect_from_forgery
 end

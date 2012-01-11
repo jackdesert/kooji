@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'authlogic'
-gem 'ruby-debug19'
+gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'nokogiri'
 gem 'paperclip'
 gem 'cucumber-rails'

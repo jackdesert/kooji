@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_filter :capture_original_request
   before_filter :may_create_events, :only => [:new, :create]
   before_filter :may_edit_event, :only => [:edit, :update, :roster, :export]
   before_filter :authenticate

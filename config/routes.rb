@@ -34,7 +34,7 @@ Regi::Application.routes.draw do
   get ':id/edit' => 'events#edit', :as => 'edit_event', :id => /\d+/
   get 'new' => 'events#new', :as => 'new_event'
   post 'create' => 'events#create'
-  get ':id/roster' => 'events#roster', :as => 'roster'
+  get ':id/roster/:anchor' => 'events#roster', :as => 'roster', :anchor => /\d*/
   get ':id/roster/export' => 'events#export', :as => 'roster_export'
   get ':id/share' => 'events#get_the_word_out', :as => 'share_event'
 
