@@ -1,4 +1,4 @@
-%h3 My Registration In
+%h3 My Registration
 = form_for registration do |f|
   -if registration.errors.any?
     #error_explanation
@@ -10,7 +10,7 @@
 
   = f.hidden_field :event_id, :value => registration.event_id
   .field
-    = f.label :gear_answer, "Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions."
+    = f.label :gear_answer, "Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions.", :class => :above
     = f.text_area :gear_answer
 
   .field
@@ -18,7 +18,7 @@
     = f.text_area :has_questions
   - unless registration.event.question1.blank?
     .field
-      = f.label :answer1, registration.event.question1
+      = f.label :answer1, registration.event.question1, :class => :above
       = f.text_area :answer1
 
   %h2 Carpool Info
@@ -39,21 +39,26 @@
         %td= f.radio_button :carpooling, 'Need Ride'
         %td= f.label :carpooling, "I need a ride"
 
-  .field
-    = f.label :leaving_from
-    = f.text_field :leaving_from
-  .field
-    = f.label :leave_time
-    = f.text_field :leave_time
-  .field
-    = f.label :returning_to
-    = f.text_field :returning_to
-  .field
-    = f.label :return_time
-    = f.text_field :return_time
+  %table
+    %tr
+      %td
+      %td (Town)
+      %td
+      %td (Time, Day)
+    %tr
+      %td= f.label :leaving_from
+      %td= f.text_field :leaving_from
+      %td= f.label :leave_time, "at"
+      %td= f.text_field :leave_time
+    %tr
+      %td= f.label :returning_to
+      %td= f.text_field :returning_to
+      %td= f.label :return_time, "at"
+      %td= f.text_field :return_time
 
   .field
-    = f.label :user_notes
+    = f.label :user_notes, :class => :above
+    %p This a place for you to scribble. Nobody else will see this.
     = f.text_area :user_notes
   .actions
     = f.submit 'Save'
