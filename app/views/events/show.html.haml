@@ -6,7 +6,7 @@
     = render 'show_my_registration'
   - current_registration ||= Registration.new(:event_id => @event.id)
   #registration_form
-    = render 'registrations/form', :registration => current_registration, :event => @event
+    = render 'registration/form', :registration => current_registration, :event => @event
 
   = button_tag 'Sign Up For This Event', :id => :show
   = button_tag 'Never Mind', :id => :hide

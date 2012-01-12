@@ -1,5 +1,5 @@
 %h3 My Registration
-= form_for registration do |f|
+= form_for :registration do |f|
   -if registration.errors.any?
     #error_explanation
       %h2= "#{pluralize(registration.errors.count, "error")} prohibited this registration from being saved:"
