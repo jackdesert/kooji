@@ -61,4 +61,7 @@
     %p This a place for you to scribble. Nobody else will see this.
     = f.text_area :user_notes
   .actions
-    = f.submit 'Save'
+    - if registration.new_record?
+      = f.submit 'Sign Me Up!'
+    - else
+      = f.submit 'Update'    

@@ -5,7 +5,7 @@ class Registration < ActiveRecord::Base
   validates_uniqueness_of :user_id, :scope => :event_id
   validates_format_of :register_status, :with => /^(leader)?(coleader)?(approved)?(waitlist)?(submitted)?(canceled)?$/
   validates_presence_of :register_status
-
+  validates_presence_of :carpooling
   # drop off date is used to decide whether to show this event as a "future" or "past" event
   def future?
     if self.event.end_date

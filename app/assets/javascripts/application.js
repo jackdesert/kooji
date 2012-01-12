@@ -9,7 +9,15 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $("#register_now").click(function(){
+  $("#show").click(function(){
+    $("#show").css("display", "none")
+    $("#hide").css("display", "block")
     $("#registration_form").css("display", "block");
+  });
+
+  $("#hide").click(function(){
+    $("#hide").css("display", "none")
+    $("#show").css("display", "block")
+    $("#registration_form").css("display", "none");
   });
 });

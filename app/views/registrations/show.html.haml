@@ -1,40 +1,39 @@
 %p#notice= notice
-%p
-  %b User ID:
-  = @registration.user_id
-%p
-  %b Event ID
-  = @registration.event_id
-%p
-  %b Register status:
-  = @registration.register_status
-%p
-  %b Need ride:
-  = @registration.need_ride
-%p
-  %b Can take:
-  = @registration.can_take
-%p
-  %b Leaving from:
-  = @registration.leaving_from
-%p
-  %b Leave time:
-  = @registration.leave_time
-%p
-  %b Returning to:
-  = @registration.returning_to
-%p
-  %b Return time:
-  = @registration.return_time
-%p
-  %b Gear answer:
-  = @registration.gear_answer
-%p
-  %b Answer1:
-  = @registration.answer1
-%p
-  %b Has questions:
-  = @registration.has_questions
+%h2 Carpooling
+- if @registration.carpooling.downcase == "all set"
+  %p I'm all set and will meet you there
+- elsif @registration.carpooling.downcase == "can take"
+  %p
+    I have room for
+    = @registration.room_for
+    passengers
+- else
+  %p I need a ride
+- unless @registration.carpooling.downcase == "all set"
+  %table
+    %tr
+      %td
+      %td (Town)
+      %td
+      %td (Time, Day)
+    %tr
+      %td Leaving From
+      %td= @registration.leaving_from
+      %td at
+      %td= @registration.leave_time
+    %tr
+      %td Returning to
+      %td= @registration.returning_to
+      %td at
+      %td= @registration.return_time
+%p.bold Gear answer:
+%p= @registration.gear_answer
+%p.bold Answer to:
+%p.bold= @registration.event.question1
+%p= @registration.answer1
+
+%p.bold Questions you asked when you signed up
+%p = @registration.has_questions
 
 = link_to 'Edit', edit_registration_path(@registration)
 \|

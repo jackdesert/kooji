@@ -8,5 +8,6 @@
   #registration_form
     = render 'registrations/form', :registration => current_registration, :event => @event
 
-  = button_tag 'Sign Up For This Event', :id => :register_now #, new_registrations_path, :id =>
+  = button_tag 'Sign Up For This Event', :id => :show
+  = button_tag 'Never Mind', :id => :hide
 .clear

@@ -19,8 +19,8 @@
     = link_to "(Hike Rating Key)", "http://www.hbbostonamc.org/index.php/Table/Key-to-Hike-Ratings/"
   = render "hike_rating_key"
 - pricing = @event.pricing.blank? ? "No cost for this event" : @event.pricing
-%p 
-  Cost: 
+%p
+  Cost:
   = pricing
 %h2 Leading This Event
 - @leaders.each do |a|

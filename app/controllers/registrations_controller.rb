@@ -15,7 +15,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1
   # GET /registrations/1.json
   def show
-    @registration = Registration.find(1)
+    @registration = Registration.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -88,10 +88,12 @@ end
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
+        format.html { redirect_to event_path(@registration.event.id), notice: 'Registration was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+binding.pry
+        session[:registration] = @registration
+        format.html { render :controller => :events, :action => :show }
         format.json { render json: @registration.errors, status: :unprocessable_entity }
       end
     end
