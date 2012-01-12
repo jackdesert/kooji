@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120110013308) do
+ActiveRecord::Schema.define(:version => 20120112032348) do
 
   create_table "events", :force => true do |t|
     t.integer  "program_id"
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20120110013308) do
     t.integer  "user_id",         :null => false
     t.integer  "event_id",        :null => false
     t.string   "register_status"
-    t.string   "need_ride"
-    t.integer  "can_take"
+    t.string   "carpooling"
+    t.integer  "room_for"
     t.string   "leaving_from"
     t.string   "leave_time"
     t.string   "returning_to"
@@ -92,8 +92,5 @@ ActiveRecord::Schema.define(:version => 20120110013308) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
   end
-
-  add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

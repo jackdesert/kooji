@@ -103,7 +103,6 @@ require 'yaml'
   def capture_original_request
     # Note that the before_filter invoking this method must happen before the before_filter for :authenticate, or there will be no
     # data to grab
-binding.pry
     if params[:controller] == "events" #&& params[:action] == "roster"    
       session[:original_request_before_auth] = request.env['PATH_INFO']
     end

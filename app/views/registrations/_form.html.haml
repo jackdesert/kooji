@@ -1,4 +1,4 @@
-
+%h3 My Registration In
 = form_for registration do |f|
   -if registration.errors.any?
     #error_explanation
@@ -7,16 +7,38 @@
         - registration.errors.full_messages.each do |msg|
           %li= msg
 
+
   = f.hidden_field :event_id, :value => registration.event_id
   .field
-    = f.label :register_status
-    = f.text_field :register_status
+    = f.label :gear_answer, "Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions."
+    = f.text_area :gear_answer
+
   .field
-    = f.label :need_ride
-    = f.text_field :need_ride
+    = f.label :has_questions, "Do you have any questions or comments for us?"
+    = f.text_area :has_questions
+  - unless registration.event.question1.blank?
+    .field
+      = f.label :answer1, registration.event.question1
+      = f.text_area :answer1
+
+  %h2 Carpool Info
+  %p Carpooling is a great way to meet people and save the earth's resources. Do you want to carpool?
+
   .field
-    = f.label :can_take
-    = f.number_field :can_take
+    %table
+      %tr
+        %td= f.radio_button :carpooling, 'All Set'
+        %td= f.label :carpooling, "I'm all set and will meet you there"
+      %tr
+        %td= f.radio_button :carpooling, 'Can Take'
+        %td
+          = f.label :carpooling, "I have room for:"
+          = f.select :room_for, ['1', '2', '3', '4', '5']
+          passenger
+      %tr
+        %td= f.radio_button :carpooling, 'Need Ride'
+        %td= f.label :carpooling, "I need a ride"
+
   .field
     = f.label :leaving_from
     = f.text_field :leaving_from
@@ -29,17 +51,9 @@
   .field
     = f.label :return_time
     = f.text_field :return_time
+
   .field
-    = f.label :gear_answer
-    = f.text_area :gear_answer
-  .field
-    = f.label :answer1
-    = f.text_area :answer1
-  .field
-    = f.label :has_questions
-    = f.text_area :has_questions
-	.field
-		= f.label :user_notes
-		= f.text_area :user_notes
+    = f.label :user_notes
+    = f.text_area :user_notes
   .actions
     = f.submit 'Save'
