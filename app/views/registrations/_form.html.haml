@@ -14,7 +14,7 @@
     = f.text_area :gear_answer
 
   .field
-    = f.label :has_questions, "Do you have any questions or comments for us?"
+    = f.label :has_questions, "Do you have any questions or comments for us?", :class => :above
     = f.text_area :has_questions
   - unless registration.event.question1.blank?
     .field
