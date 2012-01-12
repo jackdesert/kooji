@@ -5,7 +5,8 @@
   - if current_registration
     = render 'show_my_registration'
   - current_registration ||= Registration.new(:event_id => @event.id)
-  = render 'registrations/form', :registration => current_registration, :event => @event
+  #registration_form
+    = render 'registrations/form', :registration => current_registration, :event => @event
 
-  = button_to 'Sign Up For This Event' #, new_registrations_path
+  = button_tag 'Sign Up For This Event', :id => :register_now #, new_registrations_path, :id =>
 .clear
