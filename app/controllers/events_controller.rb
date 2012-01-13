@@ -22,7 +22,8 @@ class EventsController < ApplicationController
     @coleaders = @event.coleaders
     leads_and_coleads = @leaders + @coleaders
     @registrar_already_listed = (leads_and_coleads.include? @event.registrar) ? true : false
-
+binding.pry
+    @registration = Registration.where(:event_id => params[:id], :user_id => current_user.id).first
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
@@ -85,8 +86,8 @@ class EventsController < ApplicationController
       redirect_to roster_path(:id => params[:id]) + "#" + params[:anchor]
     end
     @event = Event.find(params[:id])
-    @registrations = Registration.where(:event_id => @event.id).sort do |a, b|       
-      a.sorted <=> b.sorted 
+    @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
+      a.sorted <=> b.sorted
     end
     @approved_participants = []
     @registrations.each do |r|

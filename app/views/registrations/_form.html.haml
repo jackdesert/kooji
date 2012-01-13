@@ -1,6 +1,6 @@
-%h3 My @registration
+%h3 My Registration
 
-- form_for @registration, :url => event_registration_path(@registration.event) do |f|
+= form_for @registration, :url => event_registration_path(@registration.event) do |f|
 
   -if @registration.errors.any?
     #error_explanation

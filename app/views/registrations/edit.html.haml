@@ -2,6 +2,4 @@
 
 = render 'form'
 
-= link_to 'Show', @registration
-\|
-= link_to 'Back', event_registration_path
+= link_to 'Cancel', event_registration_path(params[:event_id])

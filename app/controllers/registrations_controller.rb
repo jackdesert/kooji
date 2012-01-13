@@ -72,14 +72,14 @@ class RegistrationsController < ApplicationController
 
 
   def update
-    @registration = Registration.where(:user_id => params[:user_id], :event_id => params[:id]).first
+    @registration = get_current_registration
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
         format.html { redirect_to event_path(@registration.event.id), notice: 'Registration was successfully updated.' }
         format.json { head :ok }
       else
-binding.pry
+
         session[:registration] = @registration
         format.html { render :controller => :events, :action => :show }
         format.json { render json: @registration.errors, status: :unprocessable_entity }
