@@ -17,7 +17,7 @@ class UserSessionsController < ApplicationController
       if  @user_session.errors.messages[:email]
         flash[:error] = "Error: #{in_email} was not found in our system. Please check your email address and try again"
     	elsif @user_session.errors.messages[:password]
-      	flash[:error] = "Password Incorrect"
+      	flash[:error] = "Yes, your email address (#{in_emai} is in our system. But you typed the wrong password"
       end
       render :action => :new
     end
