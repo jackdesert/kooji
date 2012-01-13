@@ -9,7 +9,7 @@ Feature: User can click an email link, log in, and be redirected to the appropri
       | FunHike    | 2011-12-12 | 2011-12-24 |
 
 
-  Scenario: User is redirected to to event after login 
+  Scenario: User is redirected to event after login 
     And I go to the "FunHike" event page
     Then I should see "Please log in"
     And I fill in "Email Address" with "jack@sunni.ru"
@@ -19,7 +19,7 @@ Feature: User can click an email link, log in, and be redirected to the appropri
     Then I should see "FunHike"
     And show me the page
     
-  Scenario: User is redirected to to event roster after login 
+  Scenario: User is redirected to event roster after login 
     And I go to the "FunHike" event roster page
     Then I should see "Please log in"
     And I fill in "Email Address" with "jack@sunni.ru"

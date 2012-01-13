@@ -12,6 +12,9 @@ validates_attachment_content_type :photo,
                                     :if => Proc.new {|profile| profile.photo.file?},
                                     :message => 'profile.photo_content_type'
 
+
+  attr_protected :user_type, :user_id
+
   acts_as_authentic do |config|
     # Add custom configuration options here
     config.crypto_provider = Authlogic::CryptoProviders::Sha1
