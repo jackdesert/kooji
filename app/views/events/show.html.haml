@@ -1,9 +1,10 @@
 = render 'left_tabs'
 #right
-  = render 'event_listing', :event => @event
+
   - current_registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first
   - if current_registration
-    = render 'show_my_registration'
+    = render :template => 'registrations/show'
+  = render 'event_listing', :event => @event
   - current_registration ||= Registration.new(:event_id => @event.id)
   #registration_form
     = render 'registrations/form', :registration => current_registration, :event => @event
