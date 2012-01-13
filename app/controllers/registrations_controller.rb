@@ -1,10 +1,16 @@
 class RegistrationsController < ApplicationController
   before_filter :authenticate
   before_filter :may_edit_event, :only => :update_register_status
+  before_filter :get_current_registration, :only => [:show, :update, :edit]
+
+
+  def get_current_registration
+    Registration.where(:event_id => params[:event_id], :user_id => current_user.id).first
+  end
+
 
   def show
-    @registration = Registration.where(:event_id => params[:event_id], :user_id => current_user.id).first
-
+    @registration = get_current_registration
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @registration }
@@ -13,15 +19,16 @@ class RegistrationsController < ApplicationController
 
   def new
     @registration = Registration.new
+    @registration.event_id = params[:event_id]
     @sign_up = true
     respond_to do |format|
-      format.html { redirect_to event_path(params[:id]) and return}
+      format.html #{ redirect_to event_path(params[:id]) and return}
       format.json { render json: @registration }
     end
   end
 
   def edit
-    @registration = Registration.where(:user_id => params[:user_id], :event_id => params[:id]).first
+    @registration = get_current_registration
   end
 
   def create

@@ -39,4 +39,5 @@ class Registration < ActiveRecord::Base
     sort += self.updated_at.to_f/1e12
     return sort
   end
+
 end

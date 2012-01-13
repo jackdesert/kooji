@@ -21,7 +21,7 @@ class RegistrationsControllerTest < ActionController::TestCase
       post :create, registration: @registration.attributes
     end
 
-    assert_redirected_to registration_path(assigns(:registration))
+    assert_redirected_to event_registration_path(assigns(:registration))
   end
 
   test "should show registration" do
@@ -36,7 +36,7 @@ class RegistrationsControllerTest < ActionController::TestCase
 
   test "should update registration" do
     put :update, id: @registration.to_param, registration: @registration.attributes
-    assert_redirected_to registration_path(assigns(:registration))
+    assert_redirected_to event_registration_path(assigns(:registration))
   end
 
   test "should destroy registration" do

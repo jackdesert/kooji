@@ -1,15 +1,16 @@
-%h3 My Registration
-= form_for :registration do |f|
-  - binding.pry
-  -if registration.errors.any?
+%h3 My @registration
+
+- form_for @registration, :url => event_registration_path(@registration.event) do |f|
+
+  -if @registration.errors.any?
     #error_explanation
-      %h2= "#{pluralize(registration.errors.count, "error")} prohibited this registration from being saved:"
+      %h2= "#{pluralize(registration.errors.count, "error")} prohibited this @registration from being saved:"
       %ul
-        - registration.errors.full_messages.each do |msg|
+        - @registration.errors.full_messages.each do |msg|
           %li= msg
 
 
-  = f.hidden_field :event_id, :value => registration.event_id
+  = f.hidden_field :event_id, :value => @registration.event_id
   .field
     = f.label :gear_answer, "Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions.", :class => :above
     = f.text_area :gear_answer
@@ -17,9 +18,9 @@
   .field
     = f.label :has_questions, "Do you have any questions or comments for us?", :class => :above
     = f.text_area :has_questions
-  - unless registration.event.question1.blank?
+  - unless @registration.event.question1.blank?
     .field
-      = f.label :answer1, registration.event.question1, :class => :above
+      = f.label :answer1, @registration.event.question1, :class => :above
       = f.text_area :answer1
 
   %h2 Carpool Info
@@ -62,7 +63,7 @@
     %p This a place for you to scribble. Nobody else will see this.
     = f.text_area :user_notes
   .actions
-    - if registration.new_record?
+    - if @registration.new_record?
       = f.submit 'Sign Me Up!'
     - else
       = f.submit 'Update'    

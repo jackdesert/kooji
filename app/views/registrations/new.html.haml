@@ -4,4 +4,4 @@
 -# = render 'events/event_listing', :event => Event.first
 = render 'form', :registration => @registration
 
-= link_to 'Back', registrations_path
+= link_to 'Back', event_registration_path(params[:event_id])

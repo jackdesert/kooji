@@ -13,7 +13,7 @@ Regi::Application.routes.draw do
   end
 
   resource :user_session
-  resource :user
+  resource :user, :path => "profile"
 
   # The priority is based upon order of creation:
 
