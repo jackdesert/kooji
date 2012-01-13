@@ -8,10 +8,7 @@ Regi::Application.routes.draw do
 
   # for some reason, when I delete this line, then my /1/edit url complains "no route matches :controller => :events"
 
-  resources :events, :path => "/", :except => [:index, :delete] do
-    resource :registration
-  end
-
+  get 'login' => 'user_sessions#new', :as => 'new_user_session'
   resource :user_session
   resource :user, :path => "profile"
 
@@ -30,16 +27,14 @@ Regi::Application.routes.draw do
   get 'hbtrips' => 'imports#featured_events', :as => 'hbtrips', :via => :get
 
   # custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
-  get ':id' => 'events#show', :as => 'event', :id => /\d+/
-  put ':id' => 'events#update', :id => /\d+/
-  get ':id/edit' => 'events#edit', :as => 'edit_event', :id => /\d+/
-  get 'new' => 'events#new', :as => 'new_event'
-  post 'create' => 'events#create'
   get ':id/roster' => 'events#roster', :as => 'roster'
   get ':id/roster/:anchor' => 'events#roster', :as => 'roster_with_anchor', :anchor => /\d*/
   get ':id/roster/export' => 'events#export', :as => 'roster_export'
   get ':id/share' => 'events#get_the_word_out', :as => 'share_event'
 
+  resources :events, :path => "/", :except => [:index, :delete] do
+    resource :registration
+  end
 
 
 

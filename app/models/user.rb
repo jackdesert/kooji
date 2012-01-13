@@ -11,10 +11,17 @@ validates_attachment_content_type :photo,
                                     :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/pjpeg','image/x-png'],
                                     :if => Proc.new {|profile| profile.photo.file?},
                                     :message => 'profile.photo_content_type'
+  validates_presence_of :first_name, :last_name, :phone, :experience, :user_type, :member, :emergency_contact
+  validates_format_of :phone, :with => /^\d{10}$/
+  before_validation :standardize_phone_number
 
   acts_as_authentic do |config|
     # Add custom configuration options here
     config.crypto_provider = Authlogic::CryptoProviders::Sha1
+  end
+
+  def standardize_phone_number
+    self.phone = self.phone.gsub(/[^0-9]/, '')
   end
 
   def full_name
