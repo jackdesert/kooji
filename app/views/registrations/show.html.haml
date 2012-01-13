@@ -34,7 +34,6 @@
 
 %p.bold Questions you asked when you signed up
 %p = @registration.has_questions
-
-= link_to 'Edit', edit_registration_path(@registration)
+= link_to 'Edit', edit_event_registration_path(@event)
 \|
-= link_to 'Back', registrations_path
+= link_to 'Back', event_registration_path(@event)

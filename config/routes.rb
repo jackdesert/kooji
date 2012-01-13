@@ -8,7 +8,7 @@ Regi::Application.routes.draw do
 
   # for some reason, when I delete this line, then my /1/edit url complains "no route matches :controller => :events"
 
-  resources :events do
+  resources :events, :path => "/", :except => [:index, :delete] do
     resource :registration
   end
 
