@@ -90,7 +90,6 @@ require 'yaml'
 
   # returns the person to either the original url from a redirect_away or to a default url
   def redirect_back(*params)
-    binding.pry
     uri = session[:original_uri]
     session[:original_uri] = nil
     if uri

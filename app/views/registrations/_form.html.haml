@@ -1,5 +1,6 @@
 %h3 My Registration
 
+- binding.pry
 = form_for @registration, :url => event_registration_path(@registration.event) do |f|
 
   -if @registration.errors.any?

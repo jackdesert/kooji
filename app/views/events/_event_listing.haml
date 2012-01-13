@@ -34,6 +34,7 @@
 
 
 - unless @registrar_already_listed
+
   = link_to @event.registrar.full_name, "mailto:#{@event.registrar.email}"
   = @event.registrar.compound_status(@event).wrap
 

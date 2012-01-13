@@ -1,8 +1,8 @@
 FactoryGirl.define do
 
   factory :user do
-    sequence(:first_name) {|n| "User ##{n}"}
-    last_name "Last"
+    sequence(:first_name) {|n| "Jack"}
+    last_name "B. Nimble"
     sequence(:email) {|n| "#{n}@sunni.ru"}
     user_type "user"
     password "pass"
@@ -30,7 +30,7 @@ FactoryGirl.define do
     gear_list "Matches and a lighter"
     registrar_id 1
 # This registrar association causes it to fail, so I took it out
-#    association :registrar, :factory => :user
+    association :registrar, :factory => :user
   end
 
   factory :registration do |a|
