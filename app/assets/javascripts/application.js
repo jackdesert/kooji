@@ -9,17 +9,17 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $("#show").click(function(){
-    $("#show").css("display", "none")
-    $("#hide").css("display", "block")
+  $("#show_editable").click(function(){
+    $("#show_editable").css("display", "none")
+    $("#hide_editable").css("display", "block")
     $("#registration_edit").css("display", "block");
     $("#registration_new").css("display", "block");
     $("#registration_show").css("display", "none");
   });
 
-  $("#hide").click(function(){
-    $("#hide").css("display", "none")
-    $("#show").css("display", "block")
+  $("#hide_editable").click(function(){
+    $("#hide_editable").css("display", "none")
+    $("#show_editable").css("display", "block")
     $("#registration_edit").css("display", "none");
     $("#registration_new").css("display", "none");
     $("#registration_show").css("display", "block");
