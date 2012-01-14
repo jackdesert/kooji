@@ -4,9 +4,10 @@
   = render 'event_listing', :event => @event
 
   - if @registration
-    %h1.huge This is /3/registration
-    = render :template => 'registrations/show'
-    = button_tag 'Change My Answers', :id => :show
+    #registration_show
+      %h1.huge This is /3/registration
+      = render :template => 'registrations/show'
+      = button_tag 'Change My Answers', :id => :show
     #registration_form
       %h1.huge This is /3/registration/edit
       = render 'registrations/form', :registration => @registration, :event => @event

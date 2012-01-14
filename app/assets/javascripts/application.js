@@ -13,11 +13,13 @@ $(document).ready(function(){
     $("#show").css("display", "none")
     $("#hide").css("display", "block")
     $("#registration_form").css("display", "block");
+    $("#registration_show").css("display", "none");
   });
 
   $("#hide").click(function(){
     $("#hide").css("display", "none")
     $("#show").css("display", "block")
     $("#registration_form").css("display", "none");
+    $("#registration_show").css("display", "block");
   });
 });
