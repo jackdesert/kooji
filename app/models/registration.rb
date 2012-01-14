@@ -6,6 +6,7 @@ class Registration < ActiveRecord::Base
   validates_format_of :register_status, :with => /^(leader)?(coleader)?(approved)?(waitlist)?(submitted)?(canceled)?$/
   validates_presence_of :register_status
   validates_presence_of :carpooling
+  validates_format_of :carpooling, :with => /^(all set)?(can take)?(need ride)?$/, :message => "Options are all set, need ride, or can take"
   # drop off date is used to decide whether to show this event as a "future" or "past" event
   def future?
     if self.event.end_date

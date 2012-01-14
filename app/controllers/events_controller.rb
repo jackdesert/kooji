@@ -22,11 +22,12 @@ class EventsController < ApplicationController
     @coleaders = @event.coleaders
     leads_and_coleads = @leaders + @coleaders
     @registrar_already_listed = (leads_and_coleads.include? @event.registrar) ? true : false
-    @registration = Registration.where(:event_id => params[:id], :user_id => current_user.id).first
+    @registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first
+
     if @registration.nil?
-      @registration = Registration.new
-      @registration.event = @event
-      @registration.user = current_user
+      @new_registration = Registration.new
+      @new_registration.event = @event
+      @new_registration.user = current_user
     end
     respond_to do |format|
       format.html # show.html.erb

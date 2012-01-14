@@ -1,13 +1,18 @@
 = render 'left_tabs'
 #right
-
-  - current_registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first
-  - if current_registration
-    = render :template => 'registrations/show'
+  %h1 This is /3
   = render 'event_listing', :event => @event
-  - current_registration ||= Registration.new(:event_id => @event.id)
-  #registration_form
-    = render 'registrations/form', :registration => current_registration, :event => @event
+
+  - if @registration
+    %h1 This is /3/registration
+    = render :template => 'registrations/show'
+    #registration_form
+      %h1 This is /3/registration/edit
+      = render 'registrations/form', :registration => @registration, :event => @event
+  - else
+    - @registration = @new_registration
+    = render :template => 'registrations/new'
+
 
   = button_tag 'Sign Up For This Event', :id => :show
   = button_tag 'Never Mind', :id => :hide

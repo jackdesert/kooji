@@ -1,7 +1,6 @@
-%h1 New registration
+%h1 New registration block
 
 
 -# = render 'events/event_listing', :event => Event.first
 = render 'form', :registration => @registration
-
-= link_to 'Back', event_registration_path(params[:event_id])
+= link_to 'Back', event_registration_path(params[:id])
