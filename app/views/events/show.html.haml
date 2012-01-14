@@ -1,19 +1,21 @@
 = render 'left_tabs'
 #right
-  %h1 This is /3
+  %h1.huge This is /3
   = render 'event_listing', :event => @event
 
   - if @registration
-    %h1 This is /3/registration
+    %h1.huge This is /3/registration
     = render :template => 'registrations/show'
+    = button_tag 'Change My Answers', :id => :show
     #registration_form
-      %h1 This is /3/registration/edit
+      %h1.huge This is /3/registration/edit
       = render 'registrations/form', :registration => @registration, :event => @event
   - else
-    - @registration = @new_registration
-    = render :template => 'registrations/new'
+    = button_tag 'Sign Up For This Event', :id => :show
+    #registration_form
+      - @registration = @new_registration
+      = render :template => 'registrations/new'
 
 
-  = button_tag 'Sign Up For This Event', :id => :show
   = button_tag 'Never Mind', :id => :hide
 .clear
