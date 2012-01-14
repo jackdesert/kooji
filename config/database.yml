@@ -18,11 +18,7 @@ test: &test
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+
 
 development: &default
   adapter: postgresql
@@ -31,6 +27,13 @@ development: &default
   host: localhost
   encoding: utf8
 
+
+production: 
+  adapter: postgresql
+  min_messages: warning
+  database: koji
+  host: localhost
+  encoding: utf8
 
 cucumber:
   <<: *test
