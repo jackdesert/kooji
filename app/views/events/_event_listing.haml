@@ -22,21 +22,7 @@
 %p
   Cost:
   = pricing
-%h2 Leading This Event
-- @leaders.each do |a|
-  = link_to a.full_name , "mailto:#{a.email}"
-  = a.compound_status(@event).wrap
-  %br
-- @coleaders.each do |a|
-  = link_to a.full_name , "mailto:#{a.email}"
-  = a.compound_status(@event).wrap
-  %br
-
-
-- unless @registrar_already_listed
-
-  = link_to @event.registrar.full_name, "mailto:#{@event.registrar.email}"
-  = @event.registrar.compound_status(@event).wrap
+= render 'meet_your_leaders'
 
 
 

@@ -18,10 +18,8 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
-    @leaders = @event.leaders
-    @coleaders = @event.coleaders
-    leads_and_coleads = @leaders + @coleaders
-    @registrar_already_listed = (leads_and_coleads.include? @event.registrar) ? true : false
+    @leadership_team = @event.leaders + @event.coleaders
+    @leadership_team << @event.registrar unless @leadership_team.include? @event.registrar
     @registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first
 
     if @registration.nil?
