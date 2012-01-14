@@ -2,31 +2,37 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'authlogic'
-gem 'ruby-debug19', :require => 'ruby-debug'
 gem 'nokogiri'
 gem 'paperclip'
-gem 'cucumber-rails'
-gem 'capybara'
-gem 'minitest'
-gem 'database_cleaner'
-gem 'factory_girl_rails'
 gem 'rspec-rails'
-gem 'launchy'
-gem 'date_validator'
-gem 'pry'
-gem 'pry_debug'
 gem 'heroku'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'execjs'
+gem 'therubyracer'
 gem 'pg'
+
 
 group :test do
   gem 'email_spec'
+  gem 'sqlite3'
+  gem 'launchy'
+  gem 'date_validator'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'minitest'
+  # Pretty printed test output
+  gem 'turn', :require => false
 end
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-gem 'haml-rails'
+group :development, :test do
+  gem 'pry'
+  gem 'pry_debug'
+  gem 'factory_girl_rails'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,21 +42,3 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-
-gem 'execjs'
-gem 'therubyracer'
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
-end
