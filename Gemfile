@@ -14,6 +14,9 @@ gem 'rspec-rails'
 gem 'launchy'
 gem 'date_validator'
 gem 'pry'
+gem 'pry_debug'
+gem 'heroku'
+gem 'pg'
 
 group :test do
   gem 'email_spec'

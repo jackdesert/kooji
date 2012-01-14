@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120112032348) do
+ActiveRecord::Schema.define(:version => 20120114133236) do
 
   create_table "events", :force => true do |t|
     t.integer  "program_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120112032348) do
     t.datetime "updated_at"
     t.text     "user_notes"
     t.text     "registrar_notes"
+    t.boolean  "display_phone"
   end
 
   create_table "user_sessions", :force => true do |t|
@@ -67,13 +68,13 @@ ActiveRecord::Schema.define(:version => 20120112032348) do
     t.string   "last_name"
     t.string   "phone"
     t.string   "experience"
-    t.string   "persistence_token",                  :null => false
-    t.string   "crypted_password",                   :null => false
-    t.string   "password_salt",                      :null => false
-    t.string   "single_access_token",                :null => false
-    t.string   "perishable_token",                   :null => false
-    t.integer  "login_count",         :default => 0, :null => false
-    t.integer  "failed_login_count",  :default => 0, :null => false
+    t.string   "persistence_token",                    :null => false
+    t.string   "crypted_password",                     :null => false
+    t.string   "password_salt",                        :null => false
+    t.string   "single_access_token",                  :null => false
+    t.string   "perishable_token",                     :null => false
+    t.integer  "login_count",           :default => 0, :null => false
+    t.integer  "failed_login_count",    :default => 0, :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
@@ -91,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20120112032348) do
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.text     "leadership_philosophy"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

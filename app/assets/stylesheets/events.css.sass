@@ -5,6 +5,7 @@
 
 $name_color: #cfc
 $right: 90deg
+$blurb_radius: 10px
 *
     padding: 0
     margin: 0
@@ -166,6 +167,20 @@ h1.huge
 #meet_your_leaders
     float: right
     width: 300px
+    background: aqua
+    .leader
+        background: orange
+    .coleader
+        background: green
+    .registrar
+        background: yellow
 #event_small_details
     float: left
     width: 300px
+.blurb_container
+    -moz-border-radius: $blurb_radius
+    -webkit-border-radius: $blurb_radius
+    border-radius: $blurb_radius
+    padding: 10px
+.blurb_container + .blurb_container
+    margin-top: 10px

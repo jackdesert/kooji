@@ -60,4 +60,12 @@ validates_attachment_content_type :photo,
     return "not registered"
   end
 
+  def display_phone(event)
+    return true if event.registrar == self
+    display = false
+    registration = Registration.where(:event_id => event.id, :user_id => self.id).first
+    display = true if registration.display_phone
+    display
+  end
+
 end
