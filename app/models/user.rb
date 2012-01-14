@@ -15,6 +15,9 @@ validates_attachment_content_type :photo,
   validates_format_of :phone, :with => /^\d{10}$/
   before_validation :standardize_phone_number
 
+
+  attr_protected :user_type, :user_id
+
   acts_as_authentic do |config|
     # Add custom configuration options here
     config.crypto_provider = Authlogic::CryptoProviders::Sha1

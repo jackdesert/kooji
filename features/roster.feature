@@ -1,4 +1,4 @@
-Feature: User can click an email link, log in, and be redirected to the appropriate path after logging in
+Feature: User can approve participants and set leaders and coleaders
 
   Background:
     Given the following user exists:
@@ -7,9 +7,14 @@ Feature: User can click an email link, log in, and be redirected to the appropri
     Given the following events exist:
       | event_name | start_date | end_date   |
       | FunHike    | 2011-12-12 | 2011-12-24 |
+    Given the following registrations exist:
+     | event               |
+     | event_name: FunHike |
+     | event_name: FunHike |
+     | event_name: FunHike |
 
 
-  Scenario: User is redirected to event after login 
+  Scenario: User is redirected to to event after login 
     And I go to the "FunHike" event page
     Then I should see "Please log in"
     And I fill in "Email Address" with "jack@sunni.ru"
@@ -19,7 +24,7 @@ Feature: User can click an email link, log in, and be redirected to the appropri
     Then I should see "FunHike"
     And show me the page
     
-  Scenario: User is redirected to event roster after login 
+  Scenario: User is redirected to to event roster after login 
     And I go to the "FunHike" event roster page
     Then I should see "Please log in"
     And I fill in "Email Address" with "jack@sunni.ru"
