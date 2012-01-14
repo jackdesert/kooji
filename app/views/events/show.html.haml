@@ -8,12 +8,12 @@
       %h1.huge This is /3/registration
       = render :template => 'registrations/show'
       = button_tag 'Change My Answers', :id => :show
-    #registration_form
+    #registration_edit
       %h1.huge This is /3/registration/edit
       = render 'registrations/form', :registration => @registration, :event => @event
   - else
     = button_tag 'Sign Up For This Event', :id => :show
-    #registration_form
+    #registration_new
       - @registration = @new_registration
       = render :template => 'registrations/new'
 
