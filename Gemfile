@@ -11,13 +11,13 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 gem 'pg'
+gem 'date_validator'
 
 
 group :test do
   gem 'email_spec'
   gem 'sqlite3'
   gem 'launchy'
-  gem 'date_validator'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
