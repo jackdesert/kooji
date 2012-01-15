@@ -20,4 +20,6 @@ task :reset_heroku do
   `heroku pg:reset SHARED_DATABASE --confirm evening-mountain-9380`
   puts 'migrating the database'
   `heroku run rake db:remigrate`
+  puts 'restarting the heroku process'
+  `heroku restart`
 end
