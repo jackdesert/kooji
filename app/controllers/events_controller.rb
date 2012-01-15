@@ -92,12 +92,17 @@ class EventsController < ApplicationController
     @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
       a.sorted <=> b.sorted
     end
-    @approved_participants = []
-    @registrations.each do |r|
-      @approved_participants << r.user if ["approved", "leader", "coleader"].include? r.register_status
-    end
+    @approved_participants = Registration.return_approved_users(@registrations)
   end
 
+  def carpooling
+    @event = Event.find(params[:id])
+    @registrations = Registration.where(:event_id => @event.id)
+    @approved_registrations = Registration.return_approved_registrations(@registrations)
+    @can_takes  = @approved_registrations.array_where(:carpooling => "can take" )
+    @need_rides = @approved_registrations.array_where(:carpooling => "need ride")
+    @all_sets   = @approved_registrations.array_where(:carpooling => "all set"  )
+  end
 
   def export
     headers['Content-Type'] = "application/vnd.ms-excel"

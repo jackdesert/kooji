@@ -1,0 +1,34 @@
+= render 'left_tabs'
+#right
+  %h1 Carpooling
+  %h1= @event.event_name
+  %p This is where you can see who else is going on this trip so you can arrange carpooling
+  %h2 Rides Offered
+  
+  #roster_bin
+
+
+  - @need_rides.each do
+    -  |registration|
+    - user = registration.user
+    %a.hidden{:name => user.id}
+    - status_color = registration.carpooling 
+    .user{:class => status_color}
+      .avatar.left
+        - if user.photo.file?
+          = image_tag user.photo.url(:large)
+        - else
+          = image_tag "fish.jpg"
+
+      .info.left
+        .name
+          #{user.first_name} #{user.last_name}
+        .contact_info
+          #{user.phone} #{link_to user.email, 'mailto:#{user.email}'}
+      .carpooling.left
+        .from
+          %p Traveling From
+          %p= registration.compound_from
+        .to
+          %p Returning To
+          %p= registration.compound_to

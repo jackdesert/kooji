@@ -8,6 +8,7 @@ class String
   end
 
   def pretty_phone
+    return nil if self.nil?
     if self.length == 10
       first = self[0,3]
       second = self[3,3]

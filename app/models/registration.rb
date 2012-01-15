@@ -40,5 +40,23 @@ class Registration < ActiveRecord::Base
     sort += self.updated_at.to_f/1e12
     return sort
   end
-
+  
+  
+  def self.return_approved_users(registrations)
+    approved_registrations = return_approved_registrations(registrations)
+    approved_users = []
+    approved_registrations.each do |reg|
+      approved_users << reg.user
+    end
+    approved_users
+  end
+  
+  
+  def self.return_approved_registrations(registrations)
+    approved_registrations = []
+    registrations.each do |reg|
+      approved_registrations << reg if ["approved", "leader", "coleader"].include? reg.register_status
+    end
+    approved_registrations
+  end
 end

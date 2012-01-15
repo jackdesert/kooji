@@ -27,6 +27,7 @@ Regi::Application.routes.draw do
   get 'hbtrips' => 'imports#featured_events', :as => 'hbtrips', :via => :get
 
   # custom routes to do some of what 'resources :events' would do, but without the word 'events' at the front
+  get ':id/carpooling' => 'events#carpooling', :as => 'carpooling'
   get ':id/roster' => 'events#roster', :as => 'roster'
   get ':id/roster/:anchor' => 'events#roster', :as => 'roster_with_anchor', :anchor => /\d*/
   get ':id/roster/export' => 'events#export', :as => 'roster_export'
