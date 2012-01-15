@@ -15,6 +15,11 @@ gem 'date_validator'
 gem 'factory_girl_rails'
 
 
+
+group :production do
+  gem 'aws-sdk'
+end
+
 group :test do
   gem 'email_spec'
   gem 'sqlite3'
