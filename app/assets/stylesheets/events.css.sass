@@ -7,6 +7,7 @@ $name_color: #cfc
 $right: 90deg
 $blurb_radius: 10px
 $link_radius: 8px
+$button_background: darken(#D2B48C, 20%)
 *
     padding: 0
     margin: 0
@@ -14,10 +15,12 @@ $link_radius: 8px
     line-height: 1.3
     font-weight: normal
     font-family: arial, sans-serif
-
 a, a:hover, a:visited, a:active
-    color: red
-
+    color: darken(#FF0000, 20%)
+a
+    text-decoration: none
+body
+    background: tan
 #top
     text-align: right
 
@@ -28,12 +31,13 @@ a, a:hover, a:visited, a:active
 #top a, #left a
     font-size: 150%
     padding: 5px
-    background: tan
+    background: $button_background
     line-height: 200%
     -moz-border-radius: $link_radius
     -webkit-border-radius: $link_radius
     border-radius: $link_radius
-
+#top a:hover, #left a:hover
+    background: green
 #right
     float: left
     width: 600px
