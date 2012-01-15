@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user_1 = Factory(:user, :first_name => "Lindsay", :last_name => "Jones", :leadership_philosophy =>"I've been hiking these trails since I was knee-high to a grasshopper. It brings me such joy to take new people to the woods:)")
-user_2 =Factory(:user, :first_name => "Charles", :last_name => "Boney", :leadership_philosophy => "I hike for the exercise, and I always meet new people along the trail.")
+user_1 = Factory(:user, :email => "demo@sunni.ru", :first_name => "Lindsay", :last_name => "Jones", :leadership_philosophy =>"I've been hiking these trails since I was knee-high to a grasshopper. It brings me such joy to take new people to the woods:)")
+user_2 = Factory(:user, :first_name => "Charles", :last_name => "Boney", :leadership_philosophy => "I hike for the exercise, and I always meet new people along the trail.")
 user_3 = Factory(:user, :first_name => "Pike", :last_name => "Judd")
 user_4 = Factory(:user, :first_name => "Jackie", :last_name => "Marshall")
 user_5 = Factory(:user, :first_name => "Faith", :last_name => "Lundgren")

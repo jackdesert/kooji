@@ -60,7 +60,10 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(current_user.id)
-
+    if @user.email == "demo@sunni.ru"
+      flash[:error] = "Demo User is not allowed to update her profile"
+      redirect_to user_path and return
+    end
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to user_path, notice: 'User was successfully updated.' }
