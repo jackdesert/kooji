@@ -14,7 +14,7 @@ user_5 = Factory(:user, :first_name => "Faith", :last_name => "Lundgren")
 user_6 = Factory(:user, :first_name => "Heath", :last_name => "Frankfurt")
 
 [user_1, user_2, user_3, user_4, user_5, user_6].each do |u|
-  u.photo = File.open('public/assets/images/fish.jpg')
+  u.photo = File.open('app/assets/images/fish.jpg')
   u.save
 end
 event = Factory(:event, :registrar_id => user_1.id)
