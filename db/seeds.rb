@@ -12,9 +12,12 @@ user_3 = Factory(:user, :first_name => "Pike", :last_name => "Judd")
 user_4 = Factory(:user, :first_name => "Jackie", :last_name => "Marshall")
 user_5 = Factory(:user, :first_name => "Faith", :last_name => "Lundgren")
 user_6 = Factory(:user, :first_name => "Heath", :last_name => "Frankfurt")
+admin  = Factory(:user, :email => "admin@sunni.ru", :user_type => "admin")
 
 [user_1, user_2, user_3, user_4, user_5, user_6].each do |u|
-  u.photo = File.open('public/fish.jpg')
+  # grab precompiled asset that starts with the letters 'fish'
+  file = Dir.glob("public/assets/fish*").first
+  u.photo = file
   u.save
 end
 event = Factory(:event, :registrar_id => user_1.id)
