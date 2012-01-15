@@ -16,7 +16,8 @@ admin  = Factory(:user, :email => "admin@sunni.ru", :user_type => "admin")
 
 [user_1, user_2, user_3, user_4, user_5, user_6].each do |u|
   # grab precompiled asset that starts with the letters 'fish'
-  file = Dir.glob("public/assets/fish*").first
+  file = Dir.glob('public/assets/fish*.jpg').first
+  file_obj = File.open(file)
   u.photo = file
   u.save
 end
