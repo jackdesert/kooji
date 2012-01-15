@@ -11,7 +11,7 @@ namespace :db do
   end
 end
 
-task :reset_heroku do
+task :wipe_heroku do
   puts 'pushing to repositories'
   puts `git push origin master`
   puts 'pushing to heroku'

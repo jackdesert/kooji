@@ -13,7 +13,7 @@ user_4 = Factory(:user, :first_name => "Jackie", :last_name => "Marshall")
 user_5 = Factory(:user, :first_name => "Faith", :last_name => "Lundgren")
 user_6 = Factory(:user, :first_name => "Heath", :last_name => "Frankfurt")
 admin  = Factory(:user, :email => "admin@sunni.ru", :user_type => "admin")
-if Rails.env == "development"
+if false #Rails.env == "development"
   [user_1, user_2, user_3, user_4, user_5, user_6].each do |u|
     file = Dir.glob('public/fish*.jpg').first
     file_obj = File.open(file)

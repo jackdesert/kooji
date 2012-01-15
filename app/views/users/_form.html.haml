@@ -27,7 +27,7 @@
     = f.password_field :password_confirmation, :class => 'text'
   .field
     = f.label :photo, "Upload a Photo"
-    - if current_user && current_user.photo.file?
+    - if current_user && current_user.photo_file_name.present?
       = image_tag current_user.photo.url(:large)
     - else
       = image_tag FAKE_IMAGE

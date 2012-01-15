@@ -1,17 +1,17 @@
 #meet_your_leaders
   %h2 Leading This Event
-  - @leadership_team.each do |a|
+  - @leadership_team.each do |user|
     -# strip out the comma and everything after it from compound status, and use it as the class
-    .blurb_container{:class => a.compound_status(@event).match(/[a-zA-Z]+/)[0].downcase}
+    .blurb_container{:class => user.compound_status(@event).match(/[a-zA-Z]+/)[0].downcase}
       .avatar.left
         - avatar_size = :tiny
-        - if a.photo.file?
-          = image_tag a.photo.url(avatar_size)
+        - unless user.photo_file_name.nil?
+          = image_tag user.photo.url(avatar_size)
         - else
-          = image_tag User.first.photo.url(avatar_size)
-      = link_to a.full_name , "mailto:#{a.email}"
-      = a.compound_status(@event).wrap
-      = a.phone.pretty_phone if a.display_phone(@event)
+          = image_tag FAKE_IMAGE
+      = link_to user.full_name , "mailto:#{user.email}"
+      = user.compound_status(@event).wrap
+      = user.phone.pretty_phone if user.display_phone(@event)
 
-      .philosophy "#{a.leadership_philosophy}"
+      .philosophy "#{user.leadership_philosophy}"
       %br
