@@ -7,7 +7,7 @@
 - if current_user.photo.file?
   = image_tag current_user.photo.url(:large)
 - else
-  = image_tag "fish.jpg"
+  = image_tag FAKE_IMAGE
 %p
   %b First name:
   = @user.first_name

@@ -10,7 +10,7 @@
       - if user.photo.file?
         = image_tag user.photo.url(:large)
       - else
-        = image_tag "fish.jpg"
+        = image_tag FAKE_IMAGE
 
     .info.left
       .name
