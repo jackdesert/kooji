@@ -6,6 +6,7 @@
 $name_color: #cfc
 $right: 90deg
 $blurb_radius: 10px
+$link_radius: 8px
 *
     padding: 0
     margin: 0
@@ -19,16 +20,19 @@ a, a:hover, a:visited, a:active
 
 #top
     text-align: right
-    a
-        font-size: 150%
-        padding-left: 10px
 
 #left
     float: left
     width: 200px
-    a
-        font-size: 150%
-        padding-left: 10px
+
+#top a, #left a
+    font-size: 150%
+    padding: 5px
+    background: tan
+    line-height: 200%
+    -moz-border-radius: $link_radius
+    -webkit-border-radius: $link_radius
+    border-radius: $link_radius
 
 #right
     float: left
