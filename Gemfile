@@ -12,6 +12,7 @@ gem 'execjs'
 gem 'therubyracer'
 gem 'pg'
 gem 'date_validator'
+gem 'factory_girl_rails'
 
 
 group :test do
@@ -29,7 +30,6 @@ end
 group :development, :test do
   gem 'pry'
   gem 'pry_debug'
-  gem 'factory_girl_rails'
   gem 'ruby-debug19', :require => 'ruby-debug'
   
 end
