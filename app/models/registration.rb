@@ -71,4 +71,24 @@ class Registration < ActiveRecord::Base
     return_time = self.return_time
     returning_to + " @ " + return_time
   end
+  
+  def display_phone_if_selected
+    return nil if self.user.phone.nil?
+    return nil unless self.display_phone
+    self.user.phone.pretty_phone
+  end
+  
+  def pretty_carpooling
+    return nil if self.carpooling.blank?
+    case self.carpooling
+    when "can take"
+      return "Room for #{self.room_for}" if self.room_for
+      return "Room for ?"
+    when "need ride"
+      return "Needs Ride"
+    when "all set"
+      return "All Set"
+    end
+    return "?"
+  end
 end

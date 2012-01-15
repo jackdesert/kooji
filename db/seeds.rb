@@ -15,8 +15,7 @@ user_6 = Factory(:user, :first_name => "Heath", :last_name => "Frankfurt")
 admin  = Factory(:user, :email => "admin@sunni.ru", :user_type => "admin")
 
 [user_1, user_2, user_3, user_4, user_5, user_6].each do |u|
-  # grab precompiled asset that starts with the letters 'fish'
-  file = Dir.glob('public/assets/fish*.jpg').first
+  file = Dir.glob('public/fish*.jpg').first
   file_obj = File.open(file)
   u.photo = file
   u.save
@@ -25,8 +24,8 @@ event = Factory(:event, :registrar_id => user_1.id)
 
 Factory(:registration, :user_id => user_1.id, :event_id => event.id, :register_status => "leader")
 Factory(:registration, :user_id => user_2.id, :event_id => event.id, :register_status => "coleader")
-Factory(:registration, :user_id => user_3.id, :event_id => event.id)
-Factory(:registration, :user_id => user_4.id, :event_id => event.id)
-Factory(:registration, :user_id => user_5.id, :event_id => event.id)
-Factory(:registration, :user_id => user_6.id, :event_id => event.id)
+Factory(:registration, :user_id => user_3.id, :event_id => event.id, :display_phone => true)
+Factory(:registration, :user_id => user_4.id, :event_id => event.id, :display_phone => true)
+Factory(:registration, :user_id => user_5.id, :event_id => event.id, :carpooling => "can take", :room_for => 3)
+Factory(:registration, :user_id => user_6.id, :event_id => event.id, :carpooling => "all set")
 

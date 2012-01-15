@@ -1,0 +1,30 @@
+- carpool_group.each do
+  -  |registration|
+  - user = registration.user
+  %a.hidden{:name => user.id}
+  - status_color = registration.carpooling.collude 
+  .user{:class => status_color}
+    .carpooling= registration.pretty_carpooling
+  
+    .avatar.left
+      - if user.photo.file?
+        = image_tag user.photo.url(:large)
+      - else
+        = image_tag "fish.jpg"
+
+    .info.left
+      .name
+        #{user.first_name} #{user.last_name}
+      .contact_info
+        = registration.display_phone_if_selected
+        = link_to user.email, 'mailto:#{user.email}'
+    .details.left
+      .from
+        %p Traveling From
+        %p= registration.compound_from
+      .to
+        %p Returning To
+        %p= registration.compound_to
+    .carpooling_blurb.left
+      = registration.carpooling_blurb
+    .clear

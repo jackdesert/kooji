@@ -46,16 +46,16 @@ FactoryGirl.define do
     a.association :user
     a.association :event
     a.carpooling "need ride"
+    a.carpooling_blurb "I'm pretty quiet when I drive, but I listen to cool tunes"
     a.leaving_from "Westborough, MA"
-    a.leave_time 2.months.from_now
-    a.return_time 3.months.from_now
+    a.leave_time "Friday about 3pm"
+    a.return_time "Whenever we finish up on Sunday"
     a.returning_to "Westborough, MA"
     a.gear_answer "I have most everything--I just need to borrow a -5 degree sleeping bag"
     a.answer1 "I'm totally new to this high altitude thing"
     a.has_questions "I want to bring my video camera on the event. Do you have any tips on keeping it dry?"
     a.user_notes "Lindsay said she might have room in her car for me. Her number is 207.277.4255"
     a.registrar_notes "He has all the right gear, he's just a little bit afraid of heights."
-
   end
 
 end

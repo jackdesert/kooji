@@ -52,6 +52,10 @@ class Event < ActiveRecord::Base
 
   end
 
+  def registered?(user)
+    Registration.where(:event_id => self.id, :user_id => user.id).empty? ? false : true
+  end
+  
 
 #  validates_presence_of :event_status, :event_is_program, :event_name, :pricing, :description, :confirmation_page, :start_date
 

@@ -19,4 +19,9 @@ class String
     end
     pretty
   end
+  
+  def collude
+    return nil if self.nil?
+    self.gsub(' ', '_')
+  end
 end

@@ -32,7 +32,7 @@ require 'yaml'
     end
   end
 
-  def may_edit_event
+  def show_admin_tabs?
     if current_user
       return true if is_admin
       my_reg = Registration.where(:user_id => current_user.id, :event_id => params[:id]).first
@@ -44,9 +44,18 @@ require 'yaml'
         end
       end
     end
-    flash[:error] = "You must be the leader, the coleader, or the registrar of this event to edit the event details"
-    redirect_to event_path(params[:id])
-    return false
+    return false    
+  end
+  
+  
+  def may_edit_event
+    if show_admin_tabs?
+      return true
+    else
+      flash[:error] = "You must be the leader, the coleader, or the registrar of this event to edit the event details"
+      redirect_to event_path(params[:id])
+      return false
+    end
   end
 
   def is_admin

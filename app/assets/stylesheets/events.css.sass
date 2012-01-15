@@ -19,10 +19,16 @@ a, a:hover, a:visited, a:active
 
 #top
     text-align: right
+    a
+        font-size: 150%
+        padding-left: 10px
 
 #left
     float: left
     width: 200px
+    a
+        font-size: 150%
+        padding-left: 10px
 
 #right
     float: left
@@ -60,8 +66,16 @@ ul, ol
     padding: 10px
     margin-bottom: 20px
     border-radius: 10px
-    background: blue
     position: relative
+.can_take
+    background: blue
+.need_ride
+    background: orange
+.all_set
+    background: yellow
+.carpooling_blurb
+    font-style: italic
+    color: brown
 
 #roster_bin
     background: white
@@ -134,14 +148,11 @@ dd
 b
     font-weight: bold
 
-.register_status
-    font-size: 200%
+.register_status, .carpooling
     width: 100%
     color: green
     font-weight: bold
     position: absolute
-    left: 634px
-    top: 12px
     transform: rotate($right)
     -ms-transform: rotate($right) /* IE 9 */
     -webkit-transform: rotate($right) /* Safari and Chrome */
@@ -152,7 +163,16 @@ b
     -webkit-transform-origin: 0
     -o-transform-origin: 0
     -moz-transform-origin: 0
-
+.register_status
+    left: 634px
+    top: 12px
+    font-size: 200%
+    
+.carpooling
+    left: 622px
+    top: -1px
+    font-size: 168%
+    
 .above
     display: block
 #registration_edit, #registration_new, #hide_editable
