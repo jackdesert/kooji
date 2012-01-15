@@ -91,14 +91,16 @@ class EventsController < ApplicationController
     end
     @event = Event.find(params[:id])
     @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
-      a.sorted <=> b.sorted
+      a.sorted_by_status <=> b.sorted_by_status
     end
     @approved_participants = Registration.return_approved_users(@registrations)
   end
 
   def carpooling
     @event = Event.find(params[:id])
-    @registrations = Registration.where(:event_id => @event.id)
+    @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
+      a.user.first_name <=> b.user.first_name
+    end
     @approved_registrations = Registration.return_approved_registrations(@registrations)
     @can_takes  = @approved_registrations.array_where(:carpooling => "can take" )
     @need_rides = @approved_registrations.array_where(:carpooling => "need ride")

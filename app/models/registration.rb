@@ -17,7 +17,7 @@ class Registration < ActiveRecord::Base
     master_date >= Time.now.to_date
   end
 
-  def sorted
+  def sorted_by_status
     sort = 6.0
     case self.register_status
     when "leader"
@@ -40,6 +40,8 @@ class Registration < ActiveRecord::Base
     sort += self.updated_at.to_f/1e12
     return sort
   end
+  
+
   
   
   def self.return_approved_users(registrations)
