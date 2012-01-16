@@ -26,6 +26,8 @@ group :test do
   gem 'launchy'
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'capybara-screenshot' #, :git => "git://github.com/jackdesert/capybara-screenshot.git"
   gem 'database_cleaner'
   gem 'minitest'
   # Pretty printed test output

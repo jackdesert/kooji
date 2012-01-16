@@ -21,6 +21,8 @@ validates_attachment_content_type :photo,
   acts_as_authentic do |config|
     # Add custom configuration options here
     config.crypto_provider = Authlogic::CryptoProviders::Sha1
+    # This line fixes a bug
+    config.maintain_sessions = false   if Rails.env == "test" # authlogic/issues/262
   end
 
   def standardize_phone_number

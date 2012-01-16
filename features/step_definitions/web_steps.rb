@@ -18,7 +18,6 @@
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
 
-
 require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
@@ -208,4 +207,10 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+Then /^shoot$/ do
+  # This uses capybara-screenshot
+  binding.pry
+  page.screen_shot_and_save_page("purposeful_html", "angelic_png")
 end

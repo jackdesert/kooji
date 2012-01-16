@@ -51,6 +51,10 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    capybara-screenshot (0.1.9)
+      capybara (>= 1.0)
+    capybara-webkit (0.7.2)
+      capybara (>= 1.0.0, < 1.2)
     childprocess (0.3.0)
       ffi (~> 1.0.6)
     cocaine (0.2.1)
@@ -239,6 +243,8 @@ DEPENDENCIES
   authlogic
   aws-sdk
   capybara
+  capybara-screenshot
+  capybara-webkit
   coffee-rails (~> 3.1.0)
   cucumber-rails
   database_cleaner
