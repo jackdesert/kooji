@@ -9,11 +9,12 @@ Feature: User Can Log In
   @javascript
   Scenario:
     Then shoot
-    # When I fill in "Email Address" with "not_even_a_real_email_address"
-    # And I fill in "Password" with "pass"
-    # And I press "Sign In"
-    # Then I should see "does not look like a real email address"
-    # And I should see "not_even_a_real_email_address"
+    When I fill in "Email Address" with "not_even_a_real_email_address"
+    And I fill in "Password" with "pass"
+    And I press "Sign In"
+    Then I should see "does not look like a real email address"
+    And I should see "not_even_a_real_email_address"
+    Then shoot
     
   # Scenario:
   #   When I fill in "Email Address" with "not_in_system@hi.com"

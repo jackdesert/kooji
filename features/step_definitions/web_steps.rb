@@ -210,11 +210,15 @@ Then /^show me the page$/ do
 end
 
 Then /^shoot$/ do
-  binding.pry
+  # Puts screenshots in /tmp/screenshots
   # These snippets were lifted out of the capybara-screenshot gem
   file_base_name = "#{Time.now.strftime('%Y-%m-%d-%H-%M-%S')}"
   screenshot_path = Rails.root.join "/tmp/screenshots"
-  Dir.mkdir(screenshot_path) unless Dir.file? screenshot_path
+  Dir.mkdir(screenshot_path) unless Dir.exists? screenshot_path
   file_name = "#{screenshot_path}/#{file_base_name}.png"
-  Capybara.page.driver.browser.save_screenshot(file_name)
+  if Capybara.current_driver == :selenium
+    Capybara.page.driver.browser.save_screenshot(file_name)
+  else
+    puts "To save a screenshot, put '@javascript' before this scenario"
+  end
 end
