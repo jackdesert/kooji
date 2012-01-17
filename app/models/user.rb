@@ -70,7 +70,4 @@ validates_attachment_content_type :photo,
     display
   end
 
-  def fake_image
-    "http://placehold.it/75x75"
-  end
 end
