@@ -210,7 +210,11 @@ Then /^show me the page$/ do
 end
 
 Then /^shoot$/ do
-  # This uses capybara-screenshot
   binding.pry
-  page.screen_shot_and_save_page("purposeful_html", "angelic_png")
+  # These snippets were lifted out of the capybara-screenshot gem
+  file_base_name = "#{Time.now.strftime('%Y-%m-%d-%H-%M-%S')}"
+  screenshot_path = Rails.root.join "/tmp/screenshots"
+  Dir.mkdir(screenshot_path) unless Dir.file? screenshot_path
+  file_name = "#{screenshot_path}/#{file_base_name}.png"
+  Capybara.page.driver.browser.save_screenshot(file_name)
 end

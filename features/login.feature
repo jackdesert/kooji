@@ -5,7 +5,8 @@ Feature: User Can Log In
       | email      | password | password_confirmation |
       | hi@you.com | pass     | pass                  |
     And I go to the login page
-    
+  
+  @javascript
   Scenario:
     Then shoot
     # When I fill in "Email Address" with "not_even_a_real_email_address"
