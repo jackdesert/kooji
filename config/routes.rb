@@ -40,6 +40,9 @@ Regi::Application.routes.draw do
 
   namespace :admin do
     resources :users
+    get 'prospectives' => 'admin_users#index_prospectives', :as => 'index_prospectives'
+    get 'search' => 'admin_users#search', :as => 'search'
+    put 'update_user_type' => 'admin_users#update', :as => 'update_user_type'
   end
 
   get 'profile/edit' => 'users#edit', :as => 'edit_profile'

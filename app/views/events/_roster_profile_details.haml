@@ -1,0 +1,21 @@
+.recent_trips
+  .question Recent Events
+  - Registration.where(:user_id => user.id).each do
+    - |reg|
+    %ul
+      %li #{reg.event.start_date.short} #{reg.event.event_name}
+.medical
+  .question Medical
+  .answer=user.medical
+.diet
+  .question Diet
+  .answer= user.diet
+.emergency_contact
+  .question Emergency Contact
+  .answer= user.emergency_contact
+.experience
+  .question Experience
+  .answer= user.experience
+.exercise
+  .question Exercise Routine
+  .answer= user.exercise
