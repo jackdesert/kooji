@@ -3,7 +3,7 @@
   %p Roster
   %h1= @event.event_name
   %h2 Select Registrar
-  = select_tag :registrar, options_from_collection_for_select(@approved_participants, "id", "full_name") 
+  = select_tag :registrar, options_from_collection_for_select(@approved_participants, "id", "full_name")
   #roster_bin
 
 
@@ -11,7 +11,7 @@
     -  |registration|
     - user = registration.user
     %a.hidden{:name => user.id}
-    - status_color = (user == registration.event.registrar) ? "registrar" : registration.register_status 
+    - status_color = (user == registration.event.registrar) ? "registrar" : registration.register_status
     .user{:class => status_color}
       .register_status= registration.user.compound_status(@event)
       .avatar.left
@@ -38,27 +38,7 @@
         = render 'mini_form', :registration => registration, :new_status => 'Leader'
         = render 'mini_form', :registration => registration, :new_status => 'Coleader'
       .clear
-      .recent_trips
-        .question Recent Events
-        - Registration.where(:user_id => user.id).each do
-          - |reg|
-          %ul
-            %li #{reg.event.start_date.short} #{reg.event.event_name}
-      .medical
-        .question Medical
-        .answer=user.medical
-      .diet
-        .question Diet
-        .answer= user.diet
-      .emergency_contact
-        .question Emergency Contact
-        .answer= user.emergency_contact
-      .experience
-        .question Experience
-        .answer= user.experience
-      .exercise
-        .question Exercise Routine
-        .answer= user.exercise
+      = render 'roster_profile_details', :locals => {:user => user}
       .registrar_notes
         .question Registrar Notes
         .answer= registration.registrar_notes

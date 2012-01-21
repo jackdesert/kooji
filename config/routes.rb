@@ -38,6 +38,9 @@ Regi::Application.routes.draw do
   end
 
 
+  namespace :admin do
+    resources :users
+  end
 
   get 'profile/edit' => 'users#edit', :as => 'edit_profile'
 
