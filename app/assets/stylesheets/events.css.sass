@@ -70,7 +70,7 @@ ul, ol
     padding-left: 20px
 
 
-.user
+.user_block
     padding: 10px
     margin-bottom: 20px
     border-radius: 10px
@@ -86,7 +86,6 @@ ul, ol
     color: brown
 
 #roster_bin
-    background: white
     padding-top: 12px
 
 .name
@@ -108,11 +107,11 @@ ul, ol
     width: 376px
 
 /**************************************************************************/
-/* Background Coloration for various User types and Registration statuses */
-.leader, .coleader, .coleader, .registrar, .admin
+/* Background Coloration for various Registration statuses */
+.leader, .coleader, .coleader, .registrar,
     background: red
 
-.approved, .user
+.approved,
     background: lime
 
 .waitlist
@@ -125,6 +124,14 @@ ul, ol
     background: black
 
 
+/**************************************************************************/
+/* Background Coloration for various User types */
+.admin
+    background: brown
+.creator
+    background: blue
+.user
+    background: yellow
 /***************************************************************************/
 .avatar
     padding-right: 10px

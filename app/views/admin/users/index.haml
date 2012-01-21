@@ -1,1 +1,7 @@
-%h1 Index of Leaders 
+= render '/admin/admin_left_tabs'
+#right
+  %h1 All Event Creators
+  %p These users say they have completed AMC leadership training.
+  #roster_bin
+
+    = render 'admin_display_single_user'
