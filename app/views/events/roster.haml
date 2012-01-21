@@ -14,12 +14,7 @@
     - status_color = (user == registration.event.registrar) ? "registrar" : registration.register_status
     .user{:class => status_color}
       .register_status= registration.user.compound_status(@event)
-      .avatar.left
-        - unless user.photo_file_name.nil?
-          = image_tag user.photo.url(:large)
-        - else
-          = image_tag FAKE_IMAGE
-
+      = render :partial => "/users/avatar", :locals => {:user => user}
       .info.left
         .name
           #{user.first_name} #{user.last_name}
@@ -38,7 +33,7 @@
         = render 'mini_form', :registration => registration, :new_status => 'Leader'
         = render 'mini_form', :registration => registration, :new_status => 'Coleader'
       .clear
-      = render 'roster_profile_details', :locals => {:user => user}
+      = render 'roster_profile_details', :user => user
       .registrar_notes
         .question Registrar Notes
         .answer= registration.registrar_notes

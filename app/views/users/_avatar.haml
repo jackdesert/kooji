@@ -1,0 +1,5 @@
+.avatar.left
+  - unless user.photo_file_name.nil?
+    = image_tag user.photo.url(:large)
+  - else
+    = image_tag FAKE_IMAGE
