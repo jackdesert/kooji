@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @users = User.where(:id => params[:id])
   end
 end

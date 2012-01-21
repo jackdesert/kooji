@@ -4,23 +4,4 @@
   %p These users say they have completed AMC leadership training.
   #roster_bin
 
-
-    %a.hidden{:name => @user.id}
-    - status_color = @user.user_type
-    .user{:class => status_color}
-      .register_status= @user.user_type
-      = render :partial => "/users/avatar", :locals => {:user => @user}
-      .info.left
-        .name
-          #{@user.first_name} #{@user.last_name}
-        .contact_info
-          #{@user.phone} #{link_to @user.email, 'mailto:#{@user.email}'}
-
-      .select_box.left
-        = render 'user_type_form', :new_type => 'Admin'
-        = render 'user_type_form', :new_type => 'Creator'
-        = render 'user_type_form', :new_type => 'User'
-        = render 'user_type_form', :new_type => 'Disabled'
-
-      .clear
-      = render :partial => 'users/roster_profile_details', :locals => {:user => @user}
+    = render 'admin_display_single_user'
