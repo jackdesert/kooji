@@ -33,7 +33,7 @@
         = render 'mini_form', :registration => registration, :new_status => 'Leader'
         = render 'mini_form', :registration => registration, :new_status => 'Coleader'
       .clear
-      = render 'roster_profile_details', :user => user
+      = render :partial => 'users/roster_profile_details', :locals => {:user => user}
       .registrar_notes
         .question Registrar Notes
         .answer= registration.registrar_notes
