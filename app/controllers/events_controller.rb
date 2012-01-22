@@ -93,6 +93,12 @@ class EventsController < ApplicationController
     @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
       a.sorted_by_status <=> b.sorted_by_status
     end
+    if @event.registrar == current_user
+      @registrations.each do |f|
+        f.viewed_by_registrar = true
+        f.save
+      end
+    end
     @approved_participants = Registration.return_approved_users(@registrations)
   end
 
