@@ -26,11 +26,13 @@ $(document).ready(function(){
   });
   
   $("#save_new_registrar").click(function(){
-    $(this).hide();
-    var get_id = document.getElementById('event_registrar_id');
-    var display_name = get_id.options[get_id.selectedIndex].text;
-    var contents = display_name + " saved as the new registrar.</p>";
-    $('#name_of_new_registrar').html(contents);
+    //$(this).hide();
+    var event_id = $("#event_id").val();
+    var url = "/" + event_id + "#update";
+    $.post(url,{_method : "put", registrar_id : $("#event_registrar_id").val()}, function(data){
+      $('#name_of_new_registrar').html(data);
+     });
+     
     $('#name_of_new_registrar').show();
     
   })

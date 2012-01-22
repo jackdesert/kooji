@@ -76,15 +76,22 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.json
   def update
-    @event = Event.find(params[:id])
 
+    @event = Event.find(params[:id])
+    if params[:registrar_id]
+      @event.registrar_id = params[:registrar_id]
+      if @event.save
+        render :text => "hola hola"
+      end
+      return
+    end
+    
     respond_to do |format|
+      debugger
       if @event.update_attributes(params[:event])
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
-        format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
   end
