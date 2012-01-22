@@ -24,4 +24,12 @@ $(document).ready(function(){
     $("#registration_new").css("display", "none");
     $("#registration_show").css("display", "block");
   });
+  
+  $("#save_new_registrar").click(function(){
+    $(this).hide();
+  })
+  
+  $("#event_registrar_id *").click(function(){
+    $("#save_new_registrar").show();
+  })
 });
