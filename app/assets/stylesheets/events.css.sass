@@ -70,7 +70,7 @@ ul, ol
     padding-left: 20px
 
 
-.user
+.user_block
     padding: 10px
     margin-bottom: 20px
     border-radius: 10px
@@ -86,7 +86,6 @@ ul, ol
     color: brown
 
 #roster_bin
-    background: white
     padding-top: 12px
 
 .name
@@ -107,13 +106,13 @@ ul, ol
 .info
     width: 376px
 
-/***********************************************************/
+/**************************************************************************/
 /* Background Coloration for various Registration statuses */
-.leader, .coleader, .coleader, .registrar
+.leader, .coleader, .coleader, .registrar,
     background: red
 
-.approved
-    background: tan
+.approved,
+    background: lime
 
 .waitlist
     background: green
@@ -125,7 +124,15 @@ ul, ol
     background: black
 
 
-/************************************************************/
+/**************************************************************************/
+/* Background Coloration for various User types */
+.admin
+    background: brown
+.creator
+    background: blue
+.user
+    background: yellow
+/***************************************************************************/
 .avatar
     padding-right: 10px
 
@@ -175,12 +182,12 @@ b
     left: 634px
     top: 12px
     font-size: 200%
-    
+
 .carpooling
     left: 622px
     top: -1px
     font-size: 168%
-    
+
 .above
     display: block
 #registration_edit, #registration_new, #hide_editable
@@ -188,7 +195,7 @@ b
 #hide_editable
     position: relative
     left: 11ex
-    top: -5ex 
+    top: -5ex
 h1.huge
     font-size: 1.5cm
     color: green

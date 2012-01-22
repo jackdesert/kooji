@@ -38,6 +38,12 @@ Regi::Application.routes.draw do
   end
 
 
+  namespace :admin do
+    resources :users
+    get 'prospective_leaders' => 'users#index_prospectives', :as => 'index_prospectives'
+    get 'search' => 'users#search', :as => 'search'
+    put 'update_user_type' => 'users#update', :as => 'update_user_type'
+  end
 
   get 'profile/edit' => 'users#edit', :as => 'edit_profile'
 

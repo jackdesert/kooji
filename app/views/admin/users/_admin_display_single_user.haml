@@ -1,0 +1,21 @@
+- @users.each do |user|
+  %a.hidden{:name => user.id}
+  - status_color = user.user_type
+  .user_block{:class => status_color}
+    .register_status= user.user_type
+    = render :partial => "/users/avatar", :locals => {:user => user}
+    .info.left
+      .name
+        #{user.first_name} #{user.last_name}
+      .contact_info
+        #{user.phone} #{link_to user.email, 'mailto:#{user.email}'}
+
+    .select_box.left
+      %p Update user type to:
+      = render 'user_type_form', :new_type => 'Admin',    :user => user
+      = render 'user_type_form', :new_type => 'Creator',  :user => user
+      = render 'user_type_form', :new_type => 'User',     :user => user
+      = render 'user_type_form', :new_type => 'Disabled', :user => user
+
+    .clear
+    = render :partial => 'users/roster_profile_details', :locals => {:user => user}

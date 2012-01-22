@@ -2,10 +2,10 @@
   -  |registration|
   - user = registration.user
   %a.hidden{:name => user.id}
-  - status_color = registration.carpooling.collude 
-  .user{:class => status_color}
+  - status_color = registration.carpooling.collude
+  .user_block{:class => status_color}
     .carpooling= registration.pretty_carpooling
-  
+
     .avatar.left
       - unless user.photo_file_name.nil?
         = image_tag user.photo.url(:large)
