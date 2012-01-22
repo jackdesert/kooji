@@ -26,14 +26,15 @@ $(document).ready(function(){
   });
   
   $("#save_new_registrar").click(function(){
-    //$(this).hide();
+    $(this).hide();
+    $('#name_of_new_registrar').html("Sending...");
+    $('#name_of_new_registrar').show();
     var event_id = $("#event_id").val();
     var url = "/" + event_id + "#update";
     $.post(url,{_method : "put", registrar_id : $("#event_registrar_id").val()}, function(data){
       $('#name_of_new_registrar').html(data);
      });
      
-    $('#name_of_new_registrar').show();
     
   })
   

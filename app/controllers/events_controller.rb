@@ -78,10 +78,11 @@ class EventsController < ApplicationController
   def update
 
     @event = Event.find(params[:id])
-    if params[:registrar_id]
+    if params[:registrar_id] # this is an ajax request to update the registrar
       @event.registrar_id = params[:registrar_id]
       if @event.save
-        render :text => "hola hola"
+        text = "Saved " + @event.registrar.full_name + " as the new registrar"
+        render :text => text
       end
       return
     end

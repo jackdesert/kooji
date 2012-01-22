@@ -2,13 +2,15 @@
 #right
   %p Roster
   %h1= @event.event_name
-  %h2 Event Registrar
-  = hidden_field :event, :id
-  = select_tag 'event[registrar_id]', options_from_collection_for_select(@approved_participants, "id", "full_name", @event.registrar_id.to_s)
+  %p 
+    Event Registrar:
+    = hidden_field :event, :id
+    = select_tag 'event[registrar_id]', options_from_collection_for_select(@approved_participants, "id", "full_name", @event.registrar_id.to_s)
   #name_of_new_registrar
   #save_new_registrar
-    %p.left To set this person as the event registrar, click 
-    .left= link_to "Save Registrar", "#"
+    %p
+      To set this person as the event registrar, click 
+      = link_to "Save Registrar", "#"
 
 
   #roster_bin
