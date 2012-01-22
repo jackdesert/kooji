@@ -28,12 +28,17 @@ $(document).ready(function(){
   $("#save_new_registrar").click(function(){
     $(this).hide();
     var get_id = document.getElementById('event_registrar_id');
-    var result = get_id.options[get_id.selectedIndex].text;
-    alert(result);
-    $('<p>New stuff</p>').insertAfter('#event_registrar_id');
+    var display_name = get_id.options[get_id.selectedIndex].text;
+    var contents = display_name + " saved as the new registrar.</p>";
+    $('#name_of_new_registrar').html(contents);
+    $('#name_of_new_registrar').show();
+    
   })
   
   $("#event_registrar_id *").click(function(){
     $("#save_new_registrar").show();
+    $('#name_of_new_registrar').hide();
+    
+    
   })
 });
