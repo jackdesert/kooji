@@ -3,19 +3,12 @@ class Registration < ActiveRecord::Base
   belongs_to :event
   # this is a composite uniqueness constraint
   validates_uniqueness_of :user_id, :scope => :event_id
-  validates_format_of :register_status, :with => /^(leader)?(coleader)?(approved)?(waitlist)?(submitted)?(canceled)?$/
+  validates_format_of :register_status, :with => /^(leader)?(coleader)?(approved)?(pending payment)?(waitlist)?(submitted)?(canceled)?$/
   validates_presence_of :register_status
   validates_presence_of :carpooling
   validates_format_of :carpooling, :with => /^(all set)?(can take)?(need ride)?$/, :message => "Options are all set, need ride, or can take"
   # drop off date is used to decide whether to show this event as a "future" or "past" event
-  def future?
-    if self.event.end_date
-      master_date = self.event.end_date
-    else
-      master_date = self.event.start_date
-    end
-    master_date >= Time.now.to_date
-  end
+
 
   def sorted_by_status
     sort = 6.0

@@ -59,7 +59,7 @@ class RegistrationsController < ApplicationController
       @past = []
       registrations = Registration.where(:user_id => current_user.id)
       registrations.each do |reg|
-        if reg.future?
+        if reg.event.future?
           @future << reg
         else
           @past << reg
@@ -97,6 +97,7 @@ class RegistrationsController < ApplicationController
   end
 
   def update_register_status
+    debugger
       a = Registration.where(:user_id => params[:user_id], :event_id => params[:id]).first
       @new_status = params[:commit]
       a.register_status = @new_status.downcase

@@ -3,7 +3,11 @@
   %p Roster
   %h1= @event.event_name
   %h2 Select Registrar
-  = select_tag :registrar, options_from_collection_for_select(@approved_participants, "id", "full_name")
+  = form_tag :event, :controller => :events, :remote => true, :method => :put do
+    = select_tag 'event[registrar_id]', options_from_collection_for_select(@approved_participants, "id", "full_name", @event.registrar_id.to_s)
+    = button_to "Save Registrar", :id => "save_new_registrar"
+
+
   #roster_bin
 
 
@@ -28,6 +32,7 @@
           .answer= registration.gear_answer
       .select_box.left
         = render 'mini_form', :registration => registration, :new_status => 'Approved'
+        = render 'mini_form', :registration => registration, :new_status => 'Pending Payment'
         = render 'mini_form', :registration => registration, :new_status => 'Waitlist'
         = render 'mini_form', :registration => registration, :new_status => 'Canceled'
         = render 'mini_form', :registration => registration, :new_status => 'Leader'

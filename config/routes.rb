@@ -1,5 +1,6 @@
 Regi::Application.routes.draw do
 
+  put 'update_register_status' => 'registrations#update_register_status', :as => 'update_register_status'
 
 
   get 'password_reset/edit/:token' => 'password_resets#edit', :as => 'edit_password_reset'
@@ -47,7 +48,6 @@ Regi::Application.routes.draw do
 
   get 'profile/edit' => 'users#edit', :as => 'edit_profile'
 
-  put 'update_register_status' => 'registrations#update_register_status', :as => 'update_register_status'
 
 
 

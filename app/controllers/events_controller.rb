@@ -19,6 +19,10 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
+    unless @event.future?
+      @event.event_status = "closed"
+      @event.save
+    end
     @leadership_team = @event.leaders + @event.coleaders
     @leadership_team << @event.registrar unless @leadership_team.include? @event.registrar
     @registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first

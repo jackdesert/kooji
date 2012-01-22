@@ -12,6 +12,14 @@ class Event < ActiveRecord::Base
   validates_format_of :event_status, :with => /^(open)?(closed)?(waitlist)?(canceled)?$/
   validates_presence_of :event_status, :description, :event_is_program, :event_name, :gear_list, :confirmation_page, :start_date
 
+  def future?
+    if self.end_date
+      master_date = self.end_date
+    else
+      master_date = self.start_date
+    end
+    master_date >= Time.now.to_date
+  end
 
   def date_range
     return "no date entered" unless self.start_date
