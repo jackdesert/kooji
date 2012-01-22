@@ -27,6 +27,10 @@ $(document).ready(function(){
   
   $("#save_new_registrar").click(function(){
     $(this).hide();
+    var get_id = document.getElementById('event_registrar_id');
+    var result = get_id.options[get_id.selectedIndex].text;
+    alert(result);
+    $('<p>New stuff</p>').insertAfter('#event_registrar_id');
   })
   
   $("#event_registrar_id *").click(function(){
