@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :registrations
   has_many :events, :through => :registrations
-
+  has_many :morsels
+  
   has_attached_file :photo,
                     :styles => { :large => "150x150#", :medium => "100x100#", :thumb => "83x83#", :tiny => "25x25#" },
                     :url => "/system/:class/:attachment/:id/:style.:extension",
@@ -71,4 +72,22 @@ validates_attachment_content_type :photo,
     display
   end
 
+  def morsels
+    leader_regs = Registration.where(:user_id => self.id, :register_status => "leader")
+    coleader_regs = Registration.where(:user_id => self.id, :register_status => "coleader")
+    staff_regs = leader_regs + coleader_regs
+    my_events = []
+    staff_regs.each do |r|
+      my_events << r.event
+    end
+    my_events = my_events + Event.where(:registrar_id => self.id)
+    staff_morsels = []
+    my_events.each do |e|
+      staff_morsels = staff_morsels + Morsel.where(:event_id => e.id)
+    end
+    my_morsels = Morsel.where(:user_id => self.id)
+    morsels = staff_morsels + my_morsels
+    morsels.uniq!
+    morsels.sort! {|a,b| a.created_at <=> b.created_at}
+  end
 end

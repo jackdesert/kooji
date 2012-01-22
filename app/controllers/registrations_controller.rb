@@ -36,6 +36,9 @@ class RegistrationsController < ApplicationController
     @registration.user_id = current_user.id
     respond_to do |format|
       if @registration.save
+        morsel = Morsel.new(:user_id => current_user, :text => "signed up for", 
+                            :event_id => @registration.event.id)
+        morsel.save
         Notifier.reg_status_email(current_user, @registration.event, :submitted).deliver
         Notifier.tell_leaders_about_new_registrant(current_user, @registration.event).deliver
         format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
@@ -51,6 +54,7 @@ class RegistrationsController < ApplicationController
   def mine
     # I have no idea why we end up here when we reset a password
     if current_user
+      @morsels = current_user.morsels
       @future = []
       @past = []
       registrations = Registration.where(:user_id => current_user.id)
@@ -76,6 +80,11 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
+        morsel = Morsel.new(:user_id => current_user, :text => "updated registration answers for", 
+                            :event_id => @registration.event.id)
+        morsel.save
+        
+        
         format.html { redirect_to event_path(@registration.event.id), notice: 'Registration was successfully updated.' }
         format.json { head :ok }
       else
@@ -93,7 +102,10 @@ class RegistrationsController < ApplicationController
       a.register_status = @new_status.downcase
       a.save
       Notifier.reg_status_email(a.user, a.event, a.register_status).deliver
-
+      morsel = Morsel.new(:user_id => a.user_id, :text => "#{@new_status} for", 
+                          :event_id => a.event_id)
+      morsel.save
+      
     respond_to do |format|
       format.html {redirect_to roster_path(:id => params[:id])}
       format.js

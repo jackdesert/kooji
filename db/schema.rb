@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122125816) do
+ActiveRecord::Schema.define(:version => 20120122133816) do
 
   create_table "events", :force => true do |t|
     t.integer  "program_id"
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(:version => 20120122125816) do
   end
 
   create_table "imports", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "morsels", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,5 +104,8 @@ ActiveRecord::Schema.define(:version => 20120122125816) do
     t.integer  "photo_file_size"
     t.text     "leadership_philosophy"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

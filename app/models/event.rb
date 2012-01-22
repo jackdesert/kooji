@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   has_many :registrations
   has_many :users, :through => :registrations
+  has_many :morsels
   belongs_to :registrar, :class_name => "User"
   validates :end_date, :date => {:after_or_equal_to => :start_date,
             :message => "must be AFTER start date.", :allow_nil => true}
