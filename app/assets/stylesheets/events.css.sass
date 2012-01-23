@@ -8,6 +8,8 @@ $right: 90deg
 $blurb_radius: 10px
 $link_radius: 8px
 $button_background: darken(#D2B48C, 20%)
+$notice_border: 8px
+
 *
     padding: 0
     margin: 0
@@ -242,3 +244,16 @@ h1.huge
     display: none
     color: green
     padding-left: 30px
+.notice, .success
+    color: purple
+.error, .failure
+    color: red
+.notice, .success, .error, .failure
+    font-size: 150%
+    border: 5px solid brown
+    width: 500px
+    padding: 10px
+    -moz-border-radius: $notice_border
+    -webkit-border-radius: $notice_border
+    border-radius: $notice_border
+    

@@ -17,8 +17,13 @@
         = link_to 'Logout', user_session_path, :method => :delete
       - else
         = link_to "Log In", new_user_session_path
-      %p.notice= flash[:notice]
-      %p.error= flash[:error]
+    .clear
+  
+    - unless flash[:notice].nil?
+      .notice.right= flash[:notice]
+    - unless flash[:error].nil?
+      .error.right= flash[:error]
+    .clear
 
 
     = yield
