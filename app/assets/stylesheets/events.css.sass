@@ -165,31 +165,31 @@ dd
 
 b
     font-weight: bold
+.user
+    .register_status, .carpooling
+        width: 100%
+        color: green
+        font-weight: bold
+        position: absolute
+        transform: rotate($right)
+        -ms-transform: rotate($right) /* IE 9 */
+        -webkit-transform: rotate($right) /* Safari and Chrome */
+        -o-transform: rotate($right) /* Opera */
+        -moz-transform: rotate($right) /* Firefox */
+        transform-origin: 0
+        -ms-transform-origin: 0
+        -webkit-transform-origin: 0
+        -o-transform-origin: 0
+        -moz-transform-origin: 0
+    .register_status
+        left: 634px
+        top: 12px
+        font-size: 200%
 
-.register_status, .carpooling
-    width: 100%
-    color: green
-    font-weight: bold
-    position: absolute
-    transform: rotate($right)
-    -ms-transform: rotate($right) /* IE 9 */
-    -webkit-transform: rotate($right) /* Safari and Chrome */
-    -o-transform: rotate($right) /* Opera */
-    -moz-transform: rotate($right) /* Firefox */
-    transform-origin: 0
-    -ms-transform-origin: 0
-    -webkit-transform-origin: 0
-    -o-transform-origin: 0
-    -moz-transform-origin: 0
-.register_status
-    left: 634px
-    top: 12px
-    font-size: 200%
-
-.carpooling
-    left: 622px
-    top: -1px
-    font-size: 168%
+    .carpooling
+        left: 622px
+        top: -1px
+        font-size: 168%
 
 .above
     display: block
@@ -225,7 +225,6 @@ h1.huge
 .flag
     color: red
 #my_events
-    width: 500px
     float: left
 #news_feed
     width: 300px
@@ -257,3 +256,16 @@ h1.huge
     -webkit-border-radius: $notice_border
     border-radius: $notice_border
     
+.my_events_table
+    .start_date, .end_date
+        width: 13ex
+    .event_name
+        width: 34ex
+        *
+            font-size: 170%
+    .register_status
+        width: 9ex
+    .event_status
+        width: 10ex
+    .flag
+        width: 20ex
