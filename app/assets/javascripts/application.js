@@ -9,6 +9,10 @@
 //= require_tree .
 
 $(document).ready(function(){
+  $("#user_session_email").focus();
+  $("#event_event_name").focus();
+  $("#user_first_name").focus();
+
   $("#show_editable").click(function(){
     $("#show_editable").css("display", "none")
     $("#hide_editable").css("display", "block")
