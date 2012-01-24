@@ -1,15 +1,15 @@
 #left
-  = link_to "Sign Up", event_path
+  = link_to "Sign Up", event_path, :class => @tab_active_signup
   %br
-  = link_to "Carpooling", carpooling_path
+  = link_to "Carpooling", carpooling_path, :class => @tab_active_carpooling
   %br
   
   - if @show_admin_tabs
     %br
     Leader Privy
     %br
-    = link_to "Roster", roster_path
+    = link_to "Roster", roster_path, :class => @tab_active_roster
     %br
-    = link_to "Admin", edit_event_path
+    = link_to "Admin", edit_event_path, :class => @tab_active_admin
     %br
-    = link_to "Share", share_event_path
+    = link_to "Share", share_event_path, :class => @tab_active_share

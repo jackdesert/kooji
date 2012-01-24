@@ -46,6 +46,10 @@ $link_radius: 8px
 $button_background: darken(#D2B48C, 20%)
 $notice_border: 8px
 $body_color: $tan1
+$text_color: darken($tan, 80%)
+$white_text: lighten($tan1, 40%)
+$skew: -10deg
+
 *
     padding: 0
     margin: 0
@@ -53,7 +57,7 @@ $body_color: $tan1
     line-height: 1.3
     font-weight: normal
     font-family: arial, sans-serif
-    color: darken($tan, 80%)
+    color: $text_color
 a, a:hover, a:visited, a:active
     color: darken($blue, 20%)
 a
@@ -66,17 +70,25 @@ body
 #left
     float: left
     width: 200px
+    padding-left: 1ex
 
 #top a, #left a
+    -webkit-transform: skew($skew)
+    -moz-transform:    skew($skew)
+    -o-transform:      skew($skew)
     font-size: 150%
     padding: 5px
-    background: $button_background
+    background: darken($tan, 40%)
     line-height: 200%
     -moz-border-radius: $link_radius
     -webkit-border-radius: $link_radius
     border-radius: $link_radius
+    color: $white_text
+    &.active 
+        background: $orange2
+        color: $body_color
 #top a:hover, #left a:hover
-    background: $orange2
+    background: lighten($orange2, 10%)
 #right
     float: left
     width: 600px
@@ -196,11 +208,7 @@ ul, ol
 
 .hike_rating:hover .visible_on_hover
     display: block
-
-dd
     padding-left: 40px
-
-b
     font-weight: bold
 .user
     .register_status, .carpooling

@@ -6,10 +6,12 @@ class ImportsController < ApplicationController
     require 'open-uri'
     page = Nokogiri::HTML(open("http://www.hbbostonamc.org/trips.php"))
     @content = page.css("div#layer10 + div")
+    @tab_active_listings = :active
   end
 
   def support
     @user_guide_html = elyxer
+    @tab_active_support = :active    
   end
 
   def elyxer

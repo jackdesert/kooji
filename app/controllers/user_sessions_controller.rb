@@ -2,6 +2,7 @@ class UserSessionsController < ApplicationController
 
   def new
     @user_session = UserSession.new
+    @tab_active_login = :active
   end
 
   def create

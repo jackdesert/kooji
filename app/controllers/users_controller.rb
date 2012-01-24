@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(current_user.id)
+    @tab_active_profile = :active
 
     respond_to do |format|
       format.html # show.html.erb
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(current_user.id)
+    @tab_active_profile = :active
   end
 
   # POST /users

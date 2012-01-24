@@ -52,6 +52,8 @@ class RegistrationsController < ApplicationController
 
 
   def mine
+
+    @tab_active_my_events = :active  
     # I have no idea why we end up here when we reset a password
     if current_user
       @morsels = current_user.morsels

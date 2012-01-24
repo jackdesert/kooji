@@ -18,6 +18,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @tab_active_signup = :active
     @event = Event.find(params[:id])
     unless @event.future?
       @event.event_status = "closed"
@@ -28,9 +29,12 @@ class EventsController < ApplicationController
     @registration = Registration.where(:user_id => current_user.id, :event_id => @event.id).first
 
     if @registration.nil?
+      @tab_active_listings = :active
       @new_registration = Registration.new
       @new_registration.event = @event
       @new_registration.user = current_user
+    else
+      @tab_active_my_events = :active
     end
     respond_to do |format|
       format.html # show.html.erb
@@ -42,7 +46,7 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-
+    @tab_active_new_event = :active
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
@@ -52,6 +56,8 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    @tab_active_admin = :active
+    @tab_active_my_events = :active
   end
 
   # POST /events
@@ -98,6 +104,8 @@ class EventsController < ApplicationController
   end
 
   def roster
+    @tab_active_roster = :active
+    @tab_active_my_events = :active
     if params[:anchor]
       redirect_to roster_path(:id => params[:id]) + "#" + params[:anchor]
     end
@@ -116,6 +124,8 @@ class EventsController < ApplicationController
 
   def carpooling
     @event = Event.find(params[:id])
+    @tab_active_carpooling = :active
+    @tab_active_my_events = :active
     @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
       a.user.first_name <=> b.user.first_name
     end
@@ -134,6 +144,8 @@ class EventsController < ApplicationController
 
   def get_the_word_out
     @event = Event.find(params[:id])
+    @tab_active_share = :active
+    @tab_active_my_events = :active
   end
 
 
