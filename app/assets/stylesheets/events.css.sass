@@ -66,7 +66,9 @@ body
     background: $body_color
 #top
     text-align: right
-    padding-bottom: 80px
+    padding-bottom: 8ex
+    padding-top: 0.5ex
+    padding-right: 1ex
 #left
     float: left
     width: 200px
@@ -76,14 +78,16 @@ body
     -webkit-transform: skew($skew)
     -moz-transform:    skew($skew)
     -o-transform:      skew($skew)
-    font-size: 150%
-    padding: 5px
+    font-size: 125%
+    padding: 0.6ex 0.7ex 0ex 0.6ex
+    margin-top: 5px
     background: darken($tan, 40%)
-    line-height: 200%
+    line-height: 250%
     -moz-border-radius: $link_radius
     -webkit-border-radius: $link_radius
     border-radius: $link_radius
     color: $white_text
+    display: inline-block
     &.active 
         background: $orange2
         color: $body_color
