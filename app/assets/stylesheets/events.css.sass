@@ -74,6 +74,7 @@ body
     width: 200px
     padding-left: 1ex
 
+
 #top a, #left a
     -webkit-transform: skew($skew)
     -moz-transform:    skew($skew)
@@ -91,6 +92,13 @@ body
     &.active 
         background: $orange2
         color: $body_color
+        position: relative
+#top a.active
+    left: -0.4ex
+    top: 4.2ex
+    padding-top: 4.7ex
+#left a.active
+    
 #top a:hover, #left a:hover
     background: lighten($orange2, 10%)
 #right
