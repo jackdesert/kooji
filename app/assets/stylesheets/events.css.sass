@@ -1,15 +1,51 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// These were generated from http://colorschemedesigner.com
+// Angle: 38 degrees
+// Hue: 66 degrees
+// pattern: Accented Analogic
 
+//Primary Color and variants
+$tan: #FFB300	
+$tan1: #BF9430	
+$tan2: #A67400	
+$tan3: #FFC640	
+$tan4: #FFD573
 
+//Secondary Color A and Variants:
+				
+$yellow: #FFE700	
+$yellow1: #BFB130
+$yellow2: #A69600	
+$yellow3: #FFED40	
+$yellow4: #FFF273
+
+// Secondary Color B and Variants:
+				
+$orange: #FF6F00	
+$orange1: #BF6E30	
+$orange2: #A64800	
+$orange3: #FF9340	
+$orange4: #FFB073
+
+// Complementary Color:
+				
+$blue: #1533AD	
+$blue1: #2C3D82	
+$blue2: #071C71	
+$blue3: #4965D6	
+$blue4: #6F83D6
+
+/////////
+$notice_color: $orange3
 $name_color: #cfc
 $right: 90deg
 $blurb_radius: 10px
 $link_radius: 8px
 $button_background: darken(#D2B48C, 20%)
 $notice_border: 8px
-
+$body_color: $tan1
 *
     padding: 0
     margin: 0
@@ -17,12 +53,13 @@ $notice_border: 8px
     line-height: 1.3
     font-weight: normal
     font-family: arial, sans-serif
+    color: darken($tan, 80%)
 a, a:hover, a:visited, a:active
-    color: darken(#FF0000, 20%)
+    color: darken($blue, 20%)
 a
     text-decoration: none
 body
-    background: tan
+    background: $body_color
 #top
     text-align: right
     padding-bottom: 80px
@@ -39,7 +76,7 @@ body
     -webkit-border-radius: $link_radius
     border-radius: $link_radius
 #top a:hover, #left a:hover
-    background: green
+    background: $orange2
 #right
     float: left
     width: 600px
@@ -102,7 +139,7 @@ ul, ol
     font-size: 140%
 
 .answer
-    color: white
+    color: $orange
     padding-left: 10px
     padding-bottom: 5px
 
@@ -112,36 +149,36 @@ ul, ol
 /**************************************************************************/
 /* Background Coloration for various Registration statuses */
 .leader, .coleader, .coleader, .registrar,
-    background: red
+    background: $orange2
 
 .approved,
-    background: lime
+    background: $tan2
 
 .waitlist
-    background: green
+    background: $orange3
 
 .submitted
-    background: cyan
+    background: $yellow2
 
 .canceled
-    background: black
+    background: darken($tan2, 90%)
 
 
 /**************************************************************************/
 /* Background Coloration for various User types */
 .admin
-    background: brown
+    background: $yellow
 .creator
-    background: blue
+    background: $orange2
 .user
-    background: yellow
+    background: $tan2
 /***************************************************************************/
 .avatar
     padding-right: 10px
 
 
 .hike_rating:hover
-    background: #ccc
+    background: lighten($yellow2, 40%)
     border-radius: 2ex
 
 .visible_on_hover
@@ -153,8 +190,8 @@ ul, ol
     padding: 1ex
     border-style: solid
     border-radius: 2ex
-    background: white
-    border-color: black
+    background: $yellow1
+    border-color: darken($tan2, 80%)
     border-width: 2px
 
 .hike_rating:hover .visible_on_hover
@@ -168,7 +205,7 @@ b
 .user
     .register_status, .carpooling
         width: 100%
-        color: green
+        color: darken($tan2, 80%)
         font-weight: bold
         position: absolute
         transform: rotate($right)
@@ -205,13 +242,17 @@ h1.huge
 #meet_your_leaders
     float: right
     width: 300px
-    background: aqua
+    background: darken($body_color, 10%)
+    -moz-border-radius: $blurb_radius
+    -webkit-border-radius: $blurb_radius
+    border-radius: $blurb_radius
+    padding: 10px
     .leader
-        background: orange
+        background: $orange1
     .coleader
-        background: green
+        background: lighten($orange1, 10%)
     .registrar
-        background: yellow
+        background: lighten($orange1, 20%)
 #event_small_details
     float: left
     width: 300px
@@ -223,13 +264,13 @@ h1.huge
 .blurb_container + .blurb_container
     margin-top: 10px
 .flag
-    color: red
+    color: $orange3
 #my_events
     float: left
 #news_feed
     width: 300px
     float: right
-    background: yellow
+    background: $orange1
     padding: 20px
     min-height: 500px
 #save_new_registrar
@@ -241,15 +282,15 @@ h1.huge
     width: 100px
 #name_of_new_registrar
     display: none
-    color: green
+    color: $notice_color
     padding-left: 30px
 .notice, .success
-    color: purple
+    color: $notice_color
 .error, .failure
     color: red
 .notice, .success, .error, .failure
     font-size: 150%
-    border: 5px solid brown
+    border: 5px solid darken($notice_color, 50%)
     width: 500px
     padding: 10px
     -moz-border-radius: $notice_border
