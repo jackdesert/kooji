@@ -73,6 +73,9 @@ body
     float: left
     width: 200px
     padding-left: 1ex
+    a
+        width: 10ex
+      
 
 
 #top a, #left a
@@ -98,7 +101,12 @@ body
     top: 4.2ex
     padding-top: 4.7ex
 #left a.active
-    
+    position: relative
+    left: 4ex
+    text-align: right
+#top a.active:hover, #left a.active:hover
+    color: darken($tan, 30%)
+
 #top a:hover, #left a:hover
     background: lighten($orange2, 10%)
 #right
