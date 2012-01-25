@@ -72,6 +72,7 @@ body
 #left
     float: left
     width: 200px
+    min-height: 1px
     padding-left: 1ex
     a
         width: 10ex
@@ -109,7 +110,7 @@ body
 
 #top a:hover, #left a:hover
     background: lighten($orange2, 10%)
-#right
+#center
     float: left
     width: 600px
 
@@ -158,7 +159,9 @@ ul, ol
     color: brown
 
 #roster_bin
-    padding-top: 12px
+    margin-top: 1ex
+#event_registrar_id
+    margin-bottom: 1ex
 
 .name
     font-size: 125%
@@ -230,7 +233,7 @@ ul, ol
     display: block
     padding-left: 40px
     font-weight: bold
-.user
+.user_block
     .register_status, .carpooling
         width: 100%
         color: darken($tan2, 80%)
@@ -295,7 +298,7 @@ h1.huge
     color: $orange3
 #my_events
     float: left
-#news_feed
+#right
     width: 300px
     float: right
     background: $orange1
@@ -303,7 +306,7 @@ h1.huge
     min-height: 500px
 #save_new_registrar
     display: none
-    padding-bottom: 37px
+    padding-bottom: 2ex
     padding-left: 30px
 .inline_button
     display: inline
@@ -312,6 +315,7 @@ h1.huge
     display: none
     color: $notice_color
     padding-left: 30px
+    height: 1.3em
 .notice, .success
     color: $notice_color
 .error, .failure

@@ -37,6 +37,7 @@ $(document).ready(function(){
     var url = "/" + event_id + "#update";
     $.post(url,{_method : "put", registrar_id : $("#event_registrar_id").val()}, function(data){
       $('#name_of_new_registrar').html(data);
+      setTimeout("$('#name_of_new_registrar').html('')", 5000);
      });
      
     

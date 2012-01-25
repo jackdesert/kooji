@@ -25,7 +25,11 @@
       .error.right= flash[:error]
     .clear
 
-
-    = yield
+    #left
+      = yield :left
+    #center
+      = yield
+    #right
+      = yield :right
     .clear
     %p.footer Copyright Jack Desert 2012 &nbsp; Powered by CoGo 0.70

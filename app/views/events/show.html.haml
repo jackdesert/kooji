@@ -1,5 +1,6 @@
-= render 'left_tabs'
-#right
+- content_for :left do
+  = render 'left_tabs'
+#center
   %h1.huge This is /3
   = render 'event_listing', :event => @event
 

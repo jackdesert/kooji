@@ -1,9 +1,9 @@
-#left
+= content_for :left do
   = link_to "Sign Up", event_path, :class => @tab_active_signup
   %br
   = link_to "Carpooling", carpooling_path, :class => @tab_active_carpooling
   %br
-  
+
   - if @show_admin_tabs
     = link_to "Roster", roster_path, :class => @tab_active_roster
     %br
