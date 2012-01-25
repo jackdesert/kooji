@@ -94,7 +94,6 @@ class EventsController < ApplicationController
     end
     
     respond_to do |format|
-      debugger
       if @event.update_attributes(params[:event])
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
       else
