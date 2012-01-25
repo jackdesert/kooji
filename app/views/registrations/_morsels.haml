@@ -1,10 +1,13 @@
-= content_for :right do
+
+- if current_user
   %h2 News Feed
-  - @morsels.each do |m|
-    - if m.user == current_user
-      You
-    - else
-      = m.user.first_name
-      = m.user.last_name
-    = m.text
-    = link_to m.event.event_name, event_path(:id => m.event.id)
+  - current_user.morsels.each do |m|
+    .morsel
+      - if m.user == current_user
+        You
+      - else
+        = m.user.first_name
+        = m.user.last_name
+      = m.text
+      = link_to m.event.event_name, event_path(:id => m.event.id)
+    
