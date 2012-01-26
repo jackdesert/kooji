@@ -49,7 +49,7 @@ $body_color: $tan1
 $text_color: darken($tan, 80%)
 $white_text: lighten($tan1, 40%)
 $skew: -10deg
-
+$huge_radius: 100px
 *
     padding: 0
     margin: 0
@@ -344,6 +344,15 @@ h1.huge
         width: 20ex
 .morsel
     padding-bottom: 1ex
-.floating
+.floating_sidebar
     position: fixed
     top: 20px
+.floating_event_name
+    background: $body_color
+    -moz-border-radius: $huge_radius
+    -webkit-border-radius: $huge_radius
+    border-radius: $huge_radius
+    padding-bottom: 0px
+    padding-left: 10px
+    padding-right: 10px
+    

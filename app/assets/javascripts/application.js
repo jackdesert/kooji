@@ -13,11 +13,24 @@ $(document).ready(function(){
   $(window).scroll(function(){
       var scrollTop = $(window).scrollTop();
       if (scrollTop > 200){
-        $('.floating').css('position', 'fixed');
-        $('.floating').css('top', '20px');
+        $('.floating_sidebar').css('position', 'fixed');
+        $('.floating_sidebar').css('top', '20px');
       }else{
-        $('.floating').css('position', 'absolute');
-        $('.floating').css('top', '220px');
+        $('.floating_sidebar').css('position', 'absolute');
+        $('.floating_sidebar').css('top', '220px');
+      }
+      if (scrollTop > 170){
+        $('.floating_event_name').css('position', 'fixed');
+        $('.floating_event_name').css('bottom', '-4px');
+        $('.floating_event_name').css('top', 'inherit');
+        $('.floating_event_name').css('opacity', '0.7');
+        
+      }else{
+        $('.floating_event_name').css('position', 'absolute');
+        $('.floating_event_name').css('top', '166px');
+        $('.floating_event_name').css('bottom', 'inherit');
+        $('.floating_event_name').css('z-index', '10');
+        $('.floating_event_name').css('opacity', '1');
       }
   });
   
