@@ -25,3 +25,25 @@ Given /^I go to the "([^"]*)" event carpooling page$/ do |event_name|
   event = Event.find_by_event_name(event_name)
   visit carpooling_path(event)
 end
+
+Then /^I should see in this order:$/ do |table|
+  pattern = table.raw.flatten.collect(&Regexp.method(:quote)).join('.*?')
+  pattern = Regexp.compile(pattern, Regexp::MULTILINE)
+  page.body.should =~ pattern
+end
+
+Then /^I should not see in this order:$/ do |table|
+  pattern = table.raw.flatten.collect(&Regexp.method(:quote)).join('.*?')
+  pattern = Regexp.compile(pattern, Regexp::MULTILINE)
+  page.body.should_not =~ pattern
+end
+
+When /^I sign in as "([^"]*)"$/ do |arg1|
+  visit new_user_session_path
+  array = arg1.split('/')
+  email = arg1[0]
+  password = arg1[1]
+  fill_in("Email Address", :with => email)
+  fill_in("Password", :with => password)
+  click_button("Sign In")
+end

@@ -10,33 +10,39 @@ class Registration < ActiveRecord::Base
   # drop off date is used to decide whether to show this event as a "future" or "past" event
 
 
-  def sorted_by_status
-    sort = 6.0
-    case self.register_status
-    when "leader"
-      sort = 0.0
-    when "coleader"
-      sort = 0.0
-    when "approved"
-      sort = 2.0
-    when "waitlist"
-      sort = 3.0
-    when "submitted"
-      sort = 4.0
-    when "canceled"
-      sort = 5.0
-    end
-    if self.event.registrar == self.user && sort > 0
-      sort = 1.0
-    end
+  def sorted_by_status_and_date
+    sort = math_status.to_f
     # Add a tiny portion of timestamped (not to exceed one)
     sort += self.updated_at.to_f/1e12
     return sort
   end
   
-
-  
-  
+  def math_status
+    case self.register_status
+    when "leader"
+      sort = 10
+    when "coleader"
+      sort = 9
+    when "approved"
+      sort = 7
+    when "payment pending"
+      sort = 6
+    when "waitlist"
+      sort = 5
+    when "submitted"
+      sort = 4
+    when "canceled"
+      sort = 3
+    else
+      sort = 0
+      flash[:error] = "Register status not found"
+    end  
+    if self.event.registrar == self.user && sort < 8
+      sort = 8
+    end
+    sort
+  end
+      
   def self.return_approved_users(registrations)
     approved_registrations = return_approved_registrations(registrations)
     approved_users = []

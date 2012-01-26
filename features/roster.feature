@@ -6,14 +6,17 @@ Feature: User can approve participants and set leaders and coleaders
       | Jack       | Daniels   | jack@sunni.ru  | admin     |
       | Slow       | Paddler   | paddle@sunni.ru | user      |
       | Paid       | InFull    | paid@sunni.ru  | user      |
+      | Lowly      | Shepherd  | shep@sunni.ru  | user      |
     Given the following events exist:
-      | event_name | start_date | end_date   | registrar         |
-      | FunHike    | 2011-12-12 | 2011-12-24 | first_name: Lowly |
+      | event_name      | start_date | end_date   | registrar         |
+      | FunHike         | 2011-12-12 | 2011-12-24 | first_name: Lowly |
+      | PreviousHike    | 2011-12-12 | 2011-12-24 | first_name: Lowly |
     Given the following registrations exist:
-     | event               | user              | register_status |
-     | event_name: FunHike | first_name: Paid  | approved        |
-     | event_name: FunHike | first_name: Slow  | pending payment |
-     | event_name: FunHike | first_name: Jack  | submitted       |
+     | event                    | user              | register_status |
+     | event_name: FunHike      | first_name: Paid  | approved        |
+     | event_name: FunHike      | first_name: Slow  | pending payment |
+     | event_name: FunHike      | first_name: Jack  | submitted       |
+     | event_name: PreviousHike | first_name: Jack  | approved        |
 
 
   Scenario: User is redirected to to event after login 
@@ -51,3 +54,14 @@ Feature: User can approve participants and set leaders and coleaders
     Then I should see "This is where you can see who else is going on this trip"
     And I should see "Paid InFull"
     And I should not see "Slow Paddler"
+    
+  Scenario: Roster page shows previous events--but not the current one--and only events where user was approved, leader, or coleader
+    When I sign in as "shep@sunni.ru/pass"
+    And I go to the "FunHike" event roster page
+    Then I should see in this order:
+        | Recent Events |
+        | PreviousHike   |
+    And I should not see in this order:
+        | Recent Events |
+        | FunHike        |
+    

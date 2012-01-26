@@ -1,6 +1,9 @@
 .recent_trips
   .question Recent Events
-  - Registration.where(:user_id => user.id).each do
+  - registrations = []
+  - Registration.where(:user_id => user.id).collect do |reg|
+    - registrations << reg if reg.math_status >= 7  
+  - registrations.each do
     - |reg|
     %ul
       %li #{reg.event.start_date.short} #{reg.event.event_name}

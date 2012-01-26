@@ -111,7 +111,7 @@ class EventsController < ApplicationController
     end
     @event = Event.find(params[:id])
     @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
-      a.rank_by_status <=> b.rank_by_status
+      a.sorted_by_status_and_date <=> b.sorted_by_status_and_date
     end
     if @event.registrar == current_user
       @registrations.each do |f|
