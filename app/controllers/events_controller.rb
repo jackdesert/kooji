@@ -111,7 +111,7 @@ class EventsController < ApplicationController
     end
     @event = Event.find(params[:id])
     @registrations = Registration.where(:event_id => @event.id).sort do |a, b|
-      a.sorted_by_status <=> b.sorted_by_status
+      a.rank_by_status <=> b.rank_by_status
     end
     if @event.registrar == current_user
       @registrations.each do |f|
@@ -174,14 +174,7 @@ class EventsController < ApplicationController
     elsif @event.registrar == current_user
       may = true
     elsif reg.present?
-      case reg.register_status
-      when "leader"
-        may = true
-      when "coleader"
-        may = true
-      when "approved"
-        may = true
-      end
+      may = true if ['leader', 'coleader', 'approved'].include? reg.register_status
     end
     unless may
       flash[:error] = "Only approved participants can view the carpooling page"

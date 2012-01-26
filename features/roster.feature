@@ -42,7 +42,7 @@ Feature: User can approve participants and set leaders and coleaders
     Then I should see "Only approved participants can view the carpooling page"
 
     
-  Scenario: Approved users can see the carpooling list
+  Scenario: Approved users can see the carpooling list, but cannot see carpooling of un-approved users
     And I go to the "FunHike" event carpooling page
     Then I should see "Please log in"
     And I fill in "Email Address" with "paid@sunni.ru"
