@@ -39,9 +39,8 @@ Feature: User can approve participants and set leaders and coleaders
     And I fill in "Password" with "pass"
     And I press "Sign In"
     Then show me the page
-    Then I should see "pending payment"
-    And I should not see "Paid InFull"
-    And I should not see "Slow Paddler"
+    Then I should see "Only approved participants can view the carpooling page"
+
     
   Scenario: Approved users can see the carpooling list
     And I go to the "FunHike" event carpooling page

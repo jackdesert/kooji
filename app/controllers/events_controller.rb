@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   before_filter :may_edit_event, :only => [:edit, :update, :roster, :export]
   before_filter :authenticate
   before_filter :set_show_admin_tabs
+  before_filter :may_view_carpooling, :only => :carpooling
   # GET /events
   # GET /events.json
   def index
@@ -162,5 +163,29 @@ class EventsController < ApplicationController
   end
   def set_show_admin_tabs
     @show_admin_tabs = show_admin_tabs?
+  end
+  
+  def may_view_carpooling
+    @event = Event.find(params[:id])
+    reg = Registration.where(:event_id => @event.id, :user_id => current_user.id).first
+    may = false
+    if current_user.user_type == 'admin'
+      may = true
+    elsif @event.registrar == current_user
+      may = true
+    elsif reg.present?
+      case reg.register_status
+      when "leader"
+        may = true
+      when "coleader"
+        may = true
+      when "approved"
+        may = true
+      end
+    end
+    unless may
+      flash[:error] = "Only approved participants can view the carpooling page"
+      redirect_to root_path
+    end
   end
 end
