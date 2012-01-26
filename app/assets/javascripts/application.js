@@ -66,16 +66,16 @@ function repositionElements(){
     $('.floating_sidebar').css('top', '220px');
   }
   if (scrollTop > 300){
-    $('.floating_event_name').css('position', 'fixed');
-    $('.floating_event_name').css('bottom', '-4px');
-    $('.floating_event_name').css('top', 'inherit');
-    $('.floating_event_name').css('opacity', '0.7');
-    $('.floating_event_name').css('z-index', '10');
+    $('#floating_event_name').css('position', 'fixed');
+    $('#floating_event_name').css('bottom', '-4px');
+    $('#floating_event_name').css('top', 'inherit');
+    $('#floating_event_name').css('opacity', '0.7');
+    $('#floating_event_name').css('z-index', '10');
     
   }else{
-    $('.floating_event_name').css('position', 'absolute');
-    $('.floating_event_name').css('top', '166px');
-    $('.floating_event_name').css('bottom', 'inherit');
-    $('.floating_event_name').css('opacity', '1');
+    $('#floating_event_name').css('position', 'absolute');
+    $('#floating_event_name').css('top', '166px');
+    $('#floating_event_name').css('bottom', 'inherit');
+    $('#floating_event_name').css('opacity', '1');
   }
 }

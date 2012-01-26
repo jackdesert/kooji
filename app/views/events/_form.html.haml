@@ -1,4 +1,4 @@
-%h1= @event.event_name if @event.created_at
+%h1#floating_event_name= @event.event_name if @event.created_at
 = form_for @event do |f|
   -if @event.errors.any?
     #error_explanation

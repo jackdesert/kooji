@@ -1,7 +1,7 @@
 = render 'left_tabs'
 #center
   %p Roster
-  %h1.floating_event_name= @event.event_name
+  %h1#floating_event_name= @event.event_name
   %p 
     Event Registrar:
     = hidden_field :event, :id

@@ -1,7 +1,7 @@
 = render 'left_tabs'
 #center
   %h1 Carpooling
-  %h1= @event.event_name
+  %h1#floating_event_name= @event.event_name
   %p This is where you can see who else is going on this trip so you can arrange carpooling
   = content_tag(:h2, "Rides Wanted") unless @need_rides.empty?
   = render 'carpool_group', :carpool_group => @need_rides

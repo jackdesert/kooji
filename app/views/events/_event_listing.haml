@@ -1,5 +1,5 @@
 %h2 Event Registration
-%h2= @event.event_name
+%h1#floating_event_name= @event.event_name
 = render 'meet_your_leaders'
 #event_small_details
   %p When: #{@event.date_range}
