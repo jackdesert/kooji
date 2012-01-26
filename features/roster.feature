@@ -2,33 +2,53 @@ Feature: User can approve participants and set leaders and coleaders
 
   Background:
     Given the following user exists:
-      | first_name | last_name | email         | user_type |
-      | Jack       | Daniels   | jack@sunni.ru | admin     |
+      | first_name | last_name | email          | user_type |
+      | Jack       | Daniels   | jack@sunni.ru  | admin     |
+      | Slow       | Paddler   | paddle@sunni.ru | user      |
+      | Paid       | InFull    | paid@sunni.ru  | user      |
     Given the following events exist:
-      | event_name | start_date | end_date   |
-      | FunHike    | 2011-12-12 | 2011-12-24 |
+      | event_name | start_date | end_date   | registrar         |
+      | FunHike    | 2011-12-12 | 2011-12-24 | first_name: Lowly |
     Given the following registrations exist:
-     | event               |
-     | event_name: FunHike |
-     | event_name: FunHike |
-     | event_name: FunHike |
+     | event               | user              | register_status |
+     | event_name: FunHike | first_name: Paid  | approved        |
+     | event_name: FunHike | first_name: Slow  | pending payment |
+     | event_name: FunHike | first_name: Jack  | submitted       |
 
 
   Scenario: User is redirected to to event after login 
     And I go to the "FunHike" event page
     Then I should see "Please log in"
-    And I fill in "Email Address" with "jack@sunni.ru"
+    And I fill in "Email Address" with "slave@sunni.ru"
     And I fill in "Password" with "pass"
     And I press "Sign In"
-    And show me the page
     Then I should see "FunHike"
-    And show me the page
     
   Scenario: User is redirected to to event roster after login 
     And I go to the "FunHike" event roster page
     Then I should see "Please log in"
-    And I fill in "Email Address" with "jack@sunni.ru"
+    And I fill in "Email Address" with "slave@sunni.ru"
     And I fill in "Password" with "pass"
     And I press "Sign In"
     Then I should see "Roster"
-    And show me the page
+    
+  Scenario: Pending Payment users can not see the carpooling list
+    And I go to the "FunHike" event carpooling page
+    Then I should see "Please log in"
+    And I fill in "Email Address" with "paddle@sunni.ru"
+    And I fill in "Password" with "pass"
+    And I press "Sign In"
+    Then show me the page
+    Then I should see "pending payment"
+    And I should not see "Paid InFull"
+    And I should not see "Slow Paddler"
+    
+  Scenario: Approved users can see the carpooling list
+    And I go to the "FunHike" event carpooling page
+    Then I should see "Please log in"
+    And I fill in "Email Address" with "paid@sunni.ru"
+    And I fill in "Password" with "pass"
+    And I press "Sign In"
+    Then I should see "This is where you can see who else is going on this trip"
+    And I should see "Paid InFull"
+    And I should not see "Slow Paddler"

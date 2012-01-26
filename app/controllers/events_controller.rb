@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :capture_original_request, :only => [:roster, :edit, :show]
+  before_filter :capture_original_request, :only => [:roster, :edit, :show, :carpooling, :export, :get_the_word_out]
   before_filter :may_create_events, :only => [:new, :create]
   before_filter :may_edit_event, :only => [:edit, :update, :roster, :export]
   before_filter :authenticate

@@ -20,3 +20,8 @@ Given /^I go to the "([^"]*)" event roster page$/ do |event_name|
   event = Event.find_by_event_name(event_name)
   visit roster_path(event)
 end
+
+Given /^I go to the "([^"]*)" event carpooling page$/ do |event_name|
+  event = Event.find_by_event_name(event_name)
+  visit carpooling_path(event)
+end

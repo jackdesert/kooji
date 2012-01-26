@@ -18,7 +18,6 @@ require 'yaml'
   def authenticate
     unless current_user
       flash[:notice] = "You're not logged in, Captain"
-
       redirect_away new_user_session_path
       return false
     end
