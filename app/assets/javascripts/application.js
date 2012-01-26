@@ -9,6 +9,18 @@
 //= require_tree .
 
 $(document).ready(function(){
+  
+  $(window).scroll(function(){
+      var scrollTop = $(window).scrollTop();
+      if (scrollTop > 200){
+        $('.floating').css('position', 'fixed');
+        $('.floating').css('top', '20px');
+      }else{
+        $('.floating').css('position', 'absolute');
+        $('.floating').css('top', '220px');
+      }
+  });
+  
   $("#user_session_email").focus();
   $("#event_event_name").focus();
   $("#user_first_name").focus();
