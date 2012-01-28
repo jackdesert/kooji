@@ -66,6 +66,9 @@ require 'yaml'
     end
   end
 
+  def redirect_unless_admin
+    redirect_to root_path unless is_admin
+  end
 
   def may_create_events
     unless current_user.user_type.nil?
