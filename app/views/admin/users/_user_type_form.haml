@@ -1,5 +1,4 @@
 %td
-  blah
-  = form_tag admin_update_user_type_path, :method => :put do
+  = form_tag admin_update_user_type_path, :method => :put, :remote => true do
     = hidden_field_tag :id, user.id
     = submit_tag new_type 
