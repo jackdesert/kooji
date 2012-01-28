@@ -14,6 +14,11 @@ class Admin::UsersController < ApplicationController
     @users = User.where(:leader_request => true)
   end
 
+  def update
+    debugger
+    
+  end
+
   def search
 
   end
