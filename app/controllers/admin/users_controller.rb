@@ -20,10 +20,15 @@ class Admin::UsersController < ApplicationController
     user = User.find(params[:id])
     new_user_type = params[:commit].downcase
     user.user_type = new_user_type
-    unless user.save
-      flash[:error] = "User type #{user.errors.messages[:user_type].first}. Unable to update user."
+    respond_to do |format|
+      if user.save
+        format.html {redirect_to admin_users_path}
+        format.js
+      else
+        format.html {redirect_to admin_users_path, :error => "User type #{user.errors.messages[:user_type].first}. Unable to update user."}
+        format.js
+      end
     end
-    redirect_to admin_users_path
   end
 
   def search
