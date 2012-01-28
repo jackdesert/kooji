@@ -23,7 +23,7 @@ class Admin::UsersController < ApplicationController
     respond_to do |format|
       if user.save
         format.html {redirect_to admin_users_path}
-        format.js
+        format.js # this means the <name>.js.erb file will be called
       else
         format.html {redirect_to admin_users_path, :error => "User type #{user.errors.messages[:user_type].first}. Unable to update user."}
         format.js
