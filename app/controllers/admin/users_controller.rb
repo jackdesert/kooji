@@ -26,7 +26,7 @@ class Admin::UsersController < ApplicationController
         format.js {render :layout => false}# this means the <name>.js.erb file will be called
       else
         format.html {redirect_to admin_users_path, :error => "User type #{user.errors.messages[:user_type].first}. Unable to update user."}
-        format.js 
+        format.js # How do I display an error if I end up here?
       end
     end
   end

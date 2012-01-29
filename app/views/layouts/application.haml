@@ -7,7 +7,7 @@
     = csrf_meta_tags
   %body
     #top
-      = link_to "HB Event Listings", hbtrips_path, :class => @tab_active_listings
+      = link_to "Browse H/B Events", hbtrips_path, :class => @tab_active_listings
       = link_to "Support", support_path, :class => @tab_active_support
       - if current_user
         - if @show_create_event_link

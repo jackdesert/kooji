@@ -25,10 +25,12 @@ class ImportsController < ApplicationController
   end
 
   def generate_html(raw, html)
+    elyxer_path = File.expand_path("lib/elyxer/elyxer.py")
     input_file = File.expand_path(raw)
     output_file = File.expand_path(html)
-    command = "elyxer --raw #{input_file} #{output_file}"
-    system(command)
+    command = "python #{elyxer_path} --raw #{input_file} #{output_file}"
+    raise "support page not generated"  if system(command).nil?
+    
   end
 
   def get_file_as_string(filename)

@@ -1,5 +1,5 @@
-#LyX 2.0.0beta4 created this file. For more info see http://www.lyx.org/
-\lyxformat 412
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
 \begin_document
 \begin_header
 \textclass article
@@ -53,6 +53,7 @@
 \tracking_changes false
 \output_changes false
 \html_math_output 0
+\html_css_as_file 0
 \html_be_strict false
 \end_header
 
@@ -73,73 +74,19 @@ How do I create a REGI Account?
 \end_layout
 
 \begin_layout Itemize
-Go to the 
-\emph on
-
-\begin_inset CommandInset href
-LatexCommand href
-name "login screen"
-target "logout.php"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Click the link that says 
-\emph on
-
-\begin_inset CommandInset href
-LatexCommand href
-name "Create an Account"
-target "myProfile.php"
-
-\end_inset
-
-
-\emph default
-.
-\end_layout
-
-\begin_layout Itemize
-Enter your information as requested, starting with the required fields (user
- name, password, first/last name, email).
- If you want to be able to create new events in REGI, Be sure to answer
- YES to 
-\begin_inset Quotes eld
-\end_inset
-
-Are you a current AMC H/B Leader or Coleader?
-\begin_inset Quotes erd
-\end_inset
-
- This checkbox sends an email to the webmaster so they can grant you LEADER
- privileges.
- 
-\end_layout
-
-\begin_layout Itemize
 Click 
 \emph on
-Create Profile
-\emph default
-.
- Note that you can return to edit your profile at any time by clicking on
- 
-\emph on
 
 \begin_inset CommandInset href
 LatexCommand href
-name "My Profile"
-target "myProfile.php"
+name "here"
+target "profile/new"
 
 \end_inset
 
-
-\emph default
-.
  
+\emph default
+to create an account.
 \end_layout
 
 \begin_layout Paragraph
@@ -147,31 +94,18 @@ What do I do if I forget my user name or password?
 \end_layout
 
 \begin_layout Quote
-Go to the 
-\emph on
 
+\emph on
 \begin_inset CommandInset href
 LatexCommand href
-name "login page"
-target "logout.php"
+name "Click here"
+target "password_reset/new"
 
 \end_inset
 
 
 \emph default
- and click the link where it says 
-\emph on
-
-\begin_inset CommandInset href
-LatexCommand href
-name "Forgot username or password"
-target "forgotPassword.php"
-
-\end_inset
-
-
-\emph default
-.
+ to reset your password.
 \end_layout
 
 \begin_layout Paragraph
@@ -179,19 +113,18 @@ How do I edit My Profile?
 \end_layout
 
 \begin_layout Quote
-You can edit your profile at any time by clicking on 
-\emph on
 
+\emph on
 \begin_inset CommandInset href
 LatexCommand href
-name "My Profile"
-target "myProfile.php"
+name "Click here"
+target "profile/edit"
 
 \end_inset
 
 
 \emph default
- in the navigation bar at the upper right of every REGI page.
+ to edit your profile.
  Don't forget to update your experience profile as you continue to use the
  system.
 \end_layout
@@ -201,83 +134,16 @@ How do I register for an event?
 \end_layout
 
 \begin_layout Quote
-Once you have created your profile, you can immediately begin to sign up
- for events that are using the new online REGI system.
- Follow these 2 steps: 
-\end_layout
-
-\begin_layout Quote
-Find an event on the 
-\emph on
-
+Once you have created your profile, go to 
 \begin_inset CommandInset href
 LatexCommand href
-name "HB Trip Listings"
-target "hbTrips.php"
+name "Browse H/B Events"
+target "hbtrips"
 
 \end_inset
 
-
-\emph default
- page that you are interested in.
+ to find an event you want to sign up for.
  
-\end_layout
-
-\begin_layout Quote
-Click on the REGI link listed near the bottom of the listing.
- Usually REGI links are of the form 
-\emph on
-http://www.hbbostonamc.org/regi/xxx
-\emph default
-.
- This link takes you to this event's REGI page.
- 
-\end_layout
-
-\begin_layout Quote
-On the REGI page of the event you are interested in, you will find basic
- information about the event: name, description, a gear list, and specific
- questions, such as whether you have the listed gear, and your carpooling
- details.
- Enter the requested information and click 
-\emph on
-Sign Up For This Event
-\emph default
-.
- Your registration status will be listed as 
-\emph on
-SUBMITTED
-\emph default
- under your 
-\emph on
-
-\begin_inset CommandInset href
-LatexCommand href
-name "My Events"
-target "myEvents.php"
-
-\end_inset
-
-
-\emph default
- page until the leader approves you for the event.
- If you are Approved, your status under 
-\emph on
-
-\begin_inset CommandInset href
-LatexCommand href
-name "My Events"
-target "myEvents.php"
-
-\end_inset
-
-
-\emph default
- will be changed to 
-\emph on
-APPROVED
-\emph default
- and you will receive an automated email noting the update.
 \end_layout
 
 \begin_layout Paragraph
@@ -377,13 +243,27 @@ APPROVED: You made the list.
 \end_layout
 
 \begin_layout Itemize
-WAIT LIST: All the spots on the event are taken.
+PENDING PAYMENT: You have been approved, but must submit payment before
+ it's official.
+ Once your payment is received, you will be bumped to 
+\begin_inset Quotes eld
+\end_inset
+
+APPROVED
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+WAITLIST: All the spots on the event are taken.
  However you have been added to the wait list.
  If someone cancels out of the event you will be notified.
 \end_layout
 
 \begin_layout Itemize
-CANCELLED: You have cancelled your attendance for this event.
+CANCELED: You have cancelled your attendance for this event.
 \end_layout
 
 \begin_layout Itemize
@@ -401,15 +281,15 @@ When will I know if I have been approved for an event?
 \end_layout
 
 \begin_layout Quote
-Once the leader has had a chance to review your application, your registration
- status will be updated toeither "APPROVED" or "WAITLIST".
- You will receive an automated email sent to your profile email address
- to notify you of the status change.
- You can also check the 
+You may receive an email or phone call from the event registrar to go over
+ a few things like gear and previous experience.
+ Then when she actually approves you, you will get an email that indicates
+ your registration status has been updated to either "APPROVED" or "WAITLIST".
+ You can view your registartion status for all your events under the 
 \emph on
 My Status 
 \emph default
-column under your 
+column on the 
 \emph on
 
 \begin_inset CommandInset href
@@ -432,8 +312,8 @@ What do I do if I’m WAITLISTED?
 \begin_layout Quote
 If a spot opens up on the event, the leader will contact you to offer you
  a spot.
- If you are taken off the waitlist, your registration status will switch
- to “APPROVED” and you will receive an automated email to this effect.
+ If you are taken off the waitlist, you will get an email that your registration
+ status has been changed to “APPROVED”.
 \end_layout
 
 \begin_layout Paragraph
@@ -446,7 +326,7 @@ If you need to cancel your registration, email the leader ASAP so that he
  Once the leader cancels your registration, you will receive an automated
  email that your registration status has been updated to 
 \emph on
-CANCELLED
+CANCELED
 \emph default
 .
  
@@ -468,60 +348,48 @@ When you register for an event, the REGI system will ask whether you can
 \end_layout
 
 \begin_layout Paragraph
-How do I become a LEADER so I can create REGI trips?
+I want to create an event.
+ How do I do that? 
 \end_layout
 
 \begin_layout Quote
-To create REGI trips, you must have LEADER privileges on the REGI site.
- When you create your account, be sure to answer YES to 
+If you do now already have an 
 \begin_inset Quotes eld
 \end_inset
 
-Are you a current AMC H/B Leader or Coleader?
+Create New Event
 \begin_inset Quotes erd
 \end_inset
 
- This checkbox sends an email to the webmaster so they will allow you to
- create new events in REGI.
- To gain LEADER privileges with an existing account, Simply send an email
- to 
-\emph on
-
+ link at the top of your screen, you need to request privileges from the
+ site admin.
+ To do this, just go to 
 \begin_inset CommandInset href
 LatexCommand href
-name "amcbostonhbs@gmail.com"
-target "mailto:amcbostonhbs@gmail.com?subject=Request%20Leader%20Privileges"
+name "your profile"
+target "/profile"
 
 \end_inset
 
+, click 
+\begin_inset Quotes eld
+\end_inset
 
-\emph default
+Edit Profile
+\begin_inset Quotes erd
+\end_inset
+
+, and check the box that says 
+\begin_inset Quotes eld
+\end_inset
+
+I have completed leadership training
+\begin_inset Quotes erd
+\end_inset
+
 .
- This is the user support email for REGI.
- One of the online support volunteers (currently Abby Driscoll and Julie
- LePage) will get back to you as soon as possible to upgrade your account.
- Once they verify that you are indeed an AMC Leader, they will grant you
- the ability to create new trips in the system.
- Once they email you back saying you can create events now, LOG OUT of REGI,
- and log back in.
- You will now have a 
-\emph on
-Create New Event 
-\emph default
-tab at the top of REGI.
- Once logged in with LEADER privileges, this 
-\emph on
-
-\begin_inset CommandInset href
-LatexCommand href
-name "support page"
-target "support.php"
-
-\end_inset
-
- 
-\emph default
-will display additional information specific to REGI event management.
+ The site admin with check the AMC records and grant you event creation
+ rights.
  
 \end_layout
 
@@ -948,6 +816,35 @@ TO
 
  field.
  
+\end_layout
+
+\begin_layout Paragraph
+What is the normal workflow of creating an event and getting people to sign
+ up for it?
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Create an Event"
+target "new"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Advertise it on outdoors.org.
+ After you create the event there will be a link on the left called 
+\begin_inset Quotes eld
+\end_inset
+
+Share
+\begin_inset Quotes erd
+\end_inset
+
+ with instructions for posting it on outdoors.org.
 \end_layout
 
 \begin_layout Standard
