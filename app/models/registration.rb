@@ -25,7 +25,7 @@ class Registration < ActiveRecord::Base
       sort = 9
     when "approved"
       sort = 7
-    when "payment pending"
+    when "pending payment"
       sort = 6
     when "waitlist"
       sort = 5
@@ -35,7 +35,7 @@ class Registration < ActiveRecord::Base
       sort = 3
     else
       sort = 0
-      flash[:error] = "Register status not found"
+      raise "Register status '#{self.register_status}' not found"
     end  
     if self.event.registrar == self.user && sort < 8
       sort = 8

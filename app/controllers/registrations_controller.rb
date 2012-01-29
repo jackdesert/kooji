@@ -106,10 +106,9 @@ class RegistrationsController < ApplicationController
       morsel = Morsel.new(:user_id => a.user_id, :text => "#{@new_status} for", 
                           :event_id => a.event_id)
       morsel.save
-      
     respond_to do |format|
       format.html {redirect_to roster_path(:id => params[:id])}
-      format.js
+      format.js {render :layout => false}
     end
 
   end

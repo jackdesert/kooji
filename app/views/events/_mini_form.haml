@@ -1,5 +1,5 @@
 %td
-  = form_tag(update_register_status_path, :method => :put, :remote => false) do
+  = form_tag(update_register_status_path, :method => :put, :remote => true) do
     = hidden_field_tag :id, @event.id
     = hidden_field_tag :user_id, registration.user.id
     = submit_tag new_status 
