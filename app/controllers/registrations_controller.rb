@@ -81,7 +81,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        morsel = Morsel.new(:user_id => current_user, :text => "updated registration answers", 
+        morsel = Morsel.new(:user_id => current_user, :text => "updated", 
                             :event_id => @registration.event.id)
         morsel.save
         
