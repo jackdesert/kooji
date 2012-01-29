@@ -8,8 +8,8 @@ class Morsel < ActiveRecord::Base
     text = self.text
     name = self.user.full_name
     if ['leader', 'coleader', 'registrar'].include? text
-      my_phrase = 'You became the ' + text + " for"
-      phrase = name + ' became the ' + text + " for"
+      my_phrase = 'You became ' + text + " of"
+      phrase = name + ' became ' + text + " of"
     elsif text == 'approved' || text == 'waitlisted'
       my_phrase = 'You were ' + text + ' for'
       phrase = name + ' was ' + text + ' for'

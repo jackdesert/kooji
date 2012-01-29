@@ -14,4 +14,9 @@ class Date
     # Outputs date format as Monday Jan 12, 2011.
     self.strftime("%A %B %d, %Y")
   end
+  
+  def casual
+    # Outputs date format as Mon Jan 12
+    self.strftime("%a %b %d")
+  end    
 end
