@@ -4,10 +4,10 @@
   - current_user.morsels.each do |m|
 
     .morsel
-      = m.created_at.to_date.casual
-      %br
+
       = m.phrase(current_user)
       = link_to m.event.event_name, roster_path(:id => m.event.id, :anchor => m.user_id)
-      
+      .morsel_date
+        = "--" + m.created_at.to_date.casual      
         
     
