@@ -1,8 +1,8 @@
 // Set class to new class
 var user_div = $("#<%= params[:user_id] %>");
-var new_class = "<%= params[:commit].downcase %> user_block";
+var new_class = "<%= params[:commit].collude.downcase %> user_block";
 user_div.attr('class', new_class);
 
 // Set Sideways text
-var sideways_div = $("#<%= params[:id] %> .register_status");
-sideways_div.text("<%= params[:commit] %>");
+var sideways_div = $("#<%= params[:user_id] %> .register_status");
+sideways_div.text("<%= params[:commit].downcase %>");

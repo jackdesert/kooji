@@ -2,15 +2,10 @@
 - if current_user
   %h2 News Feed
   - current_user.morsels.each do |m|
+
     .morsel
-      - if m.user == current_user
-        You
-        = m.text
-        = link_to m.event.event_name, event_path(:id => m.event.id)
-      - else
-        = m.user.first_name
-        = m.user.last_name
-        = m.text
-        = link_to m.event.event_name, roster_path(:id => m.event.id, :anchor => m.user_id)
+      = m.phrase(current_user)
+      = link_to m.event.event_name, roster_path(:id => m.event.id, :anchor => m.user_id)
+      
         
     

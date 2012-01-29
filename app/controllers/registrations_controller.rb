@@ -36,7 +36,7 @@ class RegistrationsController < ApplicationController
     @registration.user_id = current_user.id
     respond_to do |format|
       if @registration.save
-        morsel = Morsel.new(:user_id => current_user, :text => "signed up for", 
+        morsel = Morsel.new(:user_id => current_user, :text => registration.register_status, 
                             :event_id => @registration.event.id)
         morsel.save
         Notifier.reg_status_email(current_user, @registration.event, :submitted).deliver
@@ -81,7 +81,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        morsel = Morsel.new(:user_id => current_user, :text => "updated registration answers for", 
+        morsel = Morsel.new(:user_id => current_user, :text => "updated registration answers", 
                             :event_id => @registration.event.id)
         morsel.save
         
@@ -103,7 +103,7 @@ class RegistrationsController < ApplicationController
       a.register_status = @new_status.downcase
       a.save
       Notifier.reg_status_email(a.user, a.event, a.register_status).deliver
-      morsel = Morsel.new(:user_id => a.user_id, :text => "#{@new_status} for", 
+      morsel = Morsel.new(:user_id => a.user_id, :text => a.register_status, 
                           :event_id => a.event_id)
       morsel.save
     respond_to do |format|
