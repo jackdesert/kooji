@@ -57,7 +57,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
-    @tab_active_admin = :active
+    @tab_active_edit = :active
     @tab_active_my_events = :active
   end
 

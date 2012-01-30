@@ -10,10 +10,14 @@ class Admin::UsersController < ApplicationController
     admins =   User.where(:user_type => "admin")
     creators = User.where(:user_type => "creator")
     @users = admins + creators
+    @tab_active_admin = :active
+    @tab_active_admin_index = :active
   end
 
   def index_prospectives
     @users = User.where(:leader_request => true)
+    @tab_active_admin = :active
+    @tab_active_admin_prospectives = :active
   end
 
   def update
@@ -32,7 +36,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def search
-
+    @tab_active_admin = :active
+    @tab_active_admin_search = :active
   end
 
 
