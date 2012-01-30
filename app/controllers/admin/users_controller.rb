@@ -8,8 +8,8 @@ class Admin::UsersController < ApplicationController
 
   def index
     admins =   User.where(:user_type => "admin")
-    creators = User.where(:user_type => "creator")
-    @users = admins + creators
+    staff = User.where(:user_type => "staff")
+    @users = admins + staff
     @tab_active_admin = :active
     @tab_active_admin_index = :active
   end

@@ -14,7 +14,7 @@ validates_attachment_content_type :photo,
                                     :message => 'profile.photo_content_type'
   validates_presence_of :first_name, :last_name, :phone, :experience, :user_type, :member, :emergency_contact
   validates_format_of :phone, :with => /^\d{10}$/
-  validates_format_of :user_type, :with => /^(user)?(creator)?(admin)?$/
+  validates_format_of :user_type, :with => /^(participant)?(staff)?(admin)?$/
   before_validation :standardize_phone_number
 
 

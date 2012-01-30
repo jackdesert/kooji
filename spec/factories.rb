@@ -4,7 +4,7 @@ FactoryGirl.define do
     sequence(:first_name) {|n| "Jack"}
     last_name "B. Nimble"
     sequence(:email) {|n| "#{n}@sunni.ru"}
-    user_type "user"
+    user_type "participant"
     password "pass"
     password_confirmation "pass"
     diet "I can eat pretty much eat anything, but I especially have to get a lot of protein into my system in the early hours of the day to keep my energy levels up"
