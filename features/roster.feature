@@ -4,9 +4,9 @@ Feature: User can approve participants and set leaders and coleaders
     Given the following user exists:
       | first_name | last_name | email          | user_type |
       | Jack       | Daniels   | jack@sunni.ru  | admin     |
-      | Slow       | Paddler   | paddle@sunni.ru | user      |
-      | Paid       | InFull    | paid@sunni.ru  | user      |
-      | Lowly      | Shepherd  | shep@sunni.ru  | user      |
+      | Slow       | Paddler   | paddle@sunni.ru | participant      |
+      | Paid       | InFull    | paid@sunni.ru  | participant      |
+      | Lowly      | Shepherd  | shep@sunni.ru  | participant      |
     Given the following events exist:
       | event_name      | start_date | end_date   | registrar         |
       | FunHike         | 2011-12-12 | 2011-12-24 | first_name: Lowly |

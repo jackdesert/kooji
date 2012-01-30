@@ -33,7 +33,7 @@ require 'yaml'
 
   def show_admin_tabs?
     if current_user
-      return true if is_admin
+      return true if current_user.is_admin?
       my_reg = Registration.where(:user_id => current_user.id, :event_id => params[:id]).first
       unless my_reg.nil?
         if [:leader, :coleader, :registrar].include? my_reg.register_status.downcase.to_sym
