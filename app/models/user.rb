@@ -44,6 +44,11 @@ validates_attachment_content_type :photo,
 #  validates_format_of :phone_evening, :with => /^(1?(-?\d{3})-?)?(\d{3})(-?\d{4})$/, :message => "Use this phone number format: XXX-XXX-XXXX"
 #  validates_presence_of :experience, :exercise, :medical, :emergency_contact, :diet
 
+  def is_admin?
+    return false unless self.user_type == "admin"
+    return true
+  end
+
 
   def compound_status(event)
 

@@ -57,17 +57,10 @@ require 'yaml'
     end
   end
 
-  def is_admin
-    return false unless current_user
-    if [:admin].include? current_user.user_type.downcase.to_sym
-      return true
-    else
-      return false
-    end
-  end
+
 
   def redirect_unless_admin
-    redirect_to root_path unless is_admin
+    redirect_to root_path unless current_user.is_admin?
   end
 
   def may_create_events
