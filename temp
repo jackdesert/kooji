@@ -1,4 +1,0 @@
-cucumber features/my_events.feature:23 # Scenario: 
-cucumber features/roster.feature:22 # Scenario: User is redirected to to event after login
-cucumber features/roster.feature:30 # Scenario: User is redirected to to event roster after login
-cucumber features/roster.feature:58 # Scenario: Roster page shows previous events--but not the current one--and only events where user was approved, leader, or coleader

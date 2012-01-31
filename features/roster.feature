@@ -56,8 +56,12 @@ Feature: User can approve participants and set leaders and coleaders
     And I should not see "Slow Paddler"
     
   Scenario: Roster page shows previous events--but not the current one--and only events where user was approved, leader, or coleader
-    When I sign in as "shep@sunni.ru/pass"
     And I go to the "FunHike" event roster page
+    When I fill in "Email Address" with "jack@sunni.ru"
+    And I fill in "Password" with "pass"
+    And I press "Sign In"
+    And I go to the "FunHike" event roster page
+And show me the page
     Then I should see in this order:
         | Recent Events |
         | PreviousHike   |
