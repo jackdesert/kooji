@@ -22,7 +22,7 @@
   .field
     = f.label :event_status, "* Event Status"
     %p Registration is ONLY active when status is set to 'OPEN' or 'WAIT LIST'. All other statuses do NOT allow new registrations.
-    = f.text_field :event_status
+    = f.select :event_status, ['open', 'waitlisted', 'closed', 'canceled']
   .field
     = f.label :rating, "Hike Rating"
     %p (Example: B3B, also see the Hike Rating Key)

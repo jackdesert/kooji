@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
 # This is how we say that a class belongs to itself
   belongs_to :program, :class_name => 'Event', :foreign_key => 'program_id'
 
-  validates_format_of :event_status, :with => /^(open)?(closed)?(waitlist)?(canceled)?$/
+  validates_format_of :event_status, :with => /^(open)?(closed)?(waitlisted)?(canceled)?$/
   validates_presence_of :event_status, :description, :event_is_program, :event_name, :gear_list, :confirmation_page, :start_date
 
   def future?
