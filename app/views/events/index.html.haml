@@ -1,43 +1,14 @@
-%h1 Listing events
+%h1 H/B Events
 
-%table
-  %tr
-    %th Program
-    %th Event status
-    %th Event is program
-    %th Event name
-    %th Rating
-    %th Pricing
-    %th Description
-    %th Trip info
-    %th Gear list
-    %th Confirmation page
-    %th Question1
-    %th Start date
-    %th End date
-    %th
-    %th
-    %th
-
-  - @events.each do |event|
-    %tr
-      %td= event.program_id
-      %td= event.event_status
-      %td= event.event_is_program
-      %td= event.event_name
-      %td= event.rating
-      %td= event.pricing
-      %td= event.description
-      %td= event.trip_info
-      %td= event.gear_list
-      %td= event.confirmation_page
-      %td= event.question1
-      %td= event.start_date
-      %td= event.end_date
-      %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
-      %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Event', new_event_path
+- @events.each do |event|
+  =link_to event_path(event) do
+    .event_block
+      %h2.huge= event.event_name
+      .bold= event.date_range
+      .bold 
+        Rating:
+        = event.rating
+      .label_compact Cost:
+      %p= event.pricing
+      .label_compact Description: 
+      %p= event.description
