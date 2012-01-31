@@ -70,7 +70,7 @@ Frequently Asked Questions
 \end_layout
 
 \begin_layout Paragraph
-How do I create a REGI Account? 
+How do I create a Kooji Account? 
 \end_layout
 
 \begin_layout Itemize
@@ -337,7 +337,7 @@ How do I get a ride or offer a ride?
 \end_layout
 
 \begin_layout Quote
-When you register for an event, the REGI system will ask whether you can
+When you register for an event, the Kooji system will ask whether you can
  offer others a ride or if you need a ride yourself.
  Once you are approved for the event, you will be able to see other participants
 ' carpooling information.
@@ -412,22 +412,22 @@ name "sec:leader_guide"
 
 \end_inset
 
-REGI Leader Guide
+Kooji Leader Guide
 \end_layout
 
 \begin_layout Standard
-This section contains information to help REGI leaders, coleaders, and registrar
-s understand how to create REGI events, and how to approve and contact participa
-nts.
+This section contains information to help Kooji leaders, coleaders, and
+ registrars understand how to create Kooji events, and how to approve and
+ contact participants.
  
 \end_layout
 
 \begin_layout Paragraph
-Creating a REGI Page for a New Event 
+Creating a Kooji Page for a New Event 
 \end_layout
 
 \begin_layout Quote
-To create a REGI page for a new event or trip, log in and click 
+To create a Kooji page for a new event or trip, log in and click 
 \emph on
 
 \begin_inset CommandInset href
@@ -499,7 +499,7 @@ Payment
 \end_layout
 
 \begin_layout Quote
-Payment is not currently handled through REGI.
+Payment is not currently handled through Kooji.
  The current recommended process for paid events is to handle payments directly
  with participants.
  In the case of H/B sponsored programs (WHP, SHP, SLP, WFA), a PayPal account
@@ -514,7 +514,7 @@ name "par:Finish-and-Publicize"
 
 \end_inset
 
-Finish and Publicize your REGI Link
+Finish and Publicize your Kooji Link
 \end_layout
 
 \begin_layout Quote
@@ -522,7 +522,7 @@ Click the
 \emph on
 Create New Event
 \emph default
- button to create the REGI page.
+ button to create the Kooji page.
  You will be returned to the same page with one additional field: 
 \emph on
 Registration URL
@@ -536,7 +536,7 @@ Registration URL
 \end_layout
 
 \begin_layout Paragraph
-Updating the REGI Page
+Updating the Kooji Page
 \end_layout
 
 \begin_layout Quote
@@ -791,7 +791,7 @@ Leader's Corner
 \emph default
 .
  When you get to the part of the listing that says, "Include web link(s)
- in event description:", this is where you paste in the REGI link
+ in event description:", this is where you paste in the Kooji link
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "par:Finish-and-Publicize"
