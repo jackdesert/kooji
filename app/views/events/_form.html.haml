@@ -31,19 +31,19 @@
   .field
     = f.label :pricing, "Cost"
     %p  (Example: $110 covers 2 nights lodging, 2 breakfasts, and 2 dinners.)
-    = f.text_area :pricing
+    = f.text_area :pricing, :class => :text_area_medium
 
   .field
     = f.label :description, "* Event Description"
-    = f.text_area :description
+    = f.text_area :description, :class => :text_area_large
   .field
     = f.label :gear_list, "* Gear List"
     %p (If no gear necessary, please type: "No gear necessary"):
-    = f.text_area :gear_list
+    = f.text_area :gear_list, :class => :text_area_large
   .field
     = f.label :trip_info, "Participant Info"
     %p (Directions to trailhead, etc. Visible only to APPROVED participants.)
-    = f.text_area :trip_info
+    = f.text_area :trip_info, :class => :text_area_large
 
   .field
     %p Program Info
@@ -78,12 +78,12 @@
   .field
     = f.label :question1, "Additional Event Question"
     %p (Optional)
-    = f.text_area :question1
+    = f.text_area :question1, :class => :text_area_small
 
   .field
     = f.label :confirmation_page
     %p (Displays when user registers for event.)
-    = f.text_area :confirmation_page, :value => "Thank you for registering. An event leader will be in contact with you soon regarding your participation in this event."
+    = f.text_area :confirmation_page, :class => :text_area_medium, :value => "Thank you for registering. An event leader will be in contact with you soon regarding your participation in this event."
 
 
   .actions
