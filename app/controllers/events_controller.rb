@@ -69,7 +69,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        leader_reg = Registration.new(:user_id => current_user.id, :event_id => @event.id, :register_status => :leader)
+        leader_reg = Registration.new(:user_id => current_user.id, :event_id => @event.id, :register_status => :leader, :carpooling => 'all set')
+        debugger
         leader_reg.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }

@@ -22,7 +22,7 @@ Feature: User can approve participants and set leaders and coleaders
   Scenario: User is redirected to to event after login 
     And I go to the "FunHike" event page
     Then I should see "Please log in"
-    And I fill in "Email Address" with "slave@sunni.ru"
+    And I fill in "Email Address" with "paid@sunni.ru"
     And I fill in "Password" with "pass"
     And I press "Sign In"
     Then I should see "FunHike"
@@ -30,10 +30,10 @@ Feature: User can approve participants and set leaders and coleaders
   Scenario: User is redirected to to event roster after login 
     And I go to the "FunHike" event roster page
     Then I should see "Please log in"
-    And I fill in "Email Address" with "slave@sunni.ru"
+    And I fill in "Email Address" with "paid@sunni.ru"
     And I fill in "Password" with "pass"
     And I press "Sign In"
-    Then I should see "Roster"
+    Then I should see "Recent Events"
     
   Scenario: Pending Payment users can not see the carpooling list
     And I go to the "FunHike" event carpooling page
