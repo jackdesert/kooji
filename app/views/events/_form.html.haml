@@ -8,7 +8,7 @@
           %li= msg
 
   .field
-    = f.label :event_name, "*Event Name: (include location)"
+    = f.label :event_name, "* Event Name: (include location)"
     = f.text_field :event_name
   .field
     = f.label :start_date
@@ -18,7 +18,7 @@
     = f.date_select :end_date, :order => [:month, :day, :year]
 
   .field
-    = f.label :event_status, "*Event Status"
+    = f.label :event_status, "* Event Status"
     %p Registration is ONLY active when status is set to 'OPEN' or 'WAIT LIST'. All other statuses do NOT allow new registrations.
     = f.text_field :event_status
   .field
@@ -35,7 +35,7 @@
     = f.label :description, "* Event Description"
     = f.text_area :description
   .field
-    = f.label :gear_list
+    = f.label :gear_list, "* Gear List"
     %p (If no gear necessary, please type: "No gear necessary"):
     = f.text_area :gear_list
   .field
@@ -47,13 +47,13 @@
     %p Program Info
     %table
       %tr
-        %td= f.radio_button :event_is_program, 'Y'
+        %td= f.radio_button :event_is_program, 'standalone', :checked => true
         %td= f.label :event_is_program, "This is a STANDALONE EVENT"
       %tr
-        %td= f.radio_button :event_is_program, 'N'
+        %td= f.radio_button :event_is_program, 'program'
         %td= f.label :event_is_program, "This is a PROGRAM (a collection of events)"
       %tr
-        %td= f.radio_button :event_is_program, 'P'
+        %td= f.radio_button :event_is_program, 'partofprogram'
         %td
           = f.label :event_is_program, "This event is PART OF A PROGRAM"
           The program id is

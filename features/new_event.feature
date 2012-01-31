@@ -17,3 +17,12 @@ Feature: User can approve participants and set leaders and coleaders
     Then I should see "You haven't signed up"
     When I follow "Create New Event"
     Then I should see "Event Name"
+    When I fill in "* Event Name: (include location)" with "WhatsInAName"
+    And I fill in "* Event Status" with "open"
+    And I fill in "Cost" with "Ten dollars even"
+    And I fill in "* Event Description" with "Lots of biking"
+    And I fill in "* Gear List" with "Backpack"
+    And I press "Create This Event"
+    And show me the page
+    And I follow "Roster"
+    Then I should see "jack@sunni.ru"
