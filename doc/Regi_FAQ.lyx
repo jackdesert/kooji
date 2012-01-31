@@ -636,16 +636,32 @@ Fellow coleaders and registrars must sign up for the event just like all
 Roster
 \emph default
  page for the event.
- Using the pull-down menus to the far right of each person's entries, change
- their status by selecting either LEADER, COLEADER or REGISTRAR.
- Once you change the status of a participant, they will be sent an automated
- email notifying them of the change.
- Leaders, Coleaders and Registrars of this particular event all have access
- to this event's 
-\emph on
-Admin
-\emph default
- page.
+ Change their registration status from 
+\begin_inset Quotes eld
+\end_inset
+
+submitted
+\begin_inset Quotes erd
+\end_inset
+
+ to either 
+\begin_inset Quotes eld
+\end_inset
+
+leader
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+coleader
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Paragraph
@@ -866,23 +882,12 @@ name "sec:about"
 
 \end_inset
 
-About REGI 
+About Kooji
 \end_layout
 
 \begin_layout Standard
-REGI is currently hosted at http://hbbostonamc.org/regi.
- The application was originally developed in LAMP (Linux, Apache, MySQL,
- PHP) and HTML in 2010 by Dirk Koechner, a long time AMC Boston chapter
- member and outdoor enthusiast.
- Then in June 2011 
-\begin_inset CommandInset href
-LatexCommand href
-name "Jack Desert"
-target "mailto:jackdesert556@gmail.com"
-
-\end_inset
-
- stepped up to add more features and improve the look and feel of the site.
+Kooji is currently in development as a possible replacement for the registration
+ system hosted at http://hbbostonamc.org/regi.
  If you have suggestions on what would really make this site get up and
  dance, Jack would love to hear them.
  
