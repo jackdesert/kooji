@@ -9,7 +9,9 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-
+  %br
+  .field (Required fields indicated by *)
+  %br
   .field
     = f.label :first_name, "* First Name"
     = f.text_field :first_name
@@ -51,22 +53,22 @@
   .field
     * What is your previous hiking experience? (If applicable, please name mountains and include approximate distances.)
     %br
-    = f.text_field :experience
+    = f.text_area :experience, :class => :text_area_large
   .field
     * What is your weekly exercise routine? Please be honest.
     %br
-    = f.text_field :exercise
+    = f.text_area :exercise, :class => :text_area_medium
   .field
     * Please enter any allergies, any medications you are taking, or any other medical conditions that may be important. (Your answer will remain confidential.)
     %br
-    = f.text_field :medical
+    = f.text_area :medical, :class => :text_area_medium
   .field
     * In case of emergency, please enter a person to contact, including name and phone number.
     %br
-    = f.text_field :emergency_contact
+    = f.text_area :emergency_contact, :class => :text_area_small
   .field
     Do you have any dietary preferences or restrictions (vegetarian, food allergies, etc.)?
     %br
-    = f.text_field :diet
+    = f.text_area :diet, :class => :text_area_medium
   .actions
     = f.submit 'Save'
