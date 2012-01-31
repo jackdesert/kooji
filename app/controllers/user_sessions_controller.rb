@@ -13,7 +13,7 @@ class UserSessionsController < ApplicationController
       render :action => :new and return
     end
     if @user_session.save
-      redirect_back root_path
+      redirect_back root_path 
     else
       if  @user_session.errors.messages[:email]
         flash[:error] = "Error: #{in_email} was not found in our system. Please check your email address and try again"
