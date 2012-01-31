@@ -38,6 +38,6 @@ Feature: User Can Log In
     When I fill in "Email Address" with "hi@you.com"
     And I fill in "Password" with ""
     And I press "Sign In"
-    Then I should see "You must enter a password"
+    Then I should see "I found your email address"
     Then shoot "need password"
     

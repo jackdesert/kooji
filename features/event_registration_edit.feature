@@ -16,5 +16,5 @@ Feature: User can sign up for events
   Scenario:
     When I go to the "Fire Walking" event page
 And show me the page
-    And I press "Sign Up For This Event"
+    And I press "Sign Me Up!"
     Then I should see "Do you have any questions or comments for us?"
