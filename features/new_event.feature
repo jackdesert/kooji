@@ -18,7 +18,6 @@ Feature: User can approve participants and set leaders and coleaders
     When I follow "Create New Event"
     Then I should see "Event Name"
     When I fill in "* Event Name: (include location)" with "WhatsInAName"
-    And I fill in "* Event Status" with "open"
     And I fill in "Cost" with "Ten dollars even"
     And I fill in "* Event Description" with "Lots of biking"
     And I fill in "* Gear List" with "Backpack"
