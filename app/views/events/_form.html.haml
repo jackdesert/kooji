@@ -1,5 +1,8 @@
 %h1#floating_event_name= @event.event_name if @event.created_at
-= form_for @event, :url => "/" do |f|
+- debugger
+- url = @event.new_record? ? events_path : event_path(params[:id])
+- method = @event.new_record? ? :post : :put
+= form_for @event, {:url => url, :method => method}  do |f|
   -if @event.errors.any?
     #error_explanation
       %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
