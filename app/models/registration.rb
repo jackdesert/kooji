@@ -62,14 +62,14 @@ class Registration < ActiveRecord::Base
   end
   
   def compound_from
-    leaving_from = self.leaving_from
-    leave_time = self.leave_time
+    leaving_from = self.leaving_from || ''
+    leave_time = self.leave_time || ''
     leaving_from + " @ " + leave_time
   end
   
   def compound_to
-    returning_to = self.returning_to
-    return_time = self.return_time
+    returning_to = self.returning_to || ''
+    return_time = self.return_time || ''
     returning_to + " @ " + return_time
   end
   
