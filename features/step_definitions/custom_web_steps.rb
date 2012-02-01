@@ -26,6 +26,7 @@ Given /^I go to the "([^"]*)" event carpooling page$/ do |event_name|
   visit carpooling_path(event)
 end
 
+
 Then /^I should see in this order:$/ do |table|
   pattern = table.raw.flatten.collect(&Regexp.method(:quote)).join('.*?')
   pattern = Regexp.compile(pattern, Regexp::MULTILINE)

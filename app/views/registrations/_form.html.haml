@@ -15,17 +15,17 @@
   .field
     .above * Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions.
     = f.label :gear_answer, :class => :hidden
-    = f.text_area :gear_answer
+    = f.text_area :gear_answer, :class => :text_area_medium
 
   .field
     .above Do you have any questions or comments for us?
     = f.label :has_questions, :class => :hidden
-    = f.text_area :has_questions
+    = f.text_area :has_questions, :class => :text_area_medium
   - unless @registration.event.question1.blank?
     .field
       .above= "* " + @registration.event.question1
       = f.label :answer1, :class => :hidden
-      = f.text_area :answer1
+      = f.text_area :answer1, :class => :text_area_medium
 
   %h2 * Carpool Info
   %p Carpooling is a great way to meet people and save the earth's resources. Do you want to carpool?
@@ -33,16 +33,16 @@
   .field
     %table
       %tr
-        %td= f.radio_button :carpooling, 'All Set'
+        %td= f.radio_button :carpooling, 'all set'
         %td= f.label :carpooling, "I'm all set and will meet you there"
       %tr
-        %td= f.radio_button :carpooling, 'Can Take'
+        %td= f.radio_button :carpooling, 'can take'
         %td
           = f.label :carpooling, "I have room for:"
           = f.select :room_for, ['1', '2', '3', '4', '5']
           passenger
       %tr
-        %td= f.radio_button :carpooling, 'Need Ride'
+        %td= f.radio_button :carpooling, 'need ride'
         %td= f.label :carpooling, "I need a ride"
 
   %table
@@ -65,7 +65,7 @@
   .field
     = f.label :user_notes, :class => :above
     %p This a place for you to scribble. Nobody else will see this.
-    = f.text_area :user_notes
+    = f.text_area :user_notes, :class => :text_area_large
   .actions
     - if @registration.new_record?
       = f.submit 'Sign Me Up!'
