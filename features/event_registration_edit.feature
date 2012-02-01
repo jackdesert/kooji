@@ -15,6 +15,5 @@ Feature: User can sign up for events
     Then I should see "You haven't signed up for any events yet."
   Scenario:
     When I go to the "Fire Walking" event page
-And show me the page
     And I press "Sign Me Up!"
     Then I should see "Do you have any questions or comments for us?"

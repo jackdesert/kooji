@@ -12,12 +12,11 @@ Feature: User can sign up for an event
     And I press "Sign In"
     And I go to the "Wine Fest" event page
     Then I should see "Wine Fest"
-And show me the page
-    When I press "show_editable"
-    And I fill in "Required gear" with "yes"
+    And I press "Sign Me Up!"
+    And I fill in "Gear answer" with "yes"
     And I fill in "Has questions" with "no"
     And I fill in "Answer1" with "Lots"
-    And I select "registration_carpooling_all_set"
+    And I choose "registration_carpooling_all_set"
     And I press "Sign Me Up!"
     Then I should see "Submitted"
     
