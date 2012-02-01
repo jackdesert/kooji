@@ -40,7 +40,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(current_user.id)
     @tab_active_profile = :active
-    debugger
 
   end
 

@@ -35,7 +35,6 @@ class RegistrationsController < ApplicationController
     @registration = Registration.new(params[:registration])
     @registration.user_id = current_user.id
     @registration.register_status = "submitted"
-    debugger
     respond_to do |format|
       if @registration.save
         morsel = Morsel.new(:user_id => current_user, :text => @registration.register_status, 
