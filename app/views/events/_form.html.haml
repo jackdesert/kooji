@@ -1,5 +1,4 @@
 %h1#floating_event_name= @event.event_name if @event.created_at
-- debugger
 - url = @event.new_record? ? events_path : event_path(params[:id])
 - method = @event.new_record? ? :post : :put
 = form_for @event, {:url => url, :method => method}  do |f|
