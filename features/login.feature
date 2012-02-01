@@ -41,3 +41,11 @@ Feature: User Can Log In
     Then I should see "I found your email address"
     Then shoot "need password"
     
+    
+  
+  Scenario:
+    When I fill in "Email Address" with "hi@you.com"
+    And I fill in "Password" with "pass"
+    And I press "Sign In"
+    Then I should see "You haven't signed up for any events"
+    
