@@ -34,7 +34,7 @@ Regi::Application.routes.draw do
   get ':id/roster/export' => 'events#export', :as => 'roster_export'
   get ':id/share' => 'events#get_the_word_out', :as => 'share_event'
 
-  get 'events' => 'events#index', :as => 'events'
+  get 'events' => 'events#index', :as => 'events_index'
   resources :events, :path => "/", :except => [:index, :delete] do
     resource :registration
   end
