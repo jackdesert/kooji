@@ -23,19 +23,16 @@ FactoryGirl.define do
     event_is_program "n"
     rating "B3B"
     pricing "$150 includes two nights lodging, breakfasts Saturday and Sunday mornings, happy hour snacks friday evening, and dinner (with wine) Saturday."
-    description "Do your layouts deserve better than Lorem Ipsum? Apply as an art director and team up with the best copywriters at Jung von Matt: www.jvm.com/jobs/lipsum
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim dictum leo, sit amet viverra nisi porttitor quis. Ut et nibh sit amet massa lobortis imperdiet. Nunc sed mollis ante. Curabitur a nulla est, ac congue ante. Nam lobortis, magna ut ultrices hendrerit, nibh augue sagittis purus, ac condimentum tortor metus vel quam. Etiam sollicitudin facilisis dolor. Donec sodales tincidunt elementum.
-
-    Vestibulum lorem nibh, ornare lobortis molestie et, tincidunt quis lorem. Donec lobortis aliquet nisl, vitae venenatis sapien vehicula vel. Vestibulum sit amet urna consectetur dolor scelerisque luctus. Phasellus id felis leo, nec auctor orci. Maecenas in quam diam, sit amet accumsan dolor. Duis urna erat, accumsan sit amet pulvinar nec, eleifend vel sapien. Sed libero arcu, fringilla id faucibus eget, vehicula quis magna. Vivamus congue metus sed mi convallis in sodales purus laoreet. Nam in neque ut diam tincidunt pharetra. Ut tortor leo, bibendum sit amet mattis eget, suscipit vel eros. Nunc luctus diam vel tortor gravida a posuere augue facilisis. Praesent sed nunc a dolor tincidunt condimentum.
-
-    Ut fringilla eros eleifend quam pellentesque sit amet porttitor nibh dapibus. Nunc nec augue quis lorem tristique viverra sit amet eget purus. Vestibulum leo urna, aliquet sit amet rutrum vitae, laoreet quis purus. Aliquam quam eros, posuere in viverra quis, suscipit nec metus. Aenean cursus accumsan dolor, quis dapibus erat pretium eget. Cras nec tortor fermentum turpis pulvinar consequat ac vel lacus. Curabitur vulputate dui ac ante porta ullamcorper. Etiam vestibulum tellus mi, sit amet consectetur nunc. Nulla eu nulla tortor, a cursus tellus. Morbi tincidunt, ligula vitae euismod sollicitudin, dui magna rhoncus est, vel tincidunt eros urna ut justo. Phasellus est nunc, malesuada in euismod ac, eleifend at risus. Morbi ut mauris sed nunc tempor euismod in non felis. Suspendisse viverra elit sed risus tempor blandit."
+    description "On this luxurious cruise through the White Mountains, you can enjoy all your favorite beverages (as long as you're willing to pack them) and 
+    see all the best sights. We'll go sledding, caroling, ice skating, and build a bonfire. If we run out of fun things to do,
+    we will NOT do like my mom always said and fold laundry--rather, we will hike to the neighboring campsite
+    and ask to borrow two eggs to make peanut butter cookies with (just kidding, just for a laugh you know)."
+    
     trip_info "Meet us at 1695 Southtower Rd in Morton, MA at 6:30pm on Friday."
     confirmation_page "Thank you for registering. We'll be in touch soon"
     question1 "Do you have any experience doing high altitude (above 12,000ft) climbs?"
-    gear_list "For this event, you'll need some winter hiking gear Do your layouts deserve better than Lorem Ipsum? Apply as an art director and team up with the best copywriters at Jung von Matt: www.jvm.com/jobs/lipsum
-
-    Ut fringilla eros eleifend quam pellentesque sit amet porttitor nibh dapibus. Nunc nec augue quis lorem tristique viverra sit amet eget purus. Vestibulum leo urna, aliquet sit amet rutrum vitae, laoreet quis purus. Aliquam quam eros, posuere in viverra quis, suscipit nec metus. Aenean cursus accumsan dolor, quis dapibus erat pretium eget. Cras nec tortor fermentum turpis pulvinar consequat ac vel lacus. Curabitur vulputate dui ac ante porta ullamcorper. Etiam vestibulum tellus mi, sit amet consectetur nunc. Nulla eu nulla tortor, a cursus tellus. Morbi tincidunt, ligula vitae euismod sollicitudin, dui magna rhoncus est, vel tincidunt eros urna ut justo. Phasellus est nunc, malesuada in euismod ac, eleifend at risus. Morbi ut mauris sed nunc tempor euismod in non felis. Suspendisse viverra elit sed risus tempor blandit."
+    gear_list "For this event, you'll need some winter hiking gear. Mittens, ski mask, hot chocolate, and kindling are a must. Snow pants will definitely be in fashion, and bring an axe if you have one so we can stock up on our firewood supply."
+    
     registrar_id 1
 # This registrar association causes it to fail, so I took it out
     association :registrar, :factory => :user

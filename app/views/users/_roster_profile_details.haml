@@ -2,7 +2,11 @@
   .question Recent Events
   - registrations = []
   - Registration.where(:user_id => user.id).collect do |reg|
-    - registrations << reg if reg.math_status >= 7 && reg.event_id != @event.id  
+    - if @event
+      - registrations << reg if reg.math_status >= 7 && reg.event_id != @event.id
+    - else  
+      - registrations << reg if reg.math_status >= 7 
+
   - registrations.each do
     - |reg|
     %ul
