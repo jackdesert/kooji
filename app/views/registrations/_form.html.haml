@@ -13,18 +13,21 @@
 
   = f.hidden_field :event_id, :value => @registration.event_id
   .field
-    = f.label :gear_answer, "Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions.", :class => :above
+    .above * Do you have the required gear? If you are missing any required gear, please list it below. We can help if you have questions.
+    = f.label :gear_answer, :class => :hidden
     = f.text_area :gear_answer
 
   .field
-    = f.label :has_questions, "Do you have any questions or comments for us?", :class => :above
+    .above Do you have any questions or comments for us?
+    = f.label :has_questions, :class => :hidden
     = f.text_area :has_questions
   - unless @registration.event.question1.blank?
     .field
-      = f.label :answer1, @registration.event.question1, :class => :above
+      .above= "* " + @registration.event.question1
+      = f.label :answer1, :class => :hidden
       = f.text_area :answer1
 
-  %h2 Carpool Info
+  %h2 * Carpool Info
   %p Carpooling is a great way to meet people and save the earth's resources. Do you want to carpool?
 
   .field
