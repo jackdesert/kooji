@@ -12,7 +12,7 @@ validates_attachment_content_type :photo,
                                     :content_type => ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/pjpeg','image/x-png'],
                                     :if => Proc.new {|profile| profile.photo.file?},
                                     :message => 'profile.photo_content_type'
-  validates_presence_of :first_name, :last_name, :phone, :experience, :user_type, :member, :emergency_contact
+  validates_presence_of :first_name, :last_name, :phone, :experience, :user_type, :emergency_contact
   validates_format_of :phone, :with => /^\d{10}$/
   validates_format_of :user_type, :with => /^(participant)?(staff)?(admin)?$/
   before_validation :standardize_phone_number

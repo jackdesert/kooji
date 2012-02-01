@@ -36,7 +36,7 @@
     = f.label :phone, "* Phone"
     = f.text_field :phone
   .field
-    Are you and AMC member?
+    Are you an AMC member?
     = f.label :member, "Yes"
     = f.radio_button :member, true
     = f.label :member, "No"

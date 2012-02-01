@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
+    @new_account = true
 
     respond_to do |format|
       format.html # new.html.erb
@@ -39,6 +40,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(current_user.id)
     @tab_active_profile = :active
+    debugger
+
   end
 
   # POST /users
