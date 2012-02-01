@@ -10,7 +10,7 @@
       - if current_user && current_user.is_admin?
         = link_to "Admin", admin_index_prospectives_path, :class => @tab_active_admin
       =# link_to "Browse H/B Events", hbtrips_path, :class => @tab_active_listings
-      = link_to "Browse H/B Events", events_path, :class => @tab_active_listings
+      = link_to "Browse H/B Events", events_index_path, :class => @tab_active_listings
       = link_to "Support", support_path, :class => @tab_active_support
       - if current_user
         - if @show_create_event_link
